@@ -14,7 +14,11 @@ function loadTrending(): TrendingData | null {
 	const historyDir = path.resolve('data', 'history');
 	if (!fs.existsSync(historyDir)) return null;
 
-	const files = fs.readdirSync(historyDir).filter((f) => f.endsWith('.json')).sort().reverse();
+	const files = fs
+		.readdirSync(historyDir)
+		.filter((f) => f.endsWith('.json'))
+		.sort()
+		.reverse();
 	if (files.length === 0) return null;
 
 	const fileContent = fs.readFileSync(path.join(historyDir, files[0]), 'utf-8');
@@ -44,7 +48,9 @@ function scoreMatch(tool: Tool, token: string): number {
 
 function resolveTool(trending: TrendingData, token: string): Tool | null {
 	const normalized = normalizeSlug(token);
-	const direct = trending.products.find((tool) => normalizeSlug(tool.slug ?? tool.name) === normalized);
+	const direct = trending.products.find(
+		(tool) => normalizeSlug(tool.slug ?? tool.name) === normalized
+	);
 	if (direct) return direct;
 
 	const fuzzy = trending.products.find((tool) => scoreMatch(tool, normalized) > 0);
@@ -74,8 +80,9 @@ export async function load({ params }: { params: { slug: string } }): Promise<Pa
 		right,
 		slug: params.slug,
 		title: left && right ? `Compare ${left.name} vs ${right.name}` : `Compare: ${fallback}`,
-		description: left && right
-			? `Side-by-side comparison for ${left.name} and ${right.name}.`
-			: 'Comparison content for high-intent traffic.'
+		description:
+			left && right
+				? `Side-by-side comparison for ${left.name} and ${right.name}.`
+				: 'Comparison content for high-intent traffic.'
 	};
 }

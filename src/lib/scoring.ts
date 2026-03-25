@@ -1,4 +1,5 @@
 import { DEFAULT_WEIGHTS } from './types';
+export { DEFAULT_WEIGHTS };
 import type { ScoreWeights, Tool, ToolSignal, ToolScore } from './types';
 
 function normalize(value: number, maxValue: number): number {
@@ -23,8 +24,12 @@ function calculateAffiliateReadinessScore(tool: Tool): number {
 
 function calculateConversionFitScore(tool: Tool): number {
 	const intentKeywords = ['best', 'free', 'tool', 'software', 'ai', 'automation'];
-	const haystack = `${tool.name} ${tool.description} ${tool.category ?? ''} ${(tool.bestFor ?? []).join(' ')}`.toLowerCase();
-	const matchCount = intentKeywords.reduce((acc, keyword) => acc + (haystack.includes(keyword) ? 1 : 0), 0);
+	const haystack =
+		`${tool.name} ${tool.description} ${tool.category ?? ''} ${(tool.bestFor ?? []).join(' ')}`.toLowerCase();
+	const matchCount = intentKeywords.reduce(
+		(acc, keyword) => acc + (haystack.includes(keyword) ? 1 : 0),
+		0
+	);
 	return Math.min(35 + matchCount * 12, 100);
 }
 
@@ -83,10 +88,7 @@ export function scoreTool(tool: Tool, weights: ScoreWeights = DEFAULT_WEIGHTS): 
 	};
 }
 
-export function calculateScore(
-	tool: Tool,
-	weights: ScoreWeights = DEFAULT_WEIGHTS
-): number {
+export function calculateScore(tool: Tool, weights: ScoreWeights = DEFAULT_WEIGHTS): number {
 	return scoreTool(tool, weights).totalScore;
 }
 

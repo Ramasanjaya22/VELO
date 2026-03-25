@@ -17,6 +17,54 @@
 	--font-mono: 'Space Mono', monospace;
 }
 
+:root {
+	--color-bg: #fbfbfa;
+	--color-surface: #ffffff;
+	--color-metal-100: #ececec;
+	--color-metal-300: #c2c2c2;
+	--color-metal-500: #7a7a7a;
+	--color-metal-700: #3d3d3d;
+	--color-metal-900: #111111;
+	--color-accent: #b8ff1f;
+	--color-accent-dim: #93d90a;
+	--color-matrix: #3a9b35;
+	--bg: #fbfbfa;
+	--surface: #ffffff;
+	--metal-100: #ececec;
+	--metal-300: #c2c2c2;
+	--metal-500: #7a7a7a;
+	--metal-700: #3d3d3d;
+	--metal-900: #111111;
+	--accent: #b8ff1f;
+	--accent-dim: #93d90a;
+	--matrix: #3a9b35;
+	color-scheme: light;
+}
+
+[data-theme='dark'] {
+	--color-bg: #090b09;
+	--color-surface: #121412;
+	--color-metal-100: #1b1d1b;
+	--color-metal-300: #2f332f;
+	--color-metal-500: #7f887f;
+	--color-metal-700: #c2c8c2;
+	--color-metal-900: #f2f5f2;
+	--color-accent: #b4df3d;
+	--color-accent-dim: #89b92a;
+	--color-matrix: #5ea84f;
+	--bg: #090b09;
+	--surface: #121412;
+	--metal-100: #1b1d1b;
+	--metal-300: #2f332f;
+	--metal-500: #7f887f;
+	--metal-700: #c2c8c2;
+	--metal-900: #f2f5f2;
+	--accent: #b4df3d;
+	--accent-dim: #89b92a;
+	--matrix: #5ea84f;
+	color-scheme: dark;
+}
+
 @font-face {
 	font-family: 'Space Grotesk';
 	src: url('/fonts/space-grotesk-latin-300-normal.woff2') format('woff2');
@@ -103,19 +151,6 @@
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
-}
-
-:root {
-	--bg: #fbfbfa;
-	--surface: #ffffff;
-	--metal-100: #ececec;
-	--metal-300: #c2c2c2;
-	--metal-500: #7a7a7a;
-	--metal-700: #3d3d3d;
-	--metal-900: #111111;
-	--accent: #b8ff1f;
-	--accent-dim: #93d90a;
-	--matrix: #3a9b35;
 }
 
 html {

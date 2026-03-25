@@ -6,7 +6,17 @@
 	import boltIcon from '$lib/icons/bolt.svg?raw';
 	import type { Tool } from '$lib/types';
 
-	let { data }: { data: { left: Tool | null; right: Tool | null; slug: string; title: string; description: string } } = $props();
+	let {
+		data
+	}: {
+		data: {
+			left: Tool | null;
+			right: Tool | null;
+			slug: string;
+			title: string;
+			description: string;
+		};
+	} = $props();
 
 	function toolHref(tool: Tool): string {
 		return `/tool/${encodeURIComponent(tool.slug ?? tool.name.toLowerCase().replace(/\s+/g, '-'))}`;
@@ -25,13 +35,25 @@
 <svelte:head>
 	<title>{data.title} — VELO</title>
 	<meta name="description" content={data.description} />
+	<meta property="og:title" content={`${data.title} — VELO`} />
+	<meta property="og:description" content={data.description} />
+	<meta property="og:type" content="website" />
+	<meta property="og:image" content="https://velo-428.pages.dev/og-image.svg" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content={`${data.title} — VELO`} />
+	<meta name="twitter:description" content={data.description} />
+	<meta name="twitter:image" content="https://velo-428.pages.dev/og-image.svg" />
 </svelte:head>
 
 <main class="max-w-[1280px] mx-auto px-6 py-8 lg:py-12" in:fly={{ y: 12, duration: 280 }}>
 	<section class="grid gap-6 xl:grid-cols-[1.08fr_0.92fr]">
 		<div class="space-y-5">
-			<div class="inline-flex items-center gap-3 border border-metal-100 bg-surface px-4 py-3 rounded-sm">
-				<div class="size-10 border border-metal-900 bg-metal-900 text-surface rounded-sm flex items-center justify-center">
+			<div
+				class="inline-flex items-center gap-3 border border-metal-100 bg-surface px-4 py-3 rounded-sm"
+			>
+				<div
+				class="size-10 border border-metal-900 bg-metal-100 text-metal-900 rounded-sm flex items-center justify-center"
+				>
 					<Icon data={layersIcon} size="18px" color="currentColor" />
 				</div>
 				<div>
@@ -51,10 +73,14 @@
 					<span class="badge-chip">conversion-first</span>
 				</div>
 
-				<h1 class="max-w-4xl text-[clamp(2.3rem,4.8vw,4.8rem)] leading-[0.94] tracking-[-0.05em] text-metal-900 font-heading">
+				<h1
+					class="max-w-4xl text-[clamp(2.3rem,4.8vw,4.8rem)] leading-[0.94] tracking-[-0.05em] text-metal-900 font-heading"
+				>
 					{data.title}
 				</h1>
-				<p class="max-w-2xl text-base lg:text-lg text-metal-500 leading-relaxed">{data.description}</p>
+				<p class="max-w-2xl text-base lg:text-lg text-metal-500 leading-relaxed">
+					{data.description}
+				</p>
 			</header>
 		</div>
 
@@ -71,13 +97,17 @@
 					</div>
 					<div class="rounded-sm border border-metal-100 bg-bg p-3">
 						<p class="text-[10px] uppercase tracking-[0.2em] text-metal-500 font-mono">Right</p>
-						<p class="mt-2 text-lg font-heading text-metal-900">{data.right?.name ?? 'Not found'}</p>
+						<p class="mt-2 text-lg font-heading text-metal-900">
+							{data.right?.name ?? 'Not found'}
+						</p>
 					</div>
 				</div>
 			</div>
 
 			<div class="border border-metal-100 bg-surface rounded-sm p-5">
-				<p class="text-[10px] uppercase tracking-[0.25em] text-metal-500 font-mono">Decision path</p>
+				<p class="text-[10px] uppercase tracking-[0.25em] text-metal-500 font-mono">
+					Decision path
+				</p>
 				<p class="mt-2 text-sm text-metal-500">
 					Choose the tool that matches your intent, then jump straight into its detail page.
 				</p>
@@ -90,20 +120,28 @@
 			<div class="border border-metal-100 bg-surface rounded-sm p-5">
 				<div class="flex items-start justify-between gap-4">
 					<div class="min-w-0">
-						<p class="text-[10px] uppercase tracking-[0.2em] text-metal-500 font-mono">{index === 0 ? 'Left side' : 'Right side'}</p>
-						<h2 class="mt-1 text-2xl font-heading text-metal-900">{tool?.name ?? 'Tool not found'}</h2>
+						<p class="text-[10px] uppercase tracking-[0.2em] text-metal-500 font-mono">
+							{index === 0 ? 'Left side' : 'Right side'}
+						</p>
+						<h2 class="mt-1 text-2xl font-heading text-metal-900">
+							{tool?.name ?? 'Tool not found'}
+						</h2>
 						<p class="mt-2 text-sm text-metal-500">
 							{tool?.description ?? 'No data was matched for this comparison slug.'}
 						</p>
 					</div>
 					{#if tool}
-						<p class="text-3xl font-mono font-bold text-metal-900">{tool.score ?? tool.trustScore ?? 0}</p>
+						<p class="text-3xl font-mono font-bold text-metal-900">
+							{tool.score ?? tool.trustScore ?? 0}
+						</p>
 					{/if}
 				</div>
 
 				<div class="mt-4 flex flex-wrap gap-2">
 					{#each badgeFor(tool) as badge}
-						<span class="badge-chip {badge === 'not found' ? '' : 'badge-chip-accent'}">{badge}</span>
+						<span class="badge-chip {badge === 'not found' ? '' : 'badge-chip-accent'}"
+							>{badge}</span
+						>
 					{/each}
 				</div>
 
@@ -121,9 +159,12 @@
 
 	<section class="mt-8 grid gap-4 lg:grid-cols-3">
 		<div class="border border-metal-100 bg-surface rounded-sm p-5">
-			<p class="text-[10px] uppercase tracking-[0.25em] text-metal-500 font-mono">What to compare</p>
+			<p class="text-[10px] uppercase tracking-[0.25em] text-metal-500 font-mono">
+				What to compare
+			</p>
 			<p class="mt-2 text-sm text-metal-500">
-				Category, pricing, best-for, and affiliate readiness are the fastest signals for choosing a tool.
+				Category, pricing, best-for, and affiliate readiness are the fastest signals for choosing a
+				tool.
 			</p>
 		</div>
 		<div class="border border-metal-100 bg-surface rounded-sm p-5">
@@ -143,7 +184,8 @@
 	<section class="mt-8 border border-metal-100 bg-surface rounded-sm p-5">
 		<p class="text-[10px] uppercase tracking-[0.25em] text-metal-500 font-mono">Disclosure</p>
 		<p class="mt-2 text-sm text-metal-500">
-			Some comparison links may be affiliate-linked. Rank and compare logic remain separate from promotion.
+			Some comparison links may be affiliate-linked. Rank and compare logic remain separate from
+			promotion.
 		</p>
 	</section>
 </main>

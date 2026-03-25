@@ -13,6 +13,7 @@
 ### Task 1: Redefine the core data model for tools
 
 **Files:**
+
 - Modify: `src/lib/types.ts`
 - Modify: `data/trending.json` or the current data source file used by the homepage
 - Modify: `src/routes/+page.server.ts`
@@ -47,6 +48,7 @@ git commit -m "feat: pivot core types to ai tools"
 ### Task 2: Replace repo scoring with affiliate ranking scoring
 
 **Files:**
+
 - Modify: `src/lib/scoring.ts`
 - Modify: any scoring call sites in `src/routes/+page.server.ts`
 
@@ -81,6 +83,7 @@ git commit -m "feat: add affiliate ranking score model"
 ### Task 3: Build the tool ingestion and normalization pipeline
 
 **Files:**
+
 - Modify: `scripts/scrape.ts`
 - Create: `scripts/normalize-tool.ts` if a dedicated helper is needed
 - Modify: `data/trending.json` output target or replace it with a tool dataset file
@@ -115,6 +118,7 @@ git commit -m "feat: normalize ai tools ingestion"
 ### Task 4: Rebuild the homepage as an AI tools leaderboard
 
 **Files:**
+
 - Modify: `src/routes/+page.svelte`
 - Modify: `src/lib/components/ProductCard.svelte` or rename to a tool card component
 - Modify: `src/lib/components/Hero.svelte`
@@ -150,6 +154,7 @@ git commit -m "feat: rebuild homepage for ai tools"
 ### Task 5: Add tool detail pages and conversion-focused content blocks
 
 **Files:**
+
 - Modify: `src/routes/repo/[id]/+page.svelte`
 - Modify: `src/routes/repo/[id]/+page.server.ts`
 - Create: `src/routes/tool/[id]/+page.svelte`
@@ -186,6 +191,7 @@ git commit -m "feat: add tool detail pages"
 ### Task 6: Add segment pages and monetization hooks
 
 **Files:**
+
 - Create: `src/routes/category/[slug]/+page.svelte`
 - Create: `src/routes/category/[slug]/+page.server.ts`
 - Create: `src/routes/best-for/[slug]/+page.svelte`
@@ -224,6 +230,7 @@ git commit -m "feat: add segment pages and monetization hooks"
 ### Task 7: Verify build, lint, and static output
 
 **Files:**
+
 - Modify: only if verification exposes a real issue
 
 **Step 1: Run lint**
@@ -251,4 +258,3 @@ Confirm the built app contains the new tool-first pages and does not depend on G
 git add .
 git commit -m "chore: verify ai tools pivot"
 ```
-

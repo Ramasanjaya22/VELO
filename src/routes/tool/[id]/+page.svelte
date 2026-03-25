@@ -9,6 +9,7 @@
 	import layersIcon from '$lib/icons/layers.svg?raw';
 	import RadarChart from '$lib/components/RadarChart.svelte';
 	import BenchmarkBar from '$lib/components/BenchmarkBar.svelte';
+	import { parseMarkdown } from '$lib/utils/markdown';
 
 	let {
 		data
@@ -101,6 +102,95 @@
 		return '';
 	});
 
+	const pageUrl = $derived.by(
+		() => `https://velo-428.pages.dev/tool/${encodeURIComponent(data.tool.slug ?? data.tool.name)}`
+	);
+
+	let readmeContent = $state<string | null>(null);
+	let readmeLoading = $state(false);
+	let readmeError = $state<string | null>(null);
+	let readmeTruncated = $state(false);
+	let readmeExpanded = $state(false);
+
+	const CACHE_TTL = 60 * 60 * 1000;
+
+	function getCacheKey(slug: string): string {
+		return `readme:${slug}`;
+	}
+
+	function getCachedReadme(slug: string): string | null {
+		if (typeof sessionStorage === 'undefined') return null;
+		const cached = sessionStorage.getItem(getCacheKey(slug));
+		if (!cached) return null;
+		try {
+			const { content, fetchedAt } = JSON.parse(cached);
+			if (Date.now() - fetchedAt > CACHE_TTL) {
+				sessionStorage.removeItem(getCacheKey(slug));
+				return null;
+			}
+			return content;
+		} catch {
+			return null;
+		}
+	}
+
+	function setCachedReadme(slug: string, content: string): void {
+		if (typeof sessionStorage === 'undefined') return;
+		sessionStorage.setItem(
+			getCacheKey(slug),
+			JSON.stringify({
+				content,
+				fetchedAt: Date.now()
+			})
+		);
+	}
+
+	async function fetchReadme() {
+		if (!data.tool.url) return;
+
+		const slug = data.tool.slug ?? data.tool.name;
+
+		const cached = getCachedReadme(slug);
+		if (cached) {
+			readmeContent = cached;
+			return;
+		}
+
+		readmeLoading = true;
+		readmeError = null;
+
+		try {
+			const apiUrl = `/api/readme?url=${encodeURIComponent(data.tool.url)}`;
+			const response = await fetch(apiUrl);
+			const result = await response.json();
+
+			if (result.error) {
+				readmeError = result.message || 'Documentation unavailable';
+				readmeContent = null;
+				return;
+			}
+
+			if (!result.content) {
+				readmeError = 'No documentation found for this repository';
+				readmeContent = null;
+				return;
+			}
+
+			readmeContent = result.content;
+			readmeTruncated = result.truncated;
+			setCachedReadme(slug, result.content);
+		} catch (err) {
+			readmeError = 'Documentation unavailable';
+			readmeContent = null;
+		} finally {
+			readmeLoading = false;
+		}
+	}
+
+	$effect(() => {
+		fetchReadme();
+	});
+
 	const schema = $derived.by(() => {
 		const url = `https://velo-428.pages.dev/tool/${encodeURIComponent(data.tool.slug ?? data.tool.name)}`;
 		const aggregateRating = data.tool.score
@@ -155,10 +245,7 @@
 	<meta property="og:title" content={`${data.tool.name} — VELO`} />
 	<meta property="og:description" content={data.tool.description} />
 	<meta property="og:type" content="article" />
-	<meta
-		property="og:url"
-		content={`https://velo-428.pages.dev/tool/${encodeURIComponent(data.tool.slug ?? data.tool.name)}`}
-	/>
+	<meta property="og:url" content={pageUrl} />
 	<meta property="og:image" content="https://velo-428.pages.dev/og-image.svg" />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content={`${data.tool.name} — VELO`} />
@@ -177,7 +264,7 @@
 		></div>
 
 		<div class="relative grid gap-6 xl:grid-cols-[1.12fr_0.88fr]">
-			<div class="space-y-6">
+			<div class="min-w-0 space-y-6">
 				<div
 					class="flex items-center gap-3 text-metal-500 text-xs uppercase tracking-[0.25em] font-mono"
 				>
@@ -214,7 +301,7 @@
 						{/if}
 						<div class="min-w-0">
 							<h1
-								class="max-w-4xl text-[clamp(2.3rem,4.5vw,4.6rem)] leading-[0.95] tracking-[-0.05em] text-metal-900 font-heading"
+								class="detail-title max-w-4xl text-[clamp(2.3rem,4.5vw,4.6rem)] leading-[0.95] tracking-[-0.05em] text-metal-900 font-heading"
 							>
 								{data.tool.name}
 							</h1>
@@ -428,6 +515,62 @@
 		<BenchmarkBar items={benchmarkItems} />
 	</section>
 
+	<!-- README -->
+	{#if readmeLoading || readmeContent || readmeError}
+		<section class="mt-8 border border-metal-100 bg-surface rounded-sm overflow-hidden">
+			<div class="flex items-center justify-between px-5 py-3 border-b border-metal-100">
+				<div class="flex items-center gap-2">
+					<svg class="size-4" viewBox="0 0 24 24" fill="currentColor">
+						<path
+							d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+						/>
+					</svg>
+					<p class="text-[10px] uppercase tracking-[0.25em] text-metal-500 font-mono">README</p>
+				</div>
+				{#if readmeLoading}
+					<span class="text-[10px] text-metal-500 font-mono">Loading...</span>
+				{/if}
+			</div>
+			<div class="p-5">
+				{#if readmeLoading}
+					<div class="space-y-2 animate-pulse">
+						<div class="h-4 bg-metal-100 rounded w-3/4"></div>
+						<div class="h-4 bg-metal-100 rounded w-1/2"></div>
+						<div class="h-4 bg-metal-100 rounded w-5/6"></div>
+						<div class="h-4 bg-metal-100 rounded w-2/3"></div>
+					</div>
+				{:else if readmeError}
+					<div class="flex items-center gap-2 text-sm">
+						<span class="text-metal-500">{readmeError}</span>
+						<a
+							href={data.tool.url}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="text-accent-dim hover:text-metal-900 underline font-mono text-xs uppercase tracking-[0.15em]"
+						>
+							View on GitHub
+						</a>
+					</div>
+				{:else if readmeContent}
+					{@const displayContent =
+						readmeExpanded || !readmeTruncated ? readmeContent : readmeContent.slice(0, 500)}
+					<div class="readme-content prose">
+						{@html parseMarkdown(displayContent)}
+					</div>
+					{#if readmeTruncated && !readmeExpanded}
+						<button
+							type="button"
+							class="mt-4 text-xs uppercase tracking-[0.15em] font-mono text-metal-500 hover:text-metal-900 transition-colors"
+							onclick={() => (readmeExpanded = true)}
+						>
+							Read more...
+						</button>
+					{/if}
+				{/if}
+			</div>
+		</section>
+	{/if}
+
 	<section class="mt-8 grid gap-8 xl:grid-cols-[1fr_320px]">
 		<div class="space-y-6">
 			<div class="border border-metal-100 bg-surface rounded-sm p-5">
@@ -515,7 +658,7 @@
 				</div>
 				<div class="space-y-4">
 					<div
-						class="flex items-center justify-between gap-4 border border-metal-100 rounded-sm px-4 py-3 bg-bg"
+						class="flex items-center justify-between gap-3 border border-metal-100 rounded-sm px-3 py-3 bg-bg min-w-0"
 					>
 						<div>
 							<p class="text-[10px] uppercase tracking-[0.2em] text-metal-500 font-mono">
@@ -530,7 +673,7 @@
 						{#each data.compareTools as compareTool}
 							<a
 								href={`/compare/${encodeURIComponent(`${data.tool.slug ?? data.tool.name}-vs-${compareTool.slug ?? compareTool.name}`)}`}
-								class="flex items-center justify-between gap-4 border border-metal-100 rounded-sm px-4 py-3 hover:border-metal-900 transition-colors"
+								class="flex items-center justify-between gap-3 border border-metal-100 rounded-sm px-3 py-3 hover:border-metal-900 transition-colors min-w-0"
 							>
 								<div class="min-w-0">
 									<p class="text-[10px] uppercase tracking-[0.2em] text-metal-500 font-mono">
@@ -619,10 +762,10 @@
 					{#each data.relatedTools as related}
 						<a
 							href={`/tool/${encodeURIComponent(related.slug ?? related.name)}`}
-							class="block border border-metal-100 rounded-sm px-4 py-3 hover:border-metal-900 transition-colors"
+							class="block border border-metal-100 rounded-sm px-3 py-3 hover:border-metal-900 transition-colors min-w-0"
 						>
-							<div class="flex items-center justify-between gap-3">
-								<div class="min-w-0">
+							<div class="flex items-center justify-between gap-3 min-w-0">
+								<div class="min-w-0 flex-1">
 									<p class="truncate text-sm font-medium text-metal-900">{related.name}</p>
 									<div class="mt-2 flex flex-wrap gap-2">
 										<span class="badge-chip">
@@ -746,6 +889,140 @@
 	.use-case-tag-accent {
 		border-color: var(--accent-dim);
 		background: color-mix(in srgb, var(--accent-dim) 15%, var(--surface));
+		color: var(--metal-900);
+	}
+
+	.detail-title {
+		overflow-wrap: anywhere;
+		word-break: break-word;
+	}
+
+	@media (max-width: 640px) {
+		section {
+			min-width: 0;
+		}
+
+		.border,
+		.rounded-sm {
+			min-width: 0;
+		}
+
+		.badge-chip,
+		.use-case-tag {
+			max-width: 100%;
+			white-space: normal;
+			line-height: 1.2;
+			word-break: break-word;
+		}
+
+		.readme-content {
+			font-size: 0.82rem;
+		}
+
+		.readme-content :global(pre) {
+			padding: 0.75rem;
+			font-size: 0.78rem;
+		}
+
+		.readme-content :global(img) {
+			max-width: 100%;
+			height: auto;
+		}
+
+		.readme-content :global(table) {
+			display: block;
+			width: 100%;
+			overflow-x: auto;
+		}
+
+		.readme-content :global(pre),
+		.readme-content :global(code) {
+			overflow-wrap: anywhere;
+		}
+
+		.score-row > div:first-child,
+		.signal-row > div:first-child {
+			gap: 0.5rem;
+		}
+	}
+
+	.readme-content {
+		font-size: 0.875rem;
+		line-height: 1.7;
+		color: var(--metal-700);
+	}
+
+	.readme-content :global(h1) {
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: var(--metal-900);
+		margin: 0 0 1rem;
+		font-family: var(--font-heading);
+	}
+
+	.readme-content :global(h2) {
+		font-size: 1.125rem;
+		font-weight: 600;
+		color: var(--metal-900);
+		margin: 1.5rem 0 0.75rem;
+		font-family: var(--font-heading);
+	}
+
+	.readme-content :global(h3) {
+		font-size: 0.875rem;
+		font-weight: 600;
+		color: var(--metal-900);
+		margin: 1rem 0 0.5rem;
+	}
+
+	.readme-content :global(p) {
+		margin: 0 0 1rem;
+	}
+
+	.readme-content :global(ul) {
+		margin: 0 0 1rem;
+		padding-left: 1.5rem;
+		list-style-type: disc;
+	}
+
+	.readme-content :global(li) {
+		margin: 0.25rem 0;
+	}
+
+	.readme-content :global(code) {
+		font-family: var(--font-mono);
+		font-size: 0.8em;
+		background: var(--metal-100);
+		padding: 0.15em 0.4em;
+		border-radius: 0.125rem;
+	}
+
+	.readme-content :global(pre) {
+		background: var(--metal-900);
+		color: var(--surface);
+		padding: 1rem;
+		border-radius: 0.125rem;
+		overflow-x: auto;
+		margin: 1rem 0;
+	}
+
+	.readme-content :global(pre code) {
+		background: transparent;
+		padding: 0;
+		font-size: 0.8rem;
+	}
+
+	.readme-content :global(a) {
+		color: var(--accent-dim);
+		text-decoration: underline;
+	}
+
+	.readme-content :global(a:hover) {
+		color: var(--metal-900);
+	}
+
+	.readme-content :global(strong) {
+		font-weight: 700;
 		color: var(--metal-900);
 	}
 </style>

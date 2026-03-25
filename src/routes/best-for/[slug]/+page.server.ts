@@ -31,23 +31,36 @@ const SEGMENT_RULES: Record<
 > = {
 	freelancers: {
 		title: 'Best AI tools for freelancers',
-		description: 'Tools for freelancers to win clients, write faster, deliver clean work, and keep overhead low.',
-		boost: (tool) => scoreByKeywords(tool, ['freelance', 'client', 'proposal', 'writing', 'design', 'productivity'])
+		description:
+			'Tools for freelancers to win clients, write faster, deliver clean work, and keep overhead low.',
+		boost: (tool) =>
+			scoreByKeywords(tool, [
+				'freelance',
+				'client',
+				'proposal',
+				'writing',
+				'design',
+				'productivity'
+			])
 	},
-	'researchers': {
+	researchers: {
 		title: 'Best AI tools for researchers',
 		description: 'Tools that help with synthesis, citations, validation, and structured thinking.',
-		boost: (tool) => scoreByKeywords(tool, ['research', 'search', 'analysis', 'citation', 'paper', 'knowledge'])
+		boost: (tool) =>
+			scoreByKeywords(tool, ['research', 'search', 'analysis', 'citation', 'paper', 'knowledge'])
 	},
 	'solo-founders': {
 		title: 'Best AI tools for solo founders',
-		description: 'Lean tools for building, writing, automating, and moving faster with less team overhead.',
-		boost: (tool) => scoreByKeywords(tool, ['founder', 'startup', 'build', 'automation', 'writing', 'ops'])
+		description:
+			'Lean tools for building, writing, automating, and moving faster with less team overhead.',
+		boost: (tool) =>
+			scoreByKeywords(tool, ['founder', 'startup', 'build', 'automation', 'writing', 'ops'])
 	},
 	organization: {
 		title: 'Best AI tools for organizations',
 		description: 'Tools that fit shared workflows, collaboration, and operational clarity.',
-		boost: (tool) => scoreByKeywords(tool, ['team', 'collaboration', 'workflow', 'ops', 'project', 'automation'])
+		boost: (tool) =>
+			scoreByKeywords(tool, ['team', 'collaboration', 'workflow', 'ops', 'project', 'automation'])
 	},
 	writing: {
 		title: 'Best AI tools for writing',
@@ -57,12 +70,14 @@ const SEGMENT_RULES: Record<
 	automation: {
 		title: 'Best AI tools for automation',
 		description: 'Tools that reduce repetitive work and keep workflows moving.',
-		boost: (tool) => scoreByKeywords(tool, ['automation', 'workflow', 'agent', 'ops', 'integration'])
+		boost: (tool) =>
+			scoreByKeywords(tool, ['automation', 'workflow', 'agent', 'ops', 'integration'])
 	},
 	'team-collaboration': {
 		title: 'Best AI tools for team collaboration',
 		description: 'Tools that improve alignment, shared context, and team execution.',
-		boost: (tool) => scoreByKeywords(tool, ['team', 'collaboration', 'shared', 'workflow', 'project'])
+		boost: (tool) =>
+			scoreByKeywords(tool, ['team', 'collaboration', 'shared', 'workflow', 'project'])
 	}
 };
 
@@ -83,14 +98,21 @@ function scoreByKeywords(tool: Tool, keywords: string[]): number {
 }
 
 function normalizeSlug(slug: string): string {
-	return slug.toLowerCase().trim().replace(/[_\s]+/g, '-');
+	return slug
+		.toLowerCase()
+		.trim()
+		.replace(/[_\s]+/g, '-');
 }
 
 function loadTrending(): TrendingData | null {
 	const historyDir = path.resolve('data', 'history');
 	if (!fs.existsSync(historyDir)) return null;
 
-	const files = fs.readdirSync(historyDir).filter((f) => f.endsWith('.json')).sort().reverse();
+	const files = fs
+		.readdirSync(historyDir)
+		.filter((f) => f.endsWith('.json'))
+		.sort()
+		.reverse();
 	if (files.length === 0) return null;
 
 	const fileContent = fs.readFileSync(path.join(historyDir, files[0]), 'utf-8');
@@ -105,7 +127,10 @@ function fallbackSegment(slug: string): { title: string; description: string } {
 	};
 }
 
-function countBy<T>(items: T[], getter: (item: T) => string): Array<{ label: string; count: number }> {
+function countBy<T>(
+	items: T[],
+	getter: (item: T) => string
+): Array<{ label: string; count: number }> {
 	const buckets = new Map<string, number>();
 	for (const item of items) {
 		const key = getter(item);
@@ -151,7 +176,7 @@ export async function load({ params }: { params: { slug: string } }): Promise<Pa
 				(tool.trustScore ?? 0) * 0.18 +
 				(tool.affiliateAvailable ? 8 : 0) +
 				(tool.pricingModel === 'free' || tool.pricingModel === 'freemium' ? 2 : 0) +
-				((segment?.boost(tool) ?? 0) * 8)
+				(segment?.boost(tool) ?? 0) * 8
 		}))
 		.sort((a, b) => b.score - a.score);
 
@@ -171,7 +196,12 @@ export async function load({ params }: { params: { slug: string } }): Promise<Pa
 	const highlights = {
 		total: recommendations.length,
 		affiliateReady: recommendations.filter((tool) => tool.affiliateAvailable).length,
-		freeTrial: recommendations.filter((tool) => tool.pricingModel === 'free' || tool.pricingModel === 'freemium' || tool.pricingModel === 'trial').length,
+		freeTrial: recommendations.filter(
+			(tool) =>
+				tool.pricingModel === 'free' ||
+				tool.pricingModel === 'freemium' ||
+				tool.pricingModel === 'trial'
+		).length,
 		topCategory
 	};
 

@@ -1,0 +1,400 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - link "VELO" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img [ref=e8]
+        - heading "VELO" [level=1] [ref=e12]
+      - generic [ref=e13]:
+        - navigation [ref=e14]:
+          - link "Today" [ref=e15] [cursor=pointer]:
+            - /url: /
+          - link "Best For" [ref=e16] [cursor=pointer]:
+            - /url: /best-for/freelancers
+          - link "Archive" [ref=e17] [cursor=pointer]:
+            - /url: /archive
+          - link "About" [ref=e18] [cursor=pointer]:
+            - /url: /about
+        - button "Toggle theme" [ref=e19]:
+          - generic [ref=e20]: dark_mode
+        - link "Submit tool" [ref=e21] [cursor=pointer]:
+          - /url: /submit
+  - main [ref=e22]:
+    - generic [ref=e23]:
+      - generic [ref=e24]:
+        - generic [ref=e25]:
+          - img [ref=e27]
+          - generic [ref=e31]:
+            - paragraph [ref=e32]: Curated AI Tools Directory
+            - paragraph [ref=e33]: Fast, sporty, ranked by signal
+        - generic [ref=e34]:
+          - paragraph [ref=e35]: Ranked tools, no noise.
+          - heading "Tools worth opening, ranked by signal ." [level=1] [ref=e36]:
+            - text: Tools worth opening,
+            - generic [ref=e37]: ranked by signal
+            - text: .
+          - paragraph [ref=e38]: Scan GitHub trending tools by score, category, language, and use case. VELO keeps the list short, the ranking explicit, and the comparison fast.
+        - generic [ref=e40]:
+          - generic [ref=e41]:
+            - img [ref=e42]
+            - textbox "Search AI tools" [ref=e45]:
+              - /placeholder: Search tools, topics, languages, or use cases
+          - generic [ref=e46]:
+            - generic [ref=e47]: 10 tools
+            - generic [ref=e48]: All categories
+          - generic [ref=e49]:
+            - button "Search" [ref=e50] [cursor=pointer]
+            - paragraph [ref=e51]: Cmd / Ctrl + K
+      - generic [ref=e53]:
+        - generic [ref=e54]:
+          - paragraph [ref=e56]: Directory snapshot
+          - img [ref=e57]
+        - generic [ref=e61]:
+          - generic [ref=e62]:
+            - generic [ref=e63]: Source
+            - generic [ref=e64]: GitHub Trending
+          - generic [ref=e65]:
+            - generic [ref=e66]: Frequency
+            - generic [ref=e67]: Weekly
+          - generic [ref=e68]:
+            - generic [ref=e69]: Tools indexed
+            - generic [ref=e70]: "10"
+    - generic [ref=e71]:
+      - generic [ref=e72]:
+        - link "anywork.dev B2B project anywork.dev B2B anywork.dev" [ref=e73] [cursor=pointer]:
+          - /url: https://anywork.dev
+          - generic [ref=e74]:
+            - img "anywork.dev" [ref=e76]
+            - generic [ref=e77]:
+              - paragraph [ref=e78]: B2B project
+              - generic [ref=e79]:
+                - heading "anywork.dev" [level=2] [ref=e80]
+                - generic [ref=e81]: B2B
+            - img "anywork.dev" [ref=e84]
+        - heading "Fast results" [level=2] [ref=e87]
+        - link "Crosstalk-Solutions/project-nomad logo Top 1 Crosstalk-Solutions/project-nomad TypeScript Score 55.6" [ref=e88] [cursor=pointer]:
+          - /url: /tool/crosstalk-solutions-project-nomad
+          - generic [ref=e89]:
+            - generic [ref=e90]:
+              - img "Crosstalk-Solutions/project-nomad logo" [ref=e92]
+              - generic [ref=e93]:
+                - generic [ref=e94]:
+                  - img [ref=e95]
+                  - generic [ref=e97]: Top 1
+                - heading "Crosstalk-Solutions/project-nomad" [level=3] [ref=e98]
+                - generic [ref=e100]: TypeScript
+            - generic [ref=e101]:
+              - paragraph [ref=e102]: Score
+              - paragraph [ref=e103]: "55.6"
+        - generic [ref=e104]:
+          - button "Select Crosstalk-Solutions/project-nomad for chart view" [ref=e105] [cursor=pointer]:
+            - generic [ref=e106]:
+              - generic [ref=e107]:
+                - generic [ref=e108]:
+                  - img "Crosstalk-Solutions/project-nomad logo" [ref=e110]
+                  - generic [ref=e111]:
+                    - generic [ref=e112]:
+                      - paragraph [ref=e113]: Project
+                      - generic [ref=e114]: "#1"
+                    - heading "Crosstalk-Solutions/project-nomad" [level=3] [ref=e115]
+                - paragraph [ref=e116]: Project N.O.M.A.D, is a self-contained, offline survival computer packed with critical tools, knowledge, and AI to keep you informed and empowered—anytime, anywhere.
+              - generic [ref=e117]:
+                - paragraph [ref=e118]: "55.6"
+                - generic [ref=e119]:
+                  - button "Upvote Crosstalk-Solutions/project-nomad" [ref=e120]:
+                    - generic [ref=e121]: arrow_drop_up
+                  - button "Downvote Crosstalk-Solutions/project-nomad" [ref=e122]:
+                    - generic [ref=e123]: arrow_drop_down
+                - button "bookmark" [ref=e124]:
+                  - generic [ref=e125]: bookmark
+            - generic [ref=e127]: TypeScript
+          - button "Select jarrodwatts/claude-hud for chart view" [ref=e129] [cursor=pointer]:
+            - generic [ref=e130]:
+              - generic [ref=e131]:
+                - generic [ref=e132]:
+                  - img "jarrodwatts/claude-hud logo" [ref=e134]
+                  - generic [ref=e135]:
+                    - generic [ref=e136]:
+                      - paragraph [ref=e137]: Project
+                      - generic [ref=e138]: "#2"
+                    - heading "jarrodwatts/claude-hud" [level=3] [ref=e139]
+                - paragraph [ref=e140]: A Claude Code plugin that shows what's happening - context usage, active tools, running agents, and todo progress
+              - generic [ref=e141]:
+                - paragraph [ref=e142]: "53.2"
+                - generic [ref=e143]:
+                  - button "Upvote jarrodwatts/claude-hud" [ref=e144]:
+                    - generic [ref=e145]: arrow_drop_up
+                  - button "Downvote jarrodwatts/claude-hud" [ref=e146]:
+                    - generic [ref=e147]: arrow_drop_down
+                - button "bookmark" [ref=e148]:
+                  - generic [ref=e149]: bookmark
+            - generic [ref=e151]: JavaScript
+          - button "Select unslothai/unsloth for chart view" [ref=e153] [cursor=pointer]:
+            - generic [ref=e154]:
+              - generic [ref=e155]:
+                - generic [ref=e156]:
+                  - img "unslothai/unsloth logo" [ref=e158]
+                  - generic [ref=e159]:
+                    - generic [ref=e160]:
+                      - paragraph [ref=e161]: Project
+                      - generic [ref=e162]: "#3"
+                    - heading "unslothai/unsloth" [level=3] [ref=e163]
+                - paragraph [ref=e164]: Unsloth Studio is a web UI for training and running open models like Qwen, DeepSeek, gpt-oss and Gemma locally.
+              - generic [ref=e165]:
+                - paragraph [ref=e166]: "53.2"
+                - generic [ref=e167]:
+                  - button "Upvote unslothai/unsloth" [ref=e168]:
+                    - generic [ref=e169]: arrow_drop_up
+                  - button "Downvote unslothai/unsloth" [ref=e170]:
+                    - generic [ref=e171]: arrow_drop_down
+                - button "bookmark" [ref=e172]:
+                  - generic [ref=e173]: bookmark
+            - generic [ref=e175]: Python
+          - button "Select bytedance/deer-flow for chart view" [ref=e177] [cursor=pointer]:
+            - generic [ref=e178]:
+              - generic [ref=e179]:
+                - generic [ref=e180]:
+                  - img "bytedance/deer-flow logo" [ref=e182]
+                  - generic [ref=e183]:
+                    - generic [ref=e184]:
+                      - paragraph [ref=e185]: Project
+                      - generic [ref=e186]: "#4"
+                    - heading "bytedance/deer-flow" [level=3] [ref=e187]
+                - paragraph [ref=e188]: An open-source SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of tasks that could take minutes to hours.
+              - generic [ref=e189]:
+                - paragraph [ref=e190]: "53.2"
+                - generic [ref=e191]:
+                  - button "Upvote bytedance/deer-flow" [ref=e192]:
+                    - generic [ref=e193]: arrow_drop_up
+                  - button "Downvote bytedance/deer-flow" [ref=e194]:
+                    - generic [ref=e195]: arrow_drop_down
+                - button "bookmark" [ref=e196]:
+                  - generic [ref=e197]: bookmark
+            - generic [ref=e199]: Python
+          - button "Select obra/superpowers for chart view" [ref=e201] [cursor=pointer]:
+            - generic [ref=e202]:
+              - generic [ref=e203]:
+                - generic [ref=e204]:
+                  - img "obra/superpowers logo" [ref=e206]
+                  - generic [ref=e207]:
+                    - generic [ref=e208]:
+                      - paragraph [ref=e209]: Project
+                      - generic [ref=e210]: "#5"
+                    - heading "obra/superpowers" [level=3] [ref=e211]
+                - paragraph [ref=e212]: An agentic skills framework & software development methodology that works.
+              - generic [ref=e213]:
+                - paragraph [ref=e214]: "52.7"
+                - generic [ref=e215]:
+                  - button "Upvote obra/superpowers" [ref=e216]:
+                    - generic [ref=e217]: arrow_drop_up
+                  - button "Downvote obra/superpowers" [ref=e218]:
+                    - generic [ref=e219]: arrow_drop_down
+                - button "bookmark" [ref=e220]:
+                  - generic [ref=e221]: bookmark
+            - generic [ref=e223]: Shell
+          - button "Select harry0703/MoneyPrinterTurbo for chart view" [ref=e225] [cursor=pointer]:
+            - generic [ref=e226]:
+              - generic [ref=e227]:
+                - generic [ref=e228]:
+                  - img "harry0703/MoneyPrinterTurbo logo" [ref=e230]
+                  - generic [ref=e231]:
+                    - generic [ref=e232]:
+                      - paragraph [ref=e233]: Project
+                      - generic [ref=e234]: "#6"
+                    - heading "harry0703/MoneyPrinterTurbo" [level=3] [ref=e235]
+                - paragraph [ref=e236]: 利用AI大模型，一键生成高清短视频 Generate short videos with one click using AI LLM.
+              - generic [ref=e237]:
+                - paragraph [ref=e238]: "52.7"
+                - generic [ref=e239]:
+                  - button "Upvote harry0703/MoneyPrinterTurbo" [ref=e240]:
+                    - generic [ref=e241]: arrow_drop_up
+                  - button "Downvote harry0703/MoneyPrinterTurbo" [ref=e242]:
+                    - generic [ref=e243]: arrow_drop_down
+                - button "bookmark" [ref=e244]:
+                  - generic [ref=e245]: bookmark
+            - generic [ref=e247]: Python
+          - button "Select affaan-m/everything-claude-code for chart view" [ref=e249] [cursor=pointer]:
+            - generic [ref=e250]:
+              - generic [ref=e251]:
+                - generic [ref=e252]:
+                  - img "affaan-m/everything-claude-code logo" [ref=e254]
+                  - generic [ref=e255]:
+                    - generic [ref=e256]:
+                      - paragraph [ref=e257]: Project
+                      - generic [ref=e258]: "#7"
+                    - heading "affaan-m/everything-claude-code" [level=3] [ref=e259]
+                - paragraph [ref=e260]: The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.
+              - generic [ref=e261]:
+                - paragraph [ref=e262]: "50.8"
+                - generic [ref=e263]:
+                  - button "Upvote affaan-m/everything-claude-code" [ref=e264]:
+                    - generic [ref=e265]: arrow_drop_up
+                  - button "Downvote affaan-m/everything-claude-code" [ref=e266]:
+                    - generic [ref=e267]: arrow_drop_down
+                - button "bookmark" [ref=e268]:
+                  - generic [ref=e269]: bookmark
+            - generic [ref=e271]: JavaScript
+          - button "Select 666ghj/MiroFish for chart view" [ref=e273] [cursor=pointer]:
+            - generic [ref=e274]:
+              - generic [ref=e275]:
+                - generic [ref=e276]:
+                  - img "666ghj/MiroFish logo" [ref=e278]
+                  - generic [ref=e279]:
+                    - generic [ref=e280]:
+                      - paragraph [ref=e281]: Project
+                      - generic [ref=e282]: "#8"
+                    - heading "666ghj/MiroFish" [level=3] [ref=e283]
+                - paragraph [ref=e284]: A Simple and Universal Swarm Intelligence Engine, Predicting Anything. 简洁通用的群体智能引擎，预测万物
+              - generic [ref=e285]:
+                - paragraph [ref=e286]: "50.8"
+                - generic [ref=e287]:
+                  - button "Upvote 666ghj/MiroFish" [ref=e288]:
+                    - generic [ref=e289]: arrow_drop_up
+                  - button "Downvote 666ghj/MiroFish" [ref=e290]:
+                    - generic [ref=e291]: arrow_drop_down
+                - button "bookmark" [ref=e292]:
+                  - generic [ref=e293]: bookmark
+            - generic [ref=e295]: Python
+          - button "Select TauricResearch/TradingAgents for chart view" [ref=e297] [cursor=pointer]:
+            - generic [ref=e298]:
+              - generic [ref=e299]:
+                - generic [ref=e300]:
+                  - img "TauricResearch/TradingAgents logo" [ref=e302]
+                  - generic [ref=e303]:
+                    - generic [ref=e304]:
+                      - paragraph [ref=e305]: Project
+                      - generic [ref=e306]: "#9"
+                    - heading "TauricResearch/TradingAgents" [level=3] [ref=e307]
+                - paragraph [ref=e308]: "TradingAgents: Multi-Agents LLM Financial Trading Framework"
+              - generic [ref=e309]:
+                - paragraph [ref=e310]: "50.3"
+                - generic [ref=e311]:
+                  - button "Upvote TauricResearch/TradingAgents" [ref=e312]:
+                    - generic [ref=e313]: arrow_drop_up
+                  - button "Downvote TauricResearch/TradingAgents" [ref=e314]:
+                    - generic [ref=e315]: arrow_drop_down
+                - button "bookmark" [ref=e316]:
+                  - generic [ref=e317]: bookmark
+            - generic [ref=e319]: Python
+          - button "Select FujiwaraChoki/MoneyPrinterV2 for chart view" [ref=e321] [cursor=pointer]:
+            - generic [ref=e322]:
+              - generic [ref=e323]:
+                - generic [ref=e324]:
+                  - img "FujiwaraChoki/MoneyPrinterV2 logo" [ref=e326]
+                  - generic [ref=e327]:
+                    - generic [ref=e328]:
+                      - paragraph [ref=e329]: Project
+                      - generic [ref=e330]: "#10"
+                    - heading "FujiwaraChoki/MoneyPrinterV2" [level=3] [ref=e331]
+                - paragraph [ref=e332]: Automate the process of making money online.
+              - generic [ref=e333]:
+                - paragraph [ref=e334]: "48.8"
+                - generic [ref=e335]:
+                  - button "Upvote FujiwaraChoki/MoneyPrinterV2" [ref=e336]:
+                    - generic [ref=e337]: arrow_drop_up
+                  - button "Downvote FujiwaraChoki/MoneyPrinterV2" [ref=e338]:
+                    - generic [ref=e339]: arrow_drop_down
+                - button "bookmark" [ref=e340]:
+                  - generic [ref=e341]: bookmark
+            - generic [ref=e343]: Python
+        - generic [ref=e345]:
+          - generic [ref=e346]:
+            - generic [ref=e347]:
+              - paragraph [ref=e348]: Featured Applications
+              - heading "Selected work and product highlights" [level=2] [ref=e349]
+            - generic [ref=e350]:
+              - img "Xenkio" [ref=e351]
+              - img "Typecade" [ref=e352]
+          - generic [ref=e355]:
+            - link "Xenkio featured application 1" [ref=e356] [cursor=pointer]:
+              - /url: https://xenkio.com
+              - generic [ref=e357]:
+                - img "Xenkio" [ref=e359]
+                - paragraph [ref=e361]: Xenkio
+            - link "Typecade featured application 2" [ref=e362] [cursor=pointer]:
+              - /url: https://typecade.com
+              - generic [ref=e363]:
+                - img "Typecade" [ref=e365]
+                - paragraph [ref=e367]: Typecade
+            - link "Xenkio featured application 3" [ref=e368] [cursor=pointer]:
+              - /url: https://xenkio.com
+              - generic [ref=e369]:
+                - img "Xenkio" [ref=e371]
+                - paragraph [ref=e373]: Xenkio
+            - link "Typecade featured application 4" [ref=e374] [cursor=pointer]:
+              - /url: https://typecade.com
+              - generic [ref=e375]:
+                - img "Typecade" [ref=e377]
+                - paragraph [ref=e379]: Typecade
+      - complementary [ref=e380]:
+        - generic [ref=e381]:
+          - generic [ref=e382]:
+            - heading "Categories" [level=3] [ref=e383]
+            - generic [ref=e384]: Filter
+          - generic [ref=e385]:
+            - paragraph [ref=e386]: Active
+            - paragraph [ref=e387]: All categories
+          - generic [ref=e388]:
+            - button "All 10" [ref=e389] [cursor=pointer]:
+              - generic [ref=e390]: All
+              - generic [ref=e391]: "10"
+            - button "JavaScript 2" [ref=e392] [cursor=pointer]:
+              - generic [ref=e393]: JavaScript
+              - generic [ref=e394]: "2"
+            - button "Python 6" [ref=e395] [cursor=pointer]:
+              - generic [ref=e396]: Python
+              - generic [ref=e397]: "6"
+            - button "Shell 1" [ref=e398] [cursor=pointer]:
+              - generic [ref=e399]: Shell
+              - generic [ref=e400]: "1"
+            - button "TypeScript 1" [ref=e401] [cursor=pointer]:
+              - generic [ref=e402]: TypeScript
+              - generic [ref=e403]: "1"
+        - generic [ref=e404]:
+          - generic [ref=e405]:
+            - generic [ref=e406]:
+              - paragraph [ref=e407]: Selected repo
+              - heading "Crosstalk-Solutions/project-nomad" [level=3] [ref=e408]
+              - paragraph [ref=e409]: Project N.O.M.A.D, is a self-contained, offline survival computer packed with critical tools, knowledge, and AI to keep you informed and empowered—anytime, anywhere.
+            - generic [ref=e410]:
+              - paragraph [ref=e411]: Score
+              - paragraph [ref=e412]: "55.6"
+          - generic [ref=e413]:
+            - generic [ref=e415]:
+              - generic [ref=e416]: Stars
+              - generic [ref=e417]: —
+            - generic [ref=e420]:
+              - generic [ref=e421]: Weekly growth
+              - generic [ref=e422]: —
+            - generic [ref=e425]:
+              - generic [ref=e426]: Forks
+              - generic [ref=e427]: —
+            - generic [ref=e430]:
+              - generic [ref=e431]: Contributors
+              - generic [ref=e432]: —
+          - generic [ref=e435]: TypeScript
+          - link "Open repo page" [ref=e436] [cursor=pointer]:
+            - /url: /tool/crosstalk-solutions-project-nomad
+  - contentinfo [ref=e437]:
+    - generic [ref=e439]:
+      - generic [ref=e440]:
+        - generic [ref=e441]:
+          - paragraph [ref=e442]: Curated AI tools directory
+          - paragraph [ref=e443]: VELO
+          - paragraph [ref=e444]: Fast discovery. Clean ranking. Minimal noise.
+        - generic [ref=e445]:
+          - paragraph [ref=e446]: Sitemap
+          - generic [ref=e447]:
+            - link "Home / Trending" [ref=e448] [cursor=pointer]:
+              - /url: /
+            - link "Archive" [ref=e449] [cursor=pointer]:
+              - /url: /archive
+            - link "Best For Freelancers" [ref=e450] [cursor=pointer]:
+              - /url: /best-for/freelancers
+            - link "About" [ref=e451] [cursor=pointer]:
+              - /url: /about
+            - link "Submit Tool" [ref=e452] [cursor=pointer]:
+              - /url: /submit
+      - generic [ref=e453]:
+        - img "VELO curated AI tools directory hero visual" [ref=e456]
+        - generic [ref=e459]: Editorial visual

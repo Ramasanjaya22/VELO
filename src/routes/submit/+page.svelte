@@ -8,22 +8,27 @@
 
 <svelte:head>
 	<title>Submit — VELO</title>
+	<meta name="description" content="Submit a public AI tool URL to the VELO leaderboard." />
+	<meta property="og:title" content="Submit — VELO" />
+	<meta property="og:description" content="Submit a public AI tool URL to the VELO leaderboard." />
+	<meta property="og:type" content="website" />
+	<meta property="og:image" content="https://velo-428.pages.dev/og-image.svg" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Submit — VELO" />
+	<meta name="twitter:description" content="Submit a public AI tool URL to the VELO leaderboard." />
+	<meta name="twitter:image" content="https://velo-428.pages.dev/og-image.svg" />
 </svelte:head>
 
 <main class="w-full max-w-[1080px] mx-auto px-6 pt-[120px] pb-24 flex flex-col items-center">
 	<div class="w-full max-w-[480px]" in:fly={{ y: 20, duration: 600 }}>
-		<h1 class="text-2xl font-bold tracking-tight text-metal-900 mb-2 font-heading">
-			Submit Tool
-		</h1>
+		<h1 class="text-2xl font-bold tracking-tight text-metal-900 mb-2 font-heading">Submit Tool</h1>
 		<p class="text-metal-500 mb-10 text-lg font-body">
 			Paste a public AI tool URL to add it to the leaderboard.
 		</p>
 
 		<div class="flex flex-col gap-8">
 			<div class="relative">
-				<div
-					class="absolute left-6 top-1/2 -translate-y-1/2 text-metal-500 pointer-events-none"
-				>
+				<div class="absolute left-6 top-1/2 -translate-y-1/2 text-metal-500 pointer-events-none">
 					<span class="material-symbols-outlined text-[20px]">link</span>
 				</div>
 				<input
@@ -40,7 +45,9 @@
 					transition:fly={{ y: 20, duration: 400 }}
 				>
 					<div class="flex items-center gap-4">
-						<div class="size-10 bg-bg rounded-sm flex items-center justify-center overflow-hidden border border-metal-100">
+						<div
+							class="size-10 bg-bg rounded-sm flex items-center justify-center overflow-hidden border border-metal-100"
+						>
 							<span class="text-metal-900">
 								{@html githubLogo}
 							</span>
@@ -49,7 +56,9 @@
 							<span class="text-metal-900 font-bold text-lg font-heading">
 								{repoUrl.replace(/^https?:\/\//, '') || 'tool'}
 							</span>
-							<div class="flex items-center gap-1 text-metal-500 text-xs font-mono uppercase tracking-widest font-bold">
+							<div
+								class="flex items-center gap-1 text-metal-500 text-xs font-mono uppercase tracking-widest font-bold"
+							>
 								<span class="material-symbols-outlined text-[14px]">star</span>
 								<span>214K</span>
 							</div>
@@ -69,18 +78,31 @@
 		</div>
 
 		<!-- submission guidelines -->
-		<div class="w-full mt-32 pt-16 border-t border-metal-100 grid grid-cols-1 md:grid-cols-3 gap-12 font-body text-sm text-metal-500">
+		<div
+			class="w-full mt-32 pt-16 border-t border-metal-100 grid grid-cols-1 md:grid-cols-3 gap-12 font-body text-sm text-metal-500"
+		>
 			<div class="flex flex-col gap-4">
-				<h4 class="text-metal-900 font-bold font-heading uppercase tracking-widest text-[11px]">Transparency</h4>
+				<h4 class="text-metal-900 font-bold font-heading uppercase tracking-widest text-[11px]">
+					Transparency
+				</h4>
 				<p>Submit public tools with a clear landing page, pricing, and trust signals.</p>
 			</div>
 			<div class="flex flex-col gap-4">
-				<h4 class="text-metal-900 font-bold font-heading uppercase tracking-widest text-[11px]">Utility First</h4>
-				<p>Our scoring algorithm favors tools with clear use cases, trust, and affiliate readiness.</p>
+				<h4 class="text-metal-900 font-bold font-heading uppercase tracking-widest text-[11px]">
+					Utility First
+				</h4>
+				<p>
+					Our scoring algorithm favors tools with clear use cases, trust, and affiliate readiness.
+				</p>
 			</div>
 			<div class="flex flex-col gap-4">
-				<h4 class="text-metal-900 font-bold font-heading uppercase tracking-widest text-[11px]">Active Curation</h4>
-				<p>Duplicates are automatically merged. If the tool is already listed, your submission will be treated as a signal.</p>
+				<h4 class="text-metal-900 font-bold font-heading uppercase tracking-widest text-[11px]">
+					Active Curation
+				</h4>
+				<p>
+					Duplicates are automatically merged. If the tool is already listed, your submission will
+					be treated as a signal.
+				</p>
 			</div>
 		</div>
 	</div>

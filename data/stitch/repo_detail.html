@@ -1,286 +1,416 @@
-<!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>VELO - Analytics &amp; Engagement Hub</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#CCFF00",
-                        "primary-hover": "#B8E600",
-                        "background": "#FAFAFA",
-                        "surface": "#FFFFFF",
-                        "text": "#171717",
-                        "muted": "#8B8D98",
-                        "border": "#E4E4E5",
-                        "accent": "#000000"
-                    },
-                    fontFamily: {
-                        "display": ["Space Grotesk", "sans-serif"]
-                    },
-                    borderRadius: {
-                        "DEFAULT": "4px",
-                        "sm": "2px",
-                        "md": "4px",
-                    },
-                    boxShadow: {
-                        'hover': '0 4px 12px rgba(0,0,0,0.05)',
-                    }
-                },
-            },
-        }
-    </script>
-<style type="text/tailwindcss">
-        body {
-            font-family: 'Space Grotesk', sans-serif;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-        .chart-bar {
-            @apply bg-primary/20 border-l-2 border-primary relative;
-        }
-        .chart-line {
-            background: linear-gradient(90deg, #CCFF00 0%, transparent 100%);
-            height: 2px;
-        }
-    </style>
-</head>
-<body class="bg-background text-text min-h-screen flex flex-col selection:bg-primary selection:text-text">
-<div class="sticky top-0 z-50 bg-background border-b border-border">
-<div class="max-w-[1280px] mx-auto px-4 md:px-8">
-<header class="flex h-[64px] items-center justify-between">
-<div class="flex items-center gap-4">
-<div class="size-5">
-<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-<path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path>
-</svg>
-</div>
-<h2 class="text-xl font-bold leading-tight tracking-[-0.02em]">VELO</h2>
-</div>
-<div class="flex items-center gap-6">
-<a class="text-muted hover:text-text text-[15px] font-medium transition-colors" href="#">Explore</a>
-<a class="text-muted hover:text-text text-[15px] font-medium transition-colors" href="#">Changelog</a>
-<div class="h-4 w-px bg-border mx-2"></div>
-<button class="bg-accent text-white px-4 py-2 rounded font-medium text-[14px] hover:bg-gray-800 transition-colors">Submit Repo</button>
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-md size-8 border border-border" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD0Jm4rNlYc6Pim87qoNusnrAJP3rM60NeSBLLQc-OcmbLvu5IJy9GkFuF-axbYPFaVGibjp_GSMWWxiDTgS60mnmGQ1iV-4ma94Dh8U_dAmj2WVurbPx4mJAMbrT8BDjR7dQELykoJHf8mjK2yYhD97_lqXtmVfoNyKAfr9I-VtPehe0Pfe2SZP39Pi86P-vPn6hkE-WLbPE_WOIVTzhz7_Tpg9thq55mA8H3gkqTiLKmFfMBFIsoVaeg0pV6XXV6DWI62gkkic_g");'></div>
-</div>
-</header>
-</div>
-</div>
-<main class="flex-1 max-w-[1280px] mx-auto w-full px-4 md:px-8 py-10">
-<div class="flex flex-col lg:flex-row gap-12">
-<div class="flex-1 min-w-0 flex flex-col gap-10">
-<div class="flex flex-col gap-4">
-<div class="flex items-center gap-2">
-<span class="text-[13px] font-medium text-muted uppercase tracking-wider">Project Analytics</span>
-<span class="text-border">/</span>
-<span class="text-[13px] font-medium text-text uppercase tracking-wider">v3.4.1</span>
-</div>
-<div class="flex flex-col gap-2">
-<h1 class="text-[32px] font-bold leading-tight tracking-[-0.02em]">Tailwind CSS Engagement Hub</h1>
-<p class="text-muted text-[18px] max-w-[600px]">A comprehensive real-time dashboard for core maintainers and project managers.</p>
-</div>
-</div>
-<div class="flex border-b border-border gap-8">
-<button class="pb-4 border-b-2 border-primary text-text font-semibold text-[15px]">Engagement</button>
-<button class="pb-4 border-b-2 border-transparent text-muted hover:text-text font-medium text-[15px] transition-colors">Performance</button>
-<button class="pb-4 border-b-2 border-transparent text-muted hover:text-text font-medium text-[15px] transition-colors">Dependencies</button>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<div class="bg-surface border border-border p-6 rounded-md">
-<div class="flex justify-between items-start mb-6">
-<div>
-<h4 class="text-[15px] font-semibold">Star Growth</h4>
-<p class="text-[13px] text-muted">Last 30 days</p>
-</div>
-<span class="text-emerald-600 text-[13px] font-bold">+12.4%</span>
-</div>
-<div class="h-40 flex items-end gap-1.5">
-<div class="flex-1 bg-primary/10 hover:bg-primary/30 h-[40%] rounded-t-sm transition-all cursor-help" title="Oct 10: 142 stars"></div>
-<div class="flex-1 bg-primary/10 hover:bg-primary/30 h-[55%] rounded-t-sm transition-all cursor-help"></div>
-<div class="flex-1 bg-primary/10 hover:bg-primary/30 h-[45%] rounded-t-sm transition-all cursor-help"></div>
-<div class="flex-1 bg-primary/10 hover:bg-primary/30 h-[70%] rounded-t-sm transition-all cursor-help"></div>
-<div class="flex-1 bg-primary/10 hover:bg-primary/30 h-[65%] rounded-t-sm transition-all cursor-help"></div>
-<div class="flex-1 bg-primary h-[90%] rounded-t-sm"></div>
-<div class="flex-1 bg-primary/10 hover:bg-primary/30 h-[80%] rounded-t-sm transition-all cursor-help"></div>
-</div>
-</div>
-<div class="bg-surface border border-border p-6 rounded-md">
-<div class="flex justify-between items-start mb-6">
-<div>
-<h4 class="text-[15px] font-semibold">Issue Resolution</h4>
-<p class="text-[13px] text-muted">Efficiency rate</p>
-</div>
-<span class="text-text text-[13px] font-bold">4.2h Avg</span>
-</div>
-<div class="space-y-4">
-<div class="space-y-2">
-<div class="flex justify-between text-[12px] font-medium uppercase tracking-tight">
-<span>Closed Issues</span>
-<span>88%</span>
-</div>
-<div class="h-2 bg-gray-100 rounded-full overflow-hidden">
-<div class="h-full bg-accent w-[88%]"></div>
-</div>
-</div>
-<div class="space-y-2">
-<div class="flex justify-between text-[12px] font-medium uppercase tracking-tight text-muted">
-<span>Pending Review</span>
-<span>12%</span>
-</div>
-<div class="h-2 bg-gray-100 rounded-full overflow-hidden">
-<div class="h-full bg-border w-[12%]"></div>
-</div>
-</div>
-</div>
-</div>
-<div class="md:col-span-2 bg-surface border border-border p-6 rounded-md">
-<div class="flex justify-between items-start mb-6">
-<div>
-<h4 class="text-[15px] font-semibold">Commit Frequency</h4>
-<p class="text-[13px] text-muted">Active contributions across branches</p>
-</div>
-<button class="text-muted hover:text-text"><span class="material-symbols-outlined text-[18px]">more_horiz</span></button>
-</div>
-<div class="h-32 flex items-center justify-between px-2">
-<div class="relative w-full h-full flex items-end">
-<svg class="w-full h-full" preserveAspectRatio="none" viewBox="0 0 400 100">
-<path d="M0,80 Q50,20 100,50 T200,30 T300,70 T400,10" fill="none" stroke="#CCFF00" stroke-width="3"></path>
-<path d="M0,80 Q50,20 100,50 T200,30 T300,70 T400,10 V100 H0 Z" fill="rgba(204, 255, 0, 0.05)"></path>
-</svg>
-</div>
-</div>
-</div>
-</div>
-<details class="group bg-surface border border-border rounded-md overflow-hidden">
-<summary class="flex items-center justify-between p-6 cursor-pointer hover:bg-background transition-colors list-none">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-muted group-open:rotate-180 transition-transform">expand_more</span>
-<h3 class="text-[18px] font-semibold tracking-tight">Project Documentation (README)</h3>
-</div>
-<span class="text-[13px] text-muted font-medium uppercase tracking-wider">Click to expand</span>
-</summary>
-<div class="p-8 pt-2 border-t border-border">
-<article class="prose prose-slate max-w-none prose-headings:font-display prose-p:text-[15px] prose-p:leading-[1.6]">
-<h2>Rapidly build modern websites without ever leaving your HTML.</h2>
-<p>Tailwind CSS works by scanning all of your HTML files, JavaScript components, and any other templates for class names, generating the corresponding styles and then writing them to a static CSS file.</p>
-<pre class="bg-background p-4 rounded-md border border-border font-mono text-[13px]"><code>npm install -D tailwindcss
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+		<title>VELO - Analytics &amp; Engagement Hub</title>
+		<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+			rel="stylesheet"
+		/>
+		<script id="tailwind-config">
+			tailwind.config = {
+				darkMode: 'class',
+				theme: {
+					extend: {
+						colors: {
+							primary: '#CCFF00',
+							'primary-hover': '#B8E600',
+							background: '#FAFAFA',
+							surface: '#FFFFFF',
+							text: '#171717',
+							muted: '#8B8D98',
+							border: '#E4E4E5',
+							accent: '#000000'
+						},
+						fontFamily: {
+							display: ['Space Grotesk', 'sans-serif']
+						},
+						borderRadius: {
+							DEFAULT: '4px',
+							sm: '2px',
+							md: '4px'
+						},
+						boxShadow: {
+							hover: '0 4px 12px rgba(0,0,0,0.05)'
+						}
+					}
+				}
+			};
+		</script>
+		<style type="text/tailwindcss">
+			body {
+				font-family: 'Space Grotesk', sans-serif;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+			}
+			.chart-bar {
+				@apply bg-primary/20 border-l-2 border-primary relative;
+			}
+			.chart-line {
+				background: linear-gradient(90deg, #ccff00 0%, transparent 100%);
+				height: 2px;
+			}
+		</style>
+	</head>
+	<body
+		class="bg-background text-text min-h-screen flex flex-col selection:bg-primary selection:text-text"
+	>
+		<div class="sticky top-0 z-50 bg-background border-b border-border">
+			<div class="max-w-[1280px] mx-auto px-4 md:px-8">
+				<header class="flex h-[64px] items-center justify-between">
+					<div class="flex items-center gap-4">
+						<div class="size-5">
+							<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z"
+									fill="currentColor"
+								></path>
+							</svg>
+						</div>
+						<h2 class="text-xl font-bold leading-tight tracking-[-0.02em]">VELO</h2>
+					</div>
+					<div class="flex items-center gap-6">
+						<a class="text-muted hover:text-text text-[15px] font-medium transition-colors" href="#"
+							>Explore</a
+						>
+						<a class="text-muted hover:text-text text-[15px] font-medium transition-colors" href="#"
+							>Changelog</a
+						>
+						<div class="h-4 w-px bg-border mx-2"></div>
+						<button
+							class="bg-accent text-white px-4 py-2 rounded font-medium text-[14px] hover:bg-gray-800 transition-colors"
+						>
+							Submit Repo
+						</button>
+						<div
+							class="bg-center bg-no-repeat aspect-square bg-cover rounded-md size-8 border border-border"
+							style="
+								background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD0Jm4rNlYc6Pim87qoNusnrAJP3rM60NeSBLLQc-OcmbLvu5IJy9GkFuF-axbYPFaVGibjp_GSMWWxiDTgS60mnmGQ1iV-4ma94Dh8U_dAmj2WVurbPx4mJAMbrT8BDjR7dQELykoJHf8mjK2yYhD97_lqXtmVfoNyKAfr9I-VtPehe0Pfe2SZP39Pi86P-vPn6hkE-WLbPE_WOIVTzhz7_Tpg9thq55mA8H3gkqTiLKmFfMBFIsoVaeg0pV6XXV6DWI62gkkic_g');
+							"
+						></div>
+					</div>
+				</header>
+			</div>
+		</div>
+		<main class="flex-1 max-w-[1280px] mx-auto w-full px-4 md:px-8 py-10">
+			<div class="flex flex-col lg:flex-row gap-12">
+				<div class="flex-1 min-w-0 flex flex-col gap-10">
+					<div class="flex flex-col gap-4">
+						<div class="flex items-center gap-2">
+							<span class="text-[13px] font-medium text-muted uppercase tracking-wider"
+								>Project Analytics</span
+							>
+							<span class="text-border">/</span>
+							<span class="text-[13px] font-medium text-text uppercase tracking-wider">v3.4.1</span>
+						</div>
+						<div class="flex flex-col gap-2">
+							<h1 class="text-[32px] font-bold leading-tight tracking-[-0.02em]">
+								Tailwind CSS Engagement Hub
+							</h1>
+							<p class="text-muted text-[18px] max-w-[600px]">
+								A comprehensive real-time dashboard for core maintainers and project managers.
+							</p>
+						</div>
+					</div>
+					<div class="flex border-b border-border gap-8">
+						<button class="pb-4 border-b-2 border-primary text-text font-semibold text-[15px]">
+							Engagement
+						</button>
+						<button
+							class="pb-4 border-b-2 border-transparent text-muted hover:text-text font-medium text-[15px] transition-colors"
+						>
+							Performance
+						</button>
+						<button
+							class="pb-4 border-b-2 border-transparent text-muted hover:text-text font-medium text-[15px] transition-colors"
+						>
+							Dependencies
+						</button>
+					</div>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+						<div class="bg-surface border border-border p-6 rounded-md">
+							<div class="flex justify-between items-start mb-6">
+								<div>
+									<h4 class="text-[15px] font-semibold">Star Growth</h4>
+									<p class="text-[13px] text-muted">Last 30 days</p>
+								</div>
+								<span class="text-emerald-600 text-[13px] font-bold">+12.4%</span>
+							</div>
+							<div class="h-40 flex items-end gap-1.5">
+								<div
+									class="flex-1 bg-primary/10 hover:bg-primary/30 h-[40%] rounded-t-sm transition-all cursor-help"
+									title="Oct 10: 142 stars"
+								></div>
+								<div
+									class="flex-1 bg-primary/10 hover:bg-primary/30 h-[55%] rounded-t-sm transition-all cursor-help"
+								></div>
+								<div
+									class="flex-1 bg-primary/10 hover:bg-primary/30 h-[45%] rounded-t-sm transition-all cursor-help"
+								></div>
+								<div
+									class="flex-1 bg-primary/10 hover:bg-primary/30 h-[70%] rounded-t-sm transition-all cursor-help"
+								></div>
+								<div
+									class="flex-1 bg-primary/10 hover:bg-primary/30 h-[65%] rounded-t-sm transition-all cursor-help"
+								></div>
+								<div class="flex-1 bg-primary h-[90%] rounded-t-sm"></div>
+								<div
+									class="flex-1 bg-primary/10 hover:bg-primary/30 h-[80%] rounded-t-sm transition-all cursor-help"
+								></div>
+							</div>
+						</div>
+						<div class="bg-surface border border-border p-6 rounded-md">
+							<div class="flex justify-between items-start mb-6">
+								<div>
+									<h4 class="text-[15px] font-semibold">Issue Resolution</h4>
+									<p class="text-[13px] text-muted">Efficiency rate</p>
+								</div>
+								<span class="text-text text-[13px] font-bold">4.2h Avg</span>
+							</div>
+							<div class="space-y-4">
+								<div class="space-y-2">
+									<div
+										class="flex justify-between text-[12px] font-medium uppercase tracking-tight"
+									>
+										<span>Closed Issues</span>
+										<span>88%</span>
+									</div>
+									<div class="h-2 bg-gray-100 rounded-full overflow-hidden">
+										<div class="h-full bg-accent w-[88%]"></div>
+									</div>
+								</div>
+								<div class="space-y-2">
+									<div
+										class="flex justify-between text-[12px] font-medium uppercase tracking-tight text-muted"
+									>
+										<span>Pending Review</span>
+										<span>12%</span>
+									</div>
+									<div class="h-2 bg-gray-100 rounded-full overflow-hidden">
+										<div class="h-full bg-border w-[12%]"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="md:col-span-2 bg-surface border border-border p-6 rounded-md">
+							<div class="flex justify-between items-start mb-6">
+								<div>
+									<h4 class="text-[15px] font-semibold">Commit Frequency</h4>
+									<p class="text-[13px] text-muted">Active contributions across branches</p>
+								</div>
+								<button class="text-muted hover:text-text">
+									<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+								</button>
+							</div>
+							<div class="h-32 flex items-center justify-between px-2">
+								<div class="relative w-full h-full flex items-end">
+									<svg class="w-full h-full" preserveAspectRatio="none" viewBox="0 0 400 100">
+										<path
+											d="M0,80 Q50,20 100,50 T200,30 T300,70 T400,10"
+											fill="none"
+											stroke="#CCFF00"
+											stroke-width="3"
+										></path>
+										<path
+											d="M0,80 Q50,20 100,50 T200,30 T300,70 T400,10 V100 H0 Z"
+											fill="rgba(204, 255, 0, 0.05)"
+										></path>
+									</svg>
+								</div>
+							</div>
+						</div>
+					</div>
+					<details class="group bg-surface border border-border rounded-md overflow-hidden">
+						<summary
+							class="flex items-center justify-between p-6 cursor-pointer hover:bg-background transition-colors list-none"
+						>
+							<div class="flex items-center gap-3">
+								<span
+									class="material-symbols-outlined text-muted group-open:rotate-180 transition-transform"
+									>expand_more</span
+								>
+								<h3 class="text-[18px] font-semibold tracking-tight">
+									Project Documentation (README)
+								</h3>
+							</div>
+							<span class="text-[13px] text-muted font-medium uppercase tracking-wider"
+								>Click to expand</span
+							>
+						</summary>
+						<div class="p-8 pt-2 border-t border-border">
+							<article
+								class="prose prose-slate max-w-none prose-headings:font-display prose-p:text-[15px] prose-p:leading-[1.6]"
+							>
+								<h2>Rapidly build modern websites without ever leaving your HTML.</h2>
+								<p>
+									Tailwind CSS works by scanning all of your HTML files, JavaScript components, and
+									any other templates for class names, generating the corresponding styles and then
+									writing them to a static CSS file.
+								</p>
+								<pre
+									class="bg-background p-4 rounded-md border border-border font-mono text-[13px]"
+								><code>npm install -D tailwindcss
 npx tailwindcss init</code></pre>
-</article>
-</div>
-</details>
-<section class="flex flex-col gap-6">
-<h3 class="text-[20px] font-semibold tracking-tight">Community Pulse</h3>
-<div class="flex flex-col gap-4">
-<div class="flex gap-4 p-4 border border-border rounded-md hover:shadow-hover transition-shadow bg-surface">
-<div class="size-8 rounded bg-gray-200 shrink-0 overflow-hidden">
-<img alt="User" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOJxFC7SFB9w-hEFvXoVEkFxPf0vL9hLEpHOngD7ZVOac4wsnoXQVpHhnnip3_h6qMAA5-2HguLkopra-MovdZHRZmhkJl6CctLKjmHN3RyT9Xw_zmKEh9iqgtahvfk1Wh5rYn3LFE_jqV487R3ncT2wg1ZMR4IsVvLYttsJI0sZG7Fz5UM1E-aqZK1xBtntznatmIEG8EWQNIoFEX65t_dqS8LlkHhtrEeGAVGEyNELDbEwZ5FVWdSX9suW6aTtl_BeRIX41N7mQ"/>
-</div>
-<div class="flex-1">
-<div class="flex items-center justify-between mb-1">
-<span class="font-bold text-[14px]">michael_dev</span>
-<span class="text-muted text-[12px]">2h ago</span>
-</div>
-<p class="text-[14px] text-text/80">Great progress on the v4 alpha. The engine performance is noticeably better.</p>
-</div>
-</div>
-<button class="w-full py-3 border border-dashed border-border text-muted hover:text-text hover:border-text text-[13px] font-medium transition-all">Load 24 more discussions</button>
-</div>
-</section>
-</div>
-<aside class="w-full lg:w-[320px] shrink-0">
-<div class="sticky top-[104px] flex flex-col gap-6">
-<div class="flex flex-col gap-3">
-<div class="grid grid-cols-2 gap-2">
-<button class="flex items-center justify-center gap-2 h-11 border border-border hover:border-primary hover:bg-primary/5 transition-all rounded-md font-semibold text-[14px]">
-<span class="material-symbols-outlined text-[18px]">visibility</span>
-                            Watch
-                        </button>
-<button class="flex items-center justify-center gap-2 h-11 border border-border hover:border-primary hover:bg-primary/5 transition-all rounded-md font-semibold text-[14px]">
-<span class="material-symbols-outlined text-[18px]">star</span>
-                            Star
-                        </button>
-</div>
-<a class="flex items-center justify-center gap-2 h-12 bg-primary hover:bg-primary-hover text-text rounded-md font-bold text-[15px] transition-all shadow-sm" href="#">
-<span>Visit Repository</span>
-<span class="material-symbols-outlined text-[18px]">open_in_new</span>
-</a>
-</div>
-<div class="bg-surface border border-border rounded-md overflow-hidden">
-<div class="grid grid-cols-2 border-b border-border">
-<div class="p-4 border-r border-border">
-<p class="text-[11px] text-muted uppercase font-bold tracking-wider mb-1">Stars</p>
-<p class="text-[20px] font-bold">65.2k</p>
-</div>
-<div class="p-4">
-<p class="text-[11px] text-muted uppercase font-bold tracking-wider mb-1">Forks</p>
-<p class="text-[20px] font-bold">3.1k</p>
-</div>
-</div>
-<div class="grid grid-cols-2">
-<div class="p-4 border-r border-border">
-<p class="text-[11px] text-muted uppercase font-bold tracking-wider mb-1">Issues</p>
-<p class="text-[20px] font-bold">142</p>
-</div>
-<div class="p-4">
-<p class="text-[11px] text-muted uppercase font-bold tracking-wider mb-1">License</p>
-<p class="text-[20px] font-bold">MIT</p>
-</div>
-</div>
-</div>
-<div class="bg-surface border border-border rounded-md p-5 flex flex-col gap-4">
-<h5 class="text-[13px] font-bold uppercase tracking-wider text-muted">Key Contributors</h5>
-<div class="flex flex-col gap-3">
-<div class="flex items-center justify-between">
-<div class="flex items-center gap-2">
-<div class="size-6 rounded-sm bg-gray-100 overflow-hidden border border-border">
-<img alt="Adam" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtz-RE8Xt-qXPB3VKRt_2S3kOB_hDLq4VPD6789RyhqjZp2FPEJXBCxRNUp5wmMPnv_s9QWm4b7BrkHU-rvI_jq2jCg5-VPn8hgcGjNwsgzSzH1Mn-tN9zz7Uiv1TGRIHe8iv_Yf-m4OXVgPsJDzx6rVnr2e4GZg6pNWQTJYDe87xrKkzJJtAjP7iH_EnoiXrHyexXyftHqri2AYvKUTTdzaGSAtBmc_-f0z61B-8y4WGmErrqy5Uj2GNKRNiSmm_GSjuWgn3g8is"/>
-</div>
-<span class="text-[14px] font-medium">adamwathan</span>
-</div>
-<span class="text-[12px] text-muted font-mono">1.2k+</span>
-</div>
-<div class="flex items-center justify-between">
-<div class="flex items-center gap-2">
-<div class="size-6 rounded-sm bg-gray-100 overflow-hidden border border-border">
-<img alt="Robin" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVYCnxfbTz7Ey--n2ART0DrYNSPijND9qwdSy1_U3hSKzDaeciDUAx6Uc8PQ-MbHhIRni9bll6xfLRQWrCBB_7H-UkRbQwdoJKE1flpTPsvel4MFazOgeCr6kGbD0VJAwhjl5needp-m6CA0yMmLGh2vYD2t9uNEicYPpsnlK2rbSsXP_5IIzBSE6h3Ne99VXUH0G5uGkXLDRRhHFSdSiljvadIyFdxDa1xJVUX7P5BJ7BCcpk36IcX2NuT2x5vGH9Amh_qlfXxTw"/>
-</div>
-<span class="text-[14px] font-medium">robinmalfait</span>
-</div>
-<span class="text-[12px] text-muted font-mono">850</span>
-</div>
-</div>
-<button class="text-center text-[12px] font-bold text-accent hover:underline pt-2 border-t border-border/50">View all 214 contributors</button>
-</div>
-<div class="flex flex-col gap-2">
-<button class="w-full flex items-center justify-between px-4 h-12 bg-accent text-white rounded-md hover:bg-gray-800 transition-colors group">
-<span class="font-medium">Report Issue</span>
-<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">bug_report</span>
-</button>
-<button class="w-full flex items-center justify-between px-4 h-12 bg-surface border border-border text-text rounded-md hover:border-text transition-colors">
-<span class="font-medium">Share Analytics</span>
-<span class="material-symbols-outlined text-[18px]">share</span>
-</button>
-</div>
-<div class="text-[12px] text-muted flex flex-col gap-1.5 px-2">
-<div class="flex justify-between">
-<span>Last Updated</span>
-<span class="text-text font-medium">4 mins ago</span>
-</div>
-<div class="flex justify-between">
-<span>Data Source</span>
-<span class="text-text font-medium">GitHub API v4</span>
-</div>
-</div>
-</div>
-</aside>
-</div>
-</main>
-
-</body></html>
+							</article>
+						</div>
+					</details>
+					<section class="flex flex-col gap-6">
+						<h3 class="text-[20px] font-semibold tracking-tight">Community Pulse</h3>
+						<div class="flex flex-col gap-4">
+							<div
+								class="flex gap-4 p-4 border border-border rounded-md hover:shadow-hover transition-shadow bg-surface"
+							>
+								<div class="size-8 rounded bg-gray-200 shrink-0 overflow-hidden">
+									<img
+										alt="User"
+										src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOJxFC7SFB9w-hEFvXoVEkFxPf0vL9hLEpHOngD7ZVOac4wsnoXQVpHhnnip3_h6qMAA5-2HguLkopra-MovdZHRZmhkJl6CctLKjmHN3RyT9Xw_zmKEh9iqgtahvfk1Wh5rYn3LFE_jqV487R3ncT2wg1ZMR4IsVvLYttsJI0sZG7Fz5UM1E-aqZK1xBtntznatmIEG8EWQNIoFEX65t_dqS8LlkHhtrEeGAVGEyNELDbEwZ5FVWdSX9suW6aTtl_BeRIX41N7mQ"
+									/>
+								</div>
+								<div class="flex-1">
+									<div class="flex items-center justify-between mb-1">
+										<span class="font-bold text-[14px]">michael_dev</span>
+										<span class="text-muted text-[12px]">2h ago</span>
+									</div>
+									<p class="text-[14px] text-text/80">
+										Great progress on the v4 alpha. The engine performance is noticeably better.
+									</p>
+								</div>
+							</div>
+							<button
+								class="w-full py-3 border border-dashed border-border text-muted hover:text-text hover:border-text text-[13px] font-medium transition-all"
+							>
+								Load 24 more discussions
+							</button>
+						</div>
+					</section>
+				</div>
+				<aside class="w-full lg:w-[320px] shrink-0">
+					<div class="sticky top-[104px] flex flex-col gap-6">
+						<div class="flex flex-col gap-3">
+							<div class="grid grid-cols-2 gap-2">
+								<button
+									class="flex items-center justify-center gap-2 h-11 border border-border hover:border-primary hover:bg-primary/5 transition-all rounded-md font-semibold text-[14px]"
+								>
+									<span class="material-symbols-outlined text-[18px]">visibility</span>
+									Watch
+								</button>
+								<button
+									class="flex items-center justify-center gap-2 h-11 border border-border hover:border-primary hover:bg-primary/5 transition-all rounded-md font-semibold text-[14px]"
+								>
+									<span class="material-symbols-outlined text-[18px]">star</span>
+									Star
+								</button>
+							</div>
+							<a
+								class="flex items-center justify-center gap-2 h-12 bg-primary hover:bg-primary-hover text-text rounded-md font-bold text-[15px] transition-all shadow-sm"
+								href="#"
+							>
+								<span>Visit Repository</span>
+								<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+							</a>
+						</div>
+						<div class="bg-surface border border-border rounded-md overflow-hidden">
+							<div class="grid grid-cols-2 border-b border-border">
+								<div class="p-4 border-r border-border">
+									<p class="text-[11px] text-muted uppercase font-bold tracking-wider mb-1">
+										Stars
+									</p>
+									<p class="text-[20px] font-bold">65.2k</p>
+								</div>
+								<div class="p-4">
+									<p class="text-[11px] text-muted uppercase font-bold tracking-wider mb-1">
+										Forks
+									</p>
+									<p class="text-[20px] font-bold">3.1k</p>
+								</div>
+							</div>
+							<div class="grid grid-cols-2">
+								<div class="p-4 border-r border-border">
+									<p class="text-[11px] text-muted uppercase font-bold tracking-wider mb-1">
+										Issues
+									</p>
+									<p class="text-[20px] font-bold">142</p>
+								</div>
+								<div class="p-4">
+									<p class="text-[11px] text-muted uppercase font-bold tracking-wider mb-1">
+										License
+									</p>
+									<p class="text-[20px] font-bold">MIT</p>
+								</div>
+							</div>
+						</div>
+						<div class="bg-surface border border-border rounded-md p-5 flex flex-col gap-4">
+							<h5 class="text-[13px] font-bold uppercase tracking-wider text-muted">
+								Key Contributors
+							</h5>
+							<div class="flex flex-col gap-3">
+								<div class="flex items-center justify-between">
+									<div class="flex items-center gap-2">
+										<div class="size-6 rounded-sm bg-gray-100 overflow-hidden border border-border">
+											<img
+												alt="Adam"
+												src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtz-RE8Xt-qXPB3VKRt_2S3kOB_hDLq4VPD6789RyhqjZp2FPEJXBCxRNUp5wmMPnv_s9QWm4b7BrkHU-rvI_jq2jCg5-VPn8hgcGjNwsgzSzH1Mn-tN9zz7Uiv1TGRIHe8iv_Yf-m4OXVgPsJDzx6rVnr2e4GZg6pNWQTJYDe87xrKkzJJtAjP7iH_EnoiXrHyexXyftHqri2AYvKUTTdzaGSAtBmc_-f0z61B-8y4WGmErrqy5Uj2GNKRNiSmm_GSjuWgn3g8is"
+											/>
+										</div>
+										<span class="text-[14px] font-medium">adamwathan</span>
+									</div>
+									<span class="text-[12px] text-muted font-mono">1.2k+</span>
+								</div>
+								<div class="flex items-center justify-between">
+									<div class="flex items-center gap-2">
+										<div class="size-6 rounded-sm bg-gray-100 overflow-hidden border border-border">
+											<img
+												alt="Robin"
+												src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVYCnxfbTz7Ey--n2ART0DrYNSPijND9qwdSy1_U3hSKzDaeciDUAx6Uc8PQ-MbHhIRni9bll6xfLRQWrCBB_7H-UkRbQwdoJKE1flpTPsvel4MFazOgeCr6kGbD0VJAwhjl5needp-m6CA0yMmLGh2vYD2t9uNEicYPpsnlK2rbSsXP_5IIzBSE6h3Ne99VXUH0G5uGkXLDRRhHFSdSiljvadIyFdxDa1xJVUX7P5BJ7BCcpk36IcX2NuT2x5vGH9Amh_qlfXxTw"
+											/>
+										</div>
+										<span class="text-[14px] font-medium">robinmalfait</span>
+									</div>
+									<span class="text-[12px] text-muted font-mono">850</span>
+								</div>
+							</div>
+							<button
+								class="text-center text-[12px] font-bold text-accent hover:underline pt-2 border-t border-border/50"
+							>
+								View all 214 contributors
+							</button>
+						</div>
+						<div class="flex flex-col gap-2">
+							<button
+								class="w-full flex items-center justify-between px-4 h-12 bg-accent text-white rounded-md hover:bg-gray-800 transition-colors group"
+							>
+								<span class="font-medium">Report Issue</span>
+								<span
+									class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform"
+									>bug_report</span
+								>
+							</button>
+							<button
+								class="w-full flex items-center justify-between px-4 h-12 bg-surface border border-border text-text rounded-md hover:border-text transition-colors"
+							>
+								<span class="font-medium">Share Analytics</span>
+								<span class="material-symbols-outlined text-[18px]">share</span>
+							</button>
+						</div>
+						<div class="text-[12px] text-muted flex flex-col gap-1.5 px-2">
+							<div class="flex justify-between">
+								<span>Last Updated</span>
+								<span class="text-text font-medium">4 mins ago</span>
+							</div>
+							<div class="flex justify-between">
+								<span>Data Source</span>
+								<span class="text-text font-medium">GitHub API v4</span>
+							</div>
+						</div>
+					</div>
+				</aside>
+			</div>
+		</main>
+	</body>
+</html>

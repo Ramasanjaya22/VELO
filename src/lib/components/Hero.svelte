@@ -30,8 +30,6 @@
 
 		<p class="tagline">github trending. ranked. fast.</p>
 
-		<div class="speed-line" aria-hidden="true"></div>
-
 		<div class="meta-bar" aria-label="Data source information">
 			<span class="meta-item">source: github</span>
 			<span class="meta-dot"></span>
@@ -97,7 +95,7 @@
 	.cursor {
 		font-family: var(--font-mono);
 		font-size: clamp(1.2rem, 4vw, 2.2rem);
-		color: var(--accent);
+		color: var(--accent-dim);
 		margin-left: 0.1em;
 		animation: blink 1s step-end infinite;
 	}
@@ -121,27 +119,6 @@
 		letter-spacing: 0.15em;
 		text-transform: lowercase;
 		font-weight: 400;
-	}
-
-	.speed-line {
-		width: 100%;
-		height: 2px;
-		margin: 0 0 clamp(1rem, 3vw, 1.5rem);
-		background: linear-gradient(90deg, var(--accent), var(--metal-300), transparent);
-		animation: pulse-line 3s ease-in-out infinite;
-	}
-
-	@keyframes pulse-line {
-		0%,
-		100% {
-			opacity: 0.4;
-			transform: scaleX(0.95);
-			transform-origin: left;
-		}
-		50% {
-			opacity: 1;
-			transform: scaleX(1);
-		}
 	}
 
 	.meta-bar {

@@ -60,19 +60,28 @@
 	<div class="flex flex-col lg:flex-row gap-12 relative">
 		<aside class="w-full lg:w-[320px] shrink-0">
 			<div class="sticky top-24 flex flex-col gap-8">
-				<div class="bg-surface border border-metal-100 rounded-sm p-6 shadow-[0_4px_12px_rgba(0,0,0,0.02)] flex flex-col items-center text-center">
+				<div
+					class="bg-surface border border-metal-100 rounded-sm p-6 shadow-[0_4px_12px_rgba(0,0,0,0.02)] flex flex-col items-center text-center"
+				>
 					<div class="size-20 bg-bg rounded-full border border-metal-100 overflow-hidden mb-4">
 						<img src={mockUser.avatar} alt={mockUser.name} class="size-full object-cover" />
 					</div>
 					<h1 class="text-xl font-bold text-metal-900 font-heading mb-1">{mockUser.name}</h1>
-					<p class="text-xs text-metal-500 font-body leading-relaxed max-w-[200px] mb-6">{mockUser.bio}</p>
+					<p class="text-xs text-metal-500 font-body leading-relaxed max-w-[200px] mb-6">
+						{mockUser.bio}
+					</p>
 				</div>
 
-				<div class="bg-surface border border-metal-100 rounded-sm overflow-hidden shadow-[0_4px_12px_rgba(0,0,0,0.02)]">
+				<div
+					class="bg-surface border border-metal-100 rounded-sm overflow-hidden shadow-[0_4px_12px_rgba(0,0,0,0.02)]"
+				>
 					<div class="grid grid-cols-3 divide-x divide-metal-100">
 						{#each mockUser.stats as stat}
 							<div class="p-4 flex flex-col items-center gap-1">
-								<span class="text-[10px] text-metal-500 font-bold uppercase tracking-widest font-mono">{stat.label}</span>
+								<span
+									class="text-[10px] text-metal-500 font-bold uppercase tracking-widest font-mono"
+									>{stat.label}</span
+								>
 								<span class="text-lg font-bold text-metal-900 font-mono">{stat.value}</span>
 							</div>
 						{/each}
@@ -82,7 +91,9 @@
 		</aside>
 
 		<div class="flex-1 min-w-0">
-			<div class="flex items-center gap-8 border-b border-metal-100 mb-8 overflow-x-auto scrollbar-none">
+			<div
+				class="flex items-center gap-8 border-b border-metal-100 mb-8 overflow-x-auto scrollbar-none"
+			>
 				{#each tabs as tab}
 					<button
 						class="pb-4 text-xs font-bold uppercase tracking-widest transition-all relative font-heading"
@@ -100,7 +111,10 @@
 
 			<div class="flex flex-col gap-6">
 				{#each mockUser.saved as product, i}
-					<div class="transform transition-all hover:translate-x-1" in:fly={{ y: 20, duration: 400, delay: i * 100 }}>
+					<div
+						class="transform transition-all hover:translate-x-1"
+						in:fly={{ y: 20, duration: 400, delay: i * 100 }}
+					>
 						<ProductCard {product} index={i} />
 					</div>
 				{/each}

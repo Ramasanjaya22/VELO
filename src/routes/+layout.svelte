@@ -1,13 +1,23 @@
 <script lang="ts">
 	import '../app.css';
 	import Navbar from '$lib/components/Navbar.svelte';
+	import Toast from '$lib/components/Toast.svelte';
 
 	let { children } = $props();
 </script>
 
+<svelte:head>
+	<meta
+		name="robots"
+		content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+	/>
+	<link rel="canonical" href="https://velo-428.pages.dev/" />
+</svelte:head>
+
 <div class="bg-bg min-h-screen antialiased flex flex-col font-body">
 	<Navbar />
 	{@render children()}
+	<Toast />
 
 	<footer
 		class="mt-auto border-t border-metal-100 bg-[color-mix(in_srgb,var(--surface)_94%,var(--accent)_6%)] px-4 py-6 sm:px-6 lg:px-8"

@@ -1,111 +1,164 @@
-<!DOCTYPE html>
+<!doctype html>
 
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>VELO - Submit Repository</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "primary": "#c4f20d",
-              "background-light": "#FAFAFA",
-              "background-dark": "#1e2210",
-              "surface": "#FFFFFF",
-              "text-main": "#171717",
-              "text-muted": "#8B8D98",
-              "border-color": "#E4E4E5",
-              "accent-black": "#000000",
-              "error-red": "#FF4A4A"
-            },
-            fontFamily: {
-              "display": ["Space Grotesk", "sans-serif"]
-            },
-            borderRadius: {
-              "DEFAULT": "4px",
-              "sm": "2px",
-              "md": "4px",
-              "lg": "8px",
-              "full": "9999px"
-            },
-            boxShadow: {
-              'hover': '0 4px 12px rgba(0,0,0,0.05)',
-            }
-          },
-        },
-      }
-    </script>
-<style>
-        body {
-            font-family: 'Space Grotesk', sans-serif;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-    </style>
-</head>
-<body class="bg-background-light dark:bg-background-dark text-text-main min-h-screen flex flex-col font-display">
-<!-- Explicit Navigation Header (Back-to-Main Exception for Focused Views) -->
-<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-border-color px-10 py-4 bg-surface dark:bg-background-dark">
-<div class="flex items-center gap-4 text-text-main">
-<a aria-label="Go back" class="flex items-center justify-center p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" href="#">
-<span class="material-symbols-outlined text-text-main">arrow_back</span>
-</a>
-<div class="size-5 text-accent-black dark:text-white">
-<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-<path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path>
-</svg>
-</div>
-<h2 class="text-text-main dark:text-white text-xl font-bold leading-tight tracking-[-0.02em]">VELO</h2>
-</div>
-</header>
-<!-- Main Content -->
-<main class="flex-1 flex flex-col items-center px-4 pt-[120px] pb-24 w-full">
-<div class="w-full max-w-[480px] flex flex-col gap-8">
-<!-- Header Section -->
-<div class="flex flex-col gap-2">
-<h1 class="text-text-main dark:text-white text-2xl font-semibold leading-tight tracking-[-0.02em]">Submit Repository</h1>
-<p class="text-text-muted text-[15px] font-normal leading-[1.6]">Paste a public GitHub repository URL to add it to today's leaderboard.</p>
-</div>
-<!-- Form Area -->
-<form class="flex flex-col gap-6" onsubmit="event.preventDefault();">
-<!-- URL Input -->
-<div class="flex flex-col gap-2">
-<div class="relative flex items-center w-full">
-<span class="material-symbols-outlined absolute left-4 text-text-muted">link</span>
-<input class="w-full h-[56px] pl-12 pr-4 bg-surface dark:bg-gray-900 border border-border-color dark:border-gray-700 rounded-md text-text-main dark:text-white text-[15px] placeholder-text-muted focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors shadow-sm" placeholder="https://github.com/facebook/react" required="" type="url" value="https://github.com/facebook/react"/>
-</div>
-</div>
-<!-- Preview Card (Active State) -->
-<div class="bg-surface dark:bg-gray-900 border border-border-color dark:border-gray-700 rounded-md p-6 flex flex-col gap-3 shadow-sm animate-[fadeIn_0.3s_ease-out]">
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-md bg-gray-100 dark:bg-gray-800 flex items-center justify-center overflow-hidden border border-border-color dark:border-gray-700">
-<!-- Placeholder avatar for repo owner -->
-<img alt="GitHub organization avatar" class="w-full h-full object-cover" data-alt="Abstract colorful code syntax pattern" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATjAbCryacGVjbhOzVgqM6xq8O8Je8xANMIigeVC4GPGzSQDxGt3iLZCLOsaziWzuOwS-3GUsjTMW8omPw-BS0PmnWja9aXRt5hkP7jQ_O5muZb26XYN-N0BCaaakZnLFOY6KOuykg8u2RASdyxd1mXD3__H2L-Axfxc_d8HEcVte18tRjYm8KuW7x_JCos4gLTLmd-epwWMj3VveydoQLSienAuRA10OfZp0F7UT9WUotdR6fq6reFCq-MQ8NeHJ_m9KCS2cwVlM"/>
-</div>
-<div class="flex flex-col">
-<span class="text-text-main dark:text-white font-medium text-[15px]">facebook / react</span>
-<div class="flex items-center gap-1 text-text-muted text-[13px] uppercase tracking-[0.05em]">
-<span class="material-symbols-outlined text-[14px]">star</span>
-<span>214k</span>
-</div>
-</div>
-</div>
-<p class="text-text-muted text-[15px] leading-[1.6]">A declarative, efficient, and flexible JavaScript library for building user interfaces.</p>
-</div>
-<!-- Submit Button -->
-<button class="w-full h-[48px] bg-accent-black dark:bg-white text-surface dark:text-accent-black text-[14px] font-medium rounded-md hover:opacity-90 transition-opacity flex items-center justify-center gap-2 mt-4" type="submit">
-<span>Submit to Leaderboard</span>
-</button>
-<!-- Example of disabled/error state (hidden by default, shown for reference) -->
-<!-- 
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+		<title>VELO - Submit Repository</title>
+		<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+		<link href="https://fonts.googleapis.com" rel="preconnect" />
+		<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+			rel="stylesheet"
+		/>
+		<script id="tailwind-config">
+			tailwind.config = {
+				darkMode: 'class',
+				theme: {
+					extend: {
+						colors: {
+							primary: '#c4f20d',
+							'background-light': '#FAFAFA',
+							'background-dark': '#1e2210',
+							surface: '#FFFFFF',
+							'text-main': '#171717',
+							'text-muted': '#8B8D98',
+							'border-color': '#E4E4E5',
+							'accent-black': '#000000',
+							'error-red': '#FF4A4A'
+						},
+						fontFamily: {
+							display: ['Space Grotesk', 'sans-serif']
+						},
+						borderRadius: {
+							DEFAULT: '4px',
+							sm: '2px',
+							md: '4px',
+							lg: '8px',
+							full: '9999px'
+						},
+						boxShadow: {
+							hover: '0 4px 12px rgba(0,0,0,0.05)'
+						}
+					}
+				}
+			};
+		</script>
+		<style>
+			body {
+				font-family: 'Space Grotesk', sans-serif;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+			}
+		</style>
+	</head>
+	<body
+		class="bg-background-light dark:bg-background-dark text-text-main min-h-screen flex flex-col font-display"
+	>
+		<!-- Explicit Navigation Header (Back-to-Main Exception for Focused Views) -->
+		<header
+			class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-border-color px-10 py-4 bg-surface dark:bg-background-dark"
+		>
+			<div class="flex items-center gap-4 text-text-main">
+				<a
+					aria-label="Go back"
+					class="flex items-center justify-center p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+					href="#"
+				>
+					<span class="material-symbols-outlined text-text-main">arrow_back</span>
+				</a>
+				<div class="size-5 text-accent-black dark:text-white">
+					<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+						<path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path>
+					</svg>
+				</div>
+				<h2
+					class="text-text-main dark:text-white text-xl font-bold leading-tight tracking-[-0.02em]"
+				>
+					VELO
+				</h2>
+			</div>
+		</header>
+		<!-- Main Content -->
+		<main class="flex-1 flex flex-col items-center px-4 pt-[120px] pb-24 w-full">
+			<div class="w-full max-w-[480px] flex flex-col gap-8">
+				<!-- Header Section -->
+				<div class="flex flex-col gap-2">
+					<h1
+						class="text-text-main dark:text-white text-2xl font-semibold leading-tight tracking-[-0.02em]"
+					>
+						Submit Repository
+					</h1>
+					<p class="text-text-muted text-[15px] font-normal leading-[1.6]">
+						Paste a public GitHub repository URL to add it to today's leaderboard.
+					</p>
+				</div>
+				<!-- Form Area -->
+				<form class="flex flex-col gap-6" onsubmit="event.preventDefault()">
+					<!-- URL Input -->
+					<div class="flex flex-col gap-2">
+						<div class="relative flex items-center w-full">
+							<span class="material-symbols-outlined absolute left-4 text-text-muted">link</span>
+							<input
+								class="w-full h-[56px] pl-12 pr-4 bg-surface dark:bg-gray-900 border border-border-color dark:border-gray-700 rounded-md text-text-main dark:text-white text-[15px] placeholder-text-muted focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors shadow-sm"
+								placeholder="https://github.com/facebook/react"
+								required=""
+								type="url"
+								value="https://github.com/facebook/react"
+							/>
+						</div>
+					</div>
+					<!-- Preview Card (Active State) -->
+					<div
+						class="bg-surface dark:bg-gray-900 border border-border-color dark:border-gray-700 rounded-md p-6 flex flex-col gap-3 shadow-sm animate-[fadeIn_0.3s_ease-out]"
+					>
+						<div class="flex items-center gap-3">
+							<div
+								class="w-10 h-10 rounded-md bg-gray-100 dark:bg-gray-800 flex items-center justify-center overflow-hidden border border-border-color dark:border-gray-700"
+							>
+								<!-- Placeholder avatar for repo owner -->
+								<img
+									alt="GitHub organization avatar"
+									class="w-full h-full object-cover"
+									data-alt="Abstract colorful code syntax pattern"
+									src="https://lh3.googleusercontent.com/aida-public/AB6AXuATjAbCryacGVjbhOzVgqM6xq8O8Je8xANMIigeVC4GPGzSQDxGt3iLZCLOsaziWzuOwS-3GUsjTMW8omPw-BS0PmnWja9aXRt5hkP7jQ_O5muZb26XYN-N0BCaaakZnLFOY6KOuykg8u2RASdyxd1mXD3__H2L-Axfxc_d8HEcVte18tRjYm8KuW7x_JCos4gLTLmd-epwWMj3VveydoQLSienAuRA10OfZp0F7UT9WUotdR6fq6reFCq-MQ8NeHJ_m9KCS2cwVlM"
+								/>
+							</div>
+							<div class="flex flex-col">
+								<span class="text-text-main dark:text-white font-medium text-[15px]"
+									>facebook / react</span
+								>
+								<div
+									class="flex items-center gap-1 text-text-muted text-[13px] uppercase tracking-[0.05em]"
+								>
+									<span class="material-symbols-outlined text-[14px]">star</span>
+									<span>214k</span>
+								</div>
+							</div>
+						</div>
+						<p class="text-text-muted text-[15px] leading-[1.6]">
+							A declarative, efficient, and flexible JavaScript library for building user
+							interfaces.
+						</p>
+					</div>
+					<!-- Submit Button -->
+					<button
+						class="w-full h-[48px] bg-accent-black dark:bg-white text-surface dark:text-accent-black text-[14px] font-medium rounded-md hover:opacity-90 transition-opacity flex items-center justify-center gap-2 mt-4"
+						type="submit"
+					>
+						<span>Submit to Leaderboard</span>
+					</button>
+					<!-- Example of disabled/error state (hidden by default, shown for reference) -->
+					<!-- 
                 <div class="flex flex-col gap-2 mt-8 border-t border-border-color pt-8">
                     <p class="text-sm font-medium text-text-muted mb-2">Error State Example:</p>
                     <div class="relative flex items-center w-full">
@@ -122,7 +175,8 @@
                     </button>
                 </div> 
                 -->
-</form>
-</div>
-</main>
-</body></html>
+				</form>
+			</div>
+		</main>
+	</body>
+</html>

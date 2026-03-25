@@ -37,7 +37,14 @@ export interface Tool {
 
 export interface ToolSource {
 	id: string;
-	type: 'directory' | 'landing_page' | 'affiliate_page' | 'pricing_page' | 'review_page' | 'blog' | 'manual';
+	type:
+		| 'directory'
+		| 'landing_page'
+		| 'affiliate_page'
+		| 'pricing_page'
+		| 'review_page'
+		| 'blog'
+		| 'manual';
 	url: string;
 	fetchedAt: string;
 	confidence: number;

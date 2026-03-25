@@ -1,288 +1,415 @@
-<!DOCTYPE html>
+<!doctype html>
 
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Repo Detail - VELO</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#CCFF00",
-                        "background-light": "#FAFAFA",
-                        "background-dark": "#171717",
-                        "surface": "#FFFFFF",
-                        "text-main": "#171717",
-                        "text-muted": "#8B8D98",
-                        "border-color": "#E4E4E5",
-                        "accent": "#000000"
-                    },
-                    fontFamily: {
-                        "display": ["Space Grotesk", "sans-serif"]
-                    },
-                    borderRadius: {
-                        "DEFAULT": "4px",
-                        "sm": "2px",
-                        "md": "4px",
-                        "lg": "4px",
-                        "xl": "4px",
-                        "full": "4px"
-                    },
-                },
-            },
-        }
-    </script>
-<style>
-        body {
-            font-family: 'Space Grotesk', sans-serif;
-            background-color: theme('colors.background-light');
-            color: theme('colors.text-main');
-        }
-    </style>
-</head>
-<body class="antialiased min-h-screen flex flex-col">
-<!-- TopNavBar Shared Component -->
-<div class="relative flex h-auto w-full flex-col bg-surface group/design-root overflow-x-hidden border-b border-border-color">
-<div class="layout-container flex h-full grow flex-col">
-<div class="px-40 flex flex-1 justify-center py-5">
-<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-<header class="flex items-center justify-between whitespace-nowrap px-10 py-3">
-<div class="flex items-center gap-8">
-<div class="flex items-center gap-4 text-text-main">
-<h2 class="text-text-main text-xl font-bold leading-tight tracking-[-0.02em]">VELO</h2>
-</div>
-<label class="flex flex-col min-w-40 !h-10 max-w-64">
-<div class="flex w-full flex-1 items-stretch rounded-md border border-border-color bg-background-light h-full focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-colors">
-<div class="text-text-muted flex border-none bg-transparent items-center justify-center pl-4 rounded-l-md" data-icon="magnifying_glass" data-size="24px" data-weight="regular">
-<span class="material-symbols-outlined text-[20px]">search</span>
-</div>
-<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-md text-text-main focus:outline-0 focus:ring-0 border-none bg-transparent h-full placeholder:text-text-muted px-4 rounded-l-none pl-2 text-sm font-normal leading-normal" placeholder="Search repositories..." value=""/>
-</div>
-</label>
-</div>
-<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 px-6 bg-accent text-surface text-sm font-medium leading-normal hover:bg-text-main transition-colors">
-<span class="truncate">Submit Repo</span>
-</button>
-</header>
-</div>
-</div>
-</div>
-</div>
-<!-- Main Content Layout -->
-<main class="flex-1 w-full max-w-[1040px] mx-auto px-6 py-12">
-<div class="flex flex-col lg:flex-row gap-12 relative">
-<!-- Left Column: Main Content (640px max) -->
-<div class="flex-1 max-w-[640px] flex flex-col gap-20">
-<!-- Hero Section -->
-<section>
-<h1 class="text-[32px] font-semibold tracking-[-0.02em] leading-tight text-text-main mb-2">shadcn/ui</h1>
-<p class="text-[18px] font-normal text-text-muted leading-relaxed">Beautifully designed components built with Radix UI and Tailwind CSS.</p>
-</section>
-<!-- Media Gallery -->
-<section class="flex flex-col gap-4">
-<!-- Primary Asset Viewer -->
-<div class="w-full h-[400px] bg-surface border border-border-color rounded-md overflow-hidden flex items-center justify-center bg-background-light shadow-[0_4px_12px_rgba(0,0,0,0.02)]">
-<img alt="Code editor showing React components" class="w-full h-full object-cover" data-alt="Code editor showing React components" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMKF5uRdsuBrRwkTJBqyu9VFYIn2UAREzPhg7wGiScliMvZDUHL0PS93v9YBpQxqrm5oEQN2cVIZIrIHcZM2qpxmVLnEOoowkpmRrMZkHVIJdZg81d4KLNP5Htj94tN2bVlvWwBUMNaYSOUCeS6x-zNM8pQ7AWF6NF6kH2fqIwIwCNDqis4fW231duJ2h7VIsRMrQl9GD4gks0a4kIdfaquzZj4iFVo1eFjDFVnzn5C7JnL0P0aDkV5wdHk39tcC0ye2Ed5IwwxJM"/>
-</div>
-<!-- Thumbnail Strip -->
-<div class="flex gap-4 overflow-x-auto pb-2 scrollbar-hide">
-<button class="flex-shrink-0 w-[120px] h-[80px] rounded-md overflow-hidden border-2 border-accent transition-colors">
-<img alt="Thumbnail 1" class="w-full h-full object-cover" data-alt="Code editor showing React components" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5-NY-_nWRWtv3BCUYcoSNMsSzx7CmQeTg3IrCqEroomYmMU2pfHP4cla8KG12Ni53R_mHQ1wVoOATSZfTAoYVpMy3W-KltN9hRUA9wkUAIfpu3uYxBVKrSlHo-faHqdQ7c3zNirByhNt5u4xukobZ_SDCVKiYym39ayo_gmO1gRlfZ0QCyovnunyYJ7Q97Eb53yZUPwvWd7IEJoqvo2w178KapL16vd9yxDUFDpr7upaEdrpiComZgNfCs4vv-Cq5jAET9iUGdCM"/>
-</button>
-<button class="flex-shrink-0 w-[120px] h-[80px] rounded-md overflow-hidden border border-border-color hover:border-text-muted transition-colors opacity-70 hover:opacity-100">
-<div class="w-full h-full bg-background-light flex items-center justify-center">
-<span class="material-symbols-outlined text-text-muted text-[32px]">play_circle</span>
-</div>
-</button>
-<button class="flex-shrink-0 w-[120px] h-[80px] rounded-md overflow-hidden border border-border-color hover:border-text-muted transition-colors opacity-70 hover:opacity-100">
-<img alt="Thumbnail 3" class="w-full h-full object-cover" data-alt="Dark theme UI components" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3EdgtvXViSHJCUTKAFa89Sl56spUkOiS9kZvWVsh7NTPd7rb2ySxbN8mZfVrGOLRJN81ZLLnfG_7-OvMZqFMkxDCLC3_rdI-CJlx3msfuyMr2k_cWjmrf3ggUyuUbOkAlIePUEftsuOM2DXMQXn3YeKyxDsh0F_x-dTobPqTTCYhAUPsb124dzyuSwqm5-DvHUOjvW2rlC0ieCM39Xn7mpK4WWAJK4tEKhd54Qp01SjxoifIa8OrYHdEE1uLrg-izo82GTHSWnHM"/>
-</button>
-</div>
-</section>
-<!-- Curated Pros and Cons -->
-<section>
-<div class="bg-surface border border-border-color rounded-md p-8 shadow-[0_4px_12px_rgba(0,0,0,0.02)]">
-<div class="flex flex-col sm:flex-row gap-8">
-<!-- Pros -->
-<div class="flex-1">
-<h3 class="text-[18px] font-medium text-text-main mb-6 flex items-center gap-2">
-<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">add_circle</span>
-                                    Pros
-                                </h3>
-<ul class="space-y-4">
-<li class="flex items-start gap-3 text-[15px] leading-[1.6]">
-<span class="text-text-muted mt-1">-</span>
-<span>Full control over the code; it's not a dependency you install, it's code you copy.</span>
-</li>
-<li class="flex items-start gap-3 text-[15px] leading-[1.6]">
-<span class="text-text-muted mt-1">-</span>
-<span>Highly accessible out of the box thanks to Radix UI primitives.</span>
-</li>
-<li class="flex items-start gap-3 text-[15px] leading-[1.6]">
-<span class="text-text-muted mt-1">-</span>
-<span>Easily styled and customized with Tailwind CSS utility classes.</span>
-</li>
-</ul>
-</div>
-<!-- Divider (sm+) -->
-<div class="hidden sm:block w-[1px] bg-border-color"></div>
-<!-- Cons -->
-<div class="flex-1">
-<h3 class="text-[18px] font-medium text-text-main mb-6 flex items-center gap-2">
-<span class="material-symbols-outlined text-text-muted text-[20px]">remove_circle_outline</span>
-                                    Cons
-                                </h3>
-<ul class="space-y-4">
-<li class="flex items-start gap-3 text-[15px] leading-[1.6]">
-<span class="text-text-muted mt-1">-</span>
-<span>Requires a specific tech stack (React, Tailwind, Radix).</span>
-</li>
-<li class="flex items-start gap-3 text-[15px] leading-[1.6]">
-<span class="text-text-muted mt-1">-</span>
-<span>Updates to upstream components require manual code merges.</span>
-</li>
-<li class="flex items-start gap-3 text-[15px] leading-[1.6]">
-<span class="text-text-muted mt-1">-</span>
-<span>Can clutter the project structure with many small component files.</span>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<!-- Alternatives / Compare -->
-<section>
-<h2 class="text-[18px] font-medium text-text-main mb-6">Alternatives</h2>
-<div class="relative mb-6">
-<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-<span class="material-symbols-outlined text-text-muted text-[20px]">search</span>
-</div>
-<input class="w-full h-[48px] bg-background-light border border-border-color rounded-md pl-11 pr-4 text-[15px] text-text-main placeholder:text-text-muted focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" placeholder="Compare with another library..." type="text"/>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-<!-- Mini Card 1 -->
-<div class="bg-surface border border-border-color rounded-md p-4 flex flex-col gap-2 hover:border-accent hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] transition-all cursor-pointer group">
-<div class="flex items-center justify-between">
-<h4 class="font-medium text-text-main text-[15px]">MUI</h4>
-<span class="material-symbols-outlined text-text-muted text-[16px] group-hover:text-primary transition-colors">arrow_forward</span>
-</div>
-<p class="text-[13px] text-text-muted truncate">A comprehensive suite of UI tools for React.</p>
-</div>
-<!-- Mini Card 2 -->
-<div class="bg-surface border border-border-color rounded-md p-4 flex flex-col gap-2 hover:border-accent hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] transition-all cursor-pointer group">
-<div class="flex items-center justify-between">
-<h4 class="font-medium text-text-main text-[15px]">Chakra UI</h4>
-<span class="material-symbols-outlined text-text-muted text-[16px] group-hover:text-primary transition-colors">arrow_forward</span>
-</div>
-<p class="text-[13px] text-text-muted truncate">Simple, Modular &amp; Accessible UI Components.</p>
-</div>
-</div>
-</section>
-<!-- Comment Thread -->
-<section>
-<h2 class="text-[18px] font-medium text-text-main mb-8 border-b border-border-color pb-4">Discussion (4)</h2>
-<!-- Comment Input Area -->
-<div class="flex gap-4 mb-10">
-<div class="w-8 h-8 rounded-md bg-border-color flex-shrink-0 overflow-hidden">
-<img alt="Current user avatar" class="w-full h-full object-cover" data-alt="Current user avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDc7PoFj-_G1rgyTv9_OkpCMHVAaNHHz7gBvW82agYyhhmWc8PNZGWE-aIzgBo2D2PuSBnOzo6y5JvtwwsiJJnrBmfoIKjcq9micKmjrv7mDXczrP105vOanYfKEnjpL8IhGj7IORuZtMJU7bYbna5kRC7VcjIa-A4JhT5BpTWHxaA12BSqyTKGuVidib5YJGMj9bmzi7hACmBSqzpSLw0-DqV3Oe7xuzb-9kWSuWEy7A9raiL6VuBreMYA7d8QkXFw0Q9XyZjjYfA"/>
-</div>
-<div class="flex-1">
-<textarea class="w-full min-h-[80px] bg-surface border border-border-color rounded-md p-3 text-[15px] text-text-main placeholder:text-text-muted focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors resize-y" placeholder="Add to the discussion..."></textarea>
-<div class="flex justify-end mt-2">
-<button class="h-8 px-4 bg-accent text-surface text-[13px] font-medium rounded-md hover:bg-text-main transition-colors uppercase tracking-[0.05em]">Post</button>
-</div>
-</div>
-</div>
-<!-- Comments List -->
-<div class="space-y-8">
-<!-- Comment 1 -->
-<div class="flex gap-4">
-<div class="w-8 h-8 rounded-md bg-border-color flex-shrink-0 overflow-hidden">
-<img alt="Alice avatar" class="w-full h-full object-cover" data-alt="Avatar for Alice" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCt9zFvO30sKq07lJ0bQ0seReGXFDQYtHMZ_MsHOw-4FHwUJNDcZwvAkdHmB_EChui1e1zIn94QjhHSH8MreZoLAM70kv3q1_Gy1-B_nJ0yvSOvpiMKqu7bgmYnE7IY4vtzBNuOOl8OTrzOtH8mt_m0srLKa6cWaEwj6ZKk6Bhx_KR9fNGxm1Sryk5l6iK72zBExpVMgQqyym83HLAcZVa7v6i6D-R-ypKvSze6e2R4WHU6KngfRDFmSOord99pNl60QekJ8cWuEc4"/>
-</div>
-<div class="flex flex-col gap-1">
-<div class="flex items-baseline gap-2">
-<span class="font-medium text-[15px] text-text-main">alicewebdev</span>
-<span class="text-[13px] text-text-muted">2 hours ago</span>
-</div>
-<p class="text-[15px] text-text-main leading-[1.6]">I've completely switched my workflow to use this approach. The fact that you own the code and aren't tied to an npm package's update cycle is a game changer for long-term maintainability.</p>
-</div>
-</div>
-<!-- Comment 2 -->
-<div class="flex gap-4">
-<div class="w-8 h-8 rounded-md bg-border-color flex-shrink-0 overflow-hidden">
-<img alt="Bob avatar" class="w-full h-full object-cover" data-alt="Avatar for Bob" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjvRDxQDJl_HAKeMoKltiMMa6i_p5Prsy40cF1OZWwsOZMHJ6DozO_9qTQ2A7LjviuzZL6zd7zLaK-rQXMz-8An03CyhM3VbQAYb8fK2cr53U8Iz8s1W3h21z9SfXLdNjkrz6knBha8mF4vjBjwTaStaDOoME2rKsVS0iCEbxsxQy1q4dsk7SzOv86c8t9PXP0jeHigI-g_T-5wqAy5ZAlYkWqFNAH6O9uerzJL0hGiBSUVqCsULjv7Tbbxg_Do43jkWNZfJloATA"/>
-</div>
-<div class="flex flex-col gap-1">
-<div class="flex items-baseline gap-2">
-<span class="font-medium text-[15px] text-text-main">bob_builder</span>
-<span class="text-[13px] text-text-muted">5 hours ago</span>
-</div>
-<p class="text-[15px] text-text-main leading-[1.6]">It's great, but it does mean your components folder gets massive quickly. Worth the trade-off though.</p>
-</div>
-</div>
-</div>
-</section>
-</div>
-<!-- Right Column: Sticky Sidebar (320px fixed) -->
-<aside class="hidden lg:block w-[320px] flex-shrink-0">
-<div class="sticky top-[120px] flex flex-col gap-6">
-<!-- Primary CTA -->
-<button class="w-full h-[48px] bg-primary text-text-main font-medium text-[14px] rounded-md hover:bg-[#B8E600] transition-colors flex items-center justify-center gap-2 shadow-[0_4px_12px_rgba(204,255,0,0.15)]">
-                        Visit Repository
-                        <span class="material-symbols-outlined text-[18px]">open_in_new</span>
-</button>
-<!-- GitHub Metrics Box -->
-<div class="bg-surface border border-border-color rounded-md p-6">
-<h3 class="text-[13px] uppercase tracking-[0.05em] text-text-muted mb-4 font-medium">Repository Stats</h3>
-<div class="grid grid-cols-2 gap-y-6 gap-x-4">
-<!-- Metric: Stars -->
-<div class="flex flex-col gap-1">
-<div class="flex items-center gap-1.5 text-text-muted">
-<span class="material-symbols-outlined text-[16px]">star</span>
-<span class="text-[13px]">Stars</span>
-</div>
-<span class="text-[18px] font-medium text-text-main">52.4k</span>
-</div>
-<!-- Metric: Forks -->
-<div class="flex flex-col gap-1">
-<div class="flex items-center gap-1.5 text-text-muted">
-<span class="material-symbols-outlined text-[16px]">fork_right</span>
-<span class="text-[13px]">Forks</span>
-</div>
-<span class="text-[18px] font-medium text-text-main">3.2k</span>
-</div>
-<!-- Metric: Issues -->
-<div class="flex flex-col gap-1">
-<div class="flex items-center gap-1.5 text-text-muted">
-<span class="material-symbols-outlined text-[16px]">error_outline</span>
-<span class="text-[13px]">Issues</span>
-</div>
-<span class="text-[18px] font-medium text-text-main">142</span>
-</div>
-<!-- Metric: License -->
-<div class="flex flex-col gap-1">
-<div class="flex items-center gap-1.5 text-text-muted">
-<span class="material-symbols-outlined text-[16px]">gavel</span>
-<span class="text-[13px]">License</span>
-</div>
-<span class="text-[18px] font-medium text-text-main">MIT</span>
-</div>
-</div>
-</div>
-<!-- Meta info -->
-<div class="flex items-center justify-between text-[13px] text-text-muted px-2">
-<span>Hunted by @design_enthusiast</span>
-<span>Nov 12, 2023</span>
-</div>
-</div>
-</aside>
-</div>
-</main>
-</body></html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+		<title>Repo Detail - VELO</title>
+		<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+			rel="stylesheet"
+		/>
+		<script id="tailwind-config">
+			tailwind.config = {
+				darkMode: 'class',
+				theme: {
+					extend: {
+						colors: {
+							primary: '#CCFF00',
+							'background-light': '#FAFAFA',
+							'background-dark': '#171717',
+							surface: '#FFFFFF',
+							'text-main': '#171717',
+							'text-muted': '#8B8D98',
+							'border-color': '#E4E4E5',
+							accent: '#000000'
+						},
+						fontFamily: {
+							display: ['Space Grotesk', 'sans-serif']
+						},
+						borderRadius: {
+							DEFAULT: '4px',
+							sm: '2px',
+							md: '4px',
+							lg: '4px',
+							xl: '4px',
+							full: '4px'
+						}
+					}
+				}
+			};
+		</script>
+		<style>
+			body {
+				font-family: 'Space Grotesk', sans-serif;
+				background-color: theme('colors.background-light');
+				color: theme('colors.text-main');
+			}
+		</style>
+	</head>
+	<body class="antialiased min-h-screen flex flex-col">
+		<!-- TopNavBar Shared Component -->
+		<div
+			class="relative flex h-auto w-full flex-col bg-surface group/design-root overflow-x-hidden border-b border-border-color"
+		>
+			<div class="layout-container flex h-full grow flex-col">
+				<div class="px-40 flex flex-1 justify-center py-5">
+					<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+						<header class="flex items-center justify-between whitespace-nowrap px-10 py-3">
+							<div class="flex items-center gap-8">
+								<div class="flex items-center gap-4 text-text-main">
+									<h2 class="text-text-main text-xl font-bold leading-tight tracking-[-0.02em]">
+										VELO
+									</h2>
+								</div>
+								<label class="flex flex-col min-w-40 !h-10 max-w-64">
+									<div
+										class="flex w-full flex-1 items-stretch rounded-md border border-border-color bg-background-light h-full focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-colors"
+									>
+										<div
+											class="text-text-muted flex border-none bg-transparent items-center justify-center pl-4 rounded-l-md"
+											data-icon="magnifying_glass"
+											data-size="24px"
+											data-weight="regular"
+										>
+											<span class="material-symbols-outlined text-[20px]">search</span>
+										</div>
+										<input
+											class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-md text-text-main focus:outline-0 focus:ring-0 border-none bg-transparent h-full placeholder:text-text-muted px-4 rounded-l-none pl-2 text-sm font-normal leading-normal"
+											placeholder="Search repositories..."
+											value=""
+										/>
+									</div>
+								</label>
+							</div>
+							<button
+								class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-10 px-6 bg-accent text-surface text-sm font-medium leading-normal hover:bg-text-main transition-colors"
+							>
+								<span class="truncate">Submit Repo</span>
+							</button>
+						</header>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Main Content Layout -->
+		<main class="flex-1 w-full max-w-[1040px] mx-auto px-6 py-12">
+			<div class="flex flex-col lg:flex-row gap-12 relative">
+				<!-- Left Column: Main Content (640px max) -->
+				<div class="flex-1 max-w-[640px] flex flex-col gap-20">
+					<!-- Hero Section -->
+					<section>
+						<h1
+							class="text-[32px] font-semibold tracking-[-0.02em] leading-tight text-text-main mb-2"
+						>
+							shadcn/ui
+						</h1>
+						<p class="text-[18px] font-normal text-text-muted leading-relaxed">
+							Beautifully designed components built with Radix UI and Tailwind CSS.
+						</p>
+					</section>
+					<!-- Media Gallery -->
+					<section class="flex flex-col gap-4">
+						<!-- Primary Asset Viewer -->
+						<div
+							class="w-full h-[400px] bg-surface border border-border-color rounded-md overflow-hidden flex items-center justify-center bg-background-light shadow-[0_4px_12px_rgba(0,0,0,0.02)]"
+						>
+							<img
+								alt="Code editor showing React components"
+								class="w-full h-full object-cover"
+								data-alt="Code editor showing React components"
+								src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMKF5uRdsuBrRwkTJBqyu9VFYIn2UAREzPhg7wGiScliMvZDUHL0PS93v9YBpQxqrm5oEQN2cVIZIrIHcZM2qpxmVLnEOoowkpmRrMZkHVIJdZg81d4KLNP5Htj94tN2bVlvWwBUMNaYSOUCeS6x-zNM8pQ7AWF6NF6kH2fqIwIwCNDqis4fW231duJ2h7VIsRMrQl9GD4gks0a4kIdfaquzZj4iFVo1eFjDFVnzn5C7JnL0P0aDkV5wdHk39tcC0ye2Ed5IwwxJM"
+							/>
+						</div>
+						<!-- Thumbnail Strip -->
+						<div class="flex gap-4 overflow-x-auto pb-2 scrollbar-hide">
+							<button
+								class="flex-shrink-0 w-[120px] h-[80px] rounded-md overflow-hidden border-2 border-accent transition-colors"
+							>
+								<img
+									alt="Thumbnail 1"
+									class="w-full h-full object-cover"
+									data-alt="Code editor showing React components"
+									src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5-NY-_nWRWtv3BCUYcoSNMsSzx7CmQeTg3IrCqEroomYmMU2pfHP4cla8KG12Ni53R_mHQ1wVoOATSZfTAoYVpMy3W-KltN9hRUA9wkUAIfpu3uYxBVKrSlHo-faHqdQ7c3zNirByhNt5u4xukobZ_SDCVKiYym39ayo_gmO1gRlfZ0QCyovnunyYJ7Q97Eb53yZUPwvWd7IEJoqvo2w178KapL16vd9yxDUFDpr7upaEdrpiComZgNfCs4vv-Cq5jAET9iUGdCM"
+								/>
+							</button>
+							<button
+								class="flex-shrink-0 w-[120px] h-[80px] rounded-md overflow-hidden border border-border-color hover:border-text-muted transition-colors opacity-70 hover:opacity-100"
+							>
+								<div class="w-full h-full bg-background-light flex items-center justify-center">
+									<span class="material-symbols-outlined text-text-muted text-[32px]"
+										>play_circle</span
+									>
+								</div>
+							</button>
+							<button
+								class="flex-shrink-0 w-[120px] h-[80px] rounded-md overflow-hidden border border-border-color hover:border-text-muted transition-colors opacity-70 hover:opacity-100"
+							>
+								<img
+									alt="Thumbnail 3"
+									class="w-full h-full object-cover"
+									data-alt="Dark theme UI components"
+									src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3EdgtvXViSHJCUTKAFa89Sl56spUkOiS9kZvWVsh7NTPd7rb2ySxbN8mZfVrGOLRJN81ZLLnfG_7-OvMZqFMkxDCLC3_rdI-CJlx3msfuyMr2k_cWjmrf3ggUyuUbOkAlIePUEftsuOM2DXMQXn3YeKyxDsh0F_x-dTobPqTTCYhAUPsb124dzyuSwqm5-DvHUOjvW2rlC0ieCM39Xn7mpK4WWAJK4tEKhd54Qp01SjxoifIa8OrYHdEE1uLrg-izo82GTHSWnHM"
+								/>
+							</button>
+						</div>
+					</section>
+					<!-- Curated Pros and Cons -->
+					<section>
+						<div
+							class="bg-surface border border-border-color rounded-md p-8 shadow-[0_4px_12px_rgba(0,0,0,0.02)]"
+						>
+							<div class="flex flex-col sm:flex-row gap-8">
+								<!-- Pros -->
+								<div class="flex-1">
+									<h3 class="text-[18px] font-medium text-text-main mb-6 flex items-center gap-2">
+										<span
+											class="material-symbols-outlined text-primary text-[20px]"
+											style="font-variation-settings: 'FILL' 1"
+											>add_circle</span
+										>
+										Pros
+									</h3>
+									<ul class="space-y-4">
+										<li class="flex items-start gap-3 text-[15px] leading-[1.6]">
+											<span class="text-text-muted mt-1">-</span>
+											<span
+												>Full control over the code; it's not a dependency you install, it's code
+												you copy.</span
+											>
+										</li>
+										<li class="flex items-start gap-3 text-[15px] leading-[1.6]">
+											<span class="text-text-muted mt-1">-</span>
+											<span>Highly accessible out of the box thanks to Radix UI primitives.</span>
+										</li>
+										<li class="flex items-start gap-3 text-[15px] leading-[1.6]">
+											<span class="text-text-muted mt-1">-</span>
+											<span>Easily styled and customized with Tailwind CSS utility classes.</span>
+										</li>
+									</ul>
+								</div>
+								<!-- Divider (sm+) -->
+								<div class="hidden sm:block w-[1px] bg-border-color"></div>
+								<!-- Cons -->
+								<div class="flex-1">
+									<h3 class="text-[18px] font-medium text-text-main mb-6 flex items-center gap-2">
+										<span class="material-symbols-outlined text-text-muted text-[20px]"
+											>remove_circle_outline</span
+										>
+										Cons
+									</h3>
+									<ul class="space-y-4">
+										<li class="flex items-start gap-3 text-[15px] leading-[1.6]">
+											<span class="text-text-muted mt-1">-</span>
+											<span>Requires a specific tech stack (React, Tailwind, Radix).</span>
+										</li>
+										<li class="flex items-start gap-3 text-[15px] leading-[1.6]">
+											<span class="text-text-muted mt-1">-</span>
+											<span>Updates to upstream components require manual code merges.</span>
+										</li>
+										<li class="flex items-start gap-3 text-[15px] leading-[1.6]">
+											<span class="text-text-muted mt-1">-</span>
+											<span
+												>Can clutter the project structure with many small component files.</span
+											>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- Alternatives / Compare -->
+					<section>
+						<h2 class="text-[18px] font-medium text-text-main mb-6">Alternatives</h2>
+						<div class="relative mb-6">
+							<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+								<span class="material-symbols-outlined text-text-muted text-[20px]">search</span>
+							</div>
+							<input
+								class="w-full h-[48px] bg-background-light border border-border-color rounded-md pl-11 pr-4 text-[15px] text-text-main placeholder:text-text-muted focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
+								placeholder="Compare with another library..."
+								type="text"
+							/>
+						</div>
+						<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+							<!-- Mini Card 1 -->
+							<div
+								class="bg-surface border border-border-color rounded-md p-4 flex flex-col gap-2 hover:border-accent hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] transition-all cursor-pointer group"
+							>
+								<div class="flex items-center justify-between">
+									<h4 class="font-medium text-text-main text-[15px]">MUI</h4>
+									<span
+										class="material-symbols-outlined text-text-muted text-[16px] group-hover:text-primary transition-colors"
+										>arrow_forward</span
+									>
+								</div>
+								<p class="text-[13px] text-text-muted truncate">
+									A comprehensive suite of UI tools for React.
+								</p>
+							</div>
+							<!-- Mini Card 2 -->
+							<div
+								class="bg-surface border border-border-color rounded-md p-4 flex flex-col gap-2 hover:border-accent hover:shadow-[0_4px_12px_rgba(0,0,0,0.05)] transition-all cursor-pointer group"
+							>
+								<div class="flex items-center justify-between">
+									<h4 class="font-medium text-text-main text-[15px]">Chakra UI</h4>
+									<span
+										class="material-symbols-outlined text-text-muted text-[16px] group-hover:text-primary transition-colors"
+										>arrow_forward</span
+									>
+								</div>
+								<p class="text-[13px] text-text-muted truncate">
+									Simple, Modular &amp; Accessible UI Components.
+								</p>
+							</div>
+						</div>
+					</section>
+					<!-- Comment Thread -->
+					<section>
+						<h2
+							class="text-[18px] font-medium text-text-main mb-8 border-b border-border-color pb-4"
+						>
+							Discussion (4)
+						</h2>
+						<!-- Comment Input Area -->
+						<div class="flex gap-4 mb-10">
+							<div class="w-8 h-8 rounded-md bg-border-color flex-shrink-0 overflow-hidden">
+								<img
+									alt="Current user avatar"
+									class="w-full h-full object-cover"
+									data-alt="Current user avatar"
+									src="https://lh3.googleusercontent.com/aida-public/AB6AXuDc7PoFj-_G1rgyTv9_OkpCMHVAaNHHz7gBvW82agYyhhmWc8PNZGWE-aIzgBo2D2PuSBnOzo6y5JvtwwsiJJnrBmfoIKjcq9micKmjrv7mDXczrP105vOanYfKEnjpL8IhGj7IORuZtMJU7bYbna5kRC7VcjIa-A4JhT5BpTWHxaA12BSqyTKGuVidib5YJGMj9bmzi7hACmBSqzpSLw0-DqV3Oe7xuzb-9kWSuWEy7A9raiL6VuBreMYA7d8QkXFw0Q9XyZjjYfA"
+								/>
+							</div>
+							<div class="flex-1">
+								<textarea
+									class="w-full min-h-[80px] bg-surface border border-border-color rounded-md p-3 text-[15px] text-text-main placeholder:text-text-muted focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors resize-y"
+									placeholder="Add to the discussion..."
+								></textarea>
+								<div class="flex justify-end mt-2">
+									<button
+										class="h-8 px-4 bg-accent text-surface text-[13px] font-medium rounded-md hover:bg-text-main transition-colors uppercase tracking-[0.05em]"
+									>
+										Post
+									</button>
+								</div>
+							</div>
+						</div>
+						<!-- Comments List -->
+						<div class="space-y-8">
+							<!-- Comment 1 -->
+							<div class="flex gap-4">
+								<div class="w-8 h-8 rounded-md bg-border-color flex-shrink-0 overflow-hidden">
+									<img
+										alt="Alice avatar"
+										class="w-full h-full object-cover"
+										data-alt="Avatar for Alice"
+										src="https://lh3.googleusercontent.com/aida-public/AB6AXuCt9zFvO30sKq07lJ0bQ0seReGXFDQYtHMZ_MsHOw-4FHwUJNDcZwvAkdHmB_EChui1e1zIn94QjhHSH8MreZoLAM70kv3q1_Gy1-B_nJ0yvSOvpiMKqu7bgmYnE7IY4vtzBNuOOl8OTrzOtH8mt_m0srLKa6cWaEwj6ZKk6Bhx_KR9fNGxm1Sryk5l6iK72zBExpVMgQqyym83HLAcZVa7v6i6D-R-ypKvSze6e2R4WHU6KngfRDFmSOord99pNl60QekJ8cWuEc4"
+									/>
+								</div>
+								<div class="flex flex-col gap-1">
+									<div class="flex items-baseline gap-2">
+										<span class="font-medium text-[15px] text-text-main">alicewebdev</span>
+										<span class="text-[13px] text-text-muted">2 hours ago</span>
+									</div>
+									<p class="text-[15px] text-text-main leading-[1.6]">
+										I've completely switched my workflow to use this approach. The fact that you own
+										the code and aren't tied to an npm package's update cycle is a game changer for
+										long-term maintainability.
+									</p>
+								</div>
+							</div>
+							<!-- Comment 2 -->
+							<div class="flex gap-4">
+								<div class="w-8 h-8 rounded-md bg-border-color flex-shrink-0 overflow-hidden">
+									<img
+										alt="Bob avatar"
+										class="w-full h-full object-cover"
+										data-alt="Avatar for Bob"
+										src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjvRDxQDJl_HAKeMoKltiMMa6i_p5Prsy40cF1OZWwsOZMHJ6DozO_9qTQ2A7LjviuzZL6zd7zLaK-rQXMz-8An03CyhM3VbQAYb8fK2cr53U8Iz8s1W3h21z9SfXLdNjkrz6knBha8mF4vjBjwTaStaDOoME2rKsVS0iCEbxsxQy1q4dsk7SzOv86c8t9PXP0jeHigI-g_T-5wqAy5ZAlYkWqFNAH6O9uerzJL0hGiBSUVqCsULjv7Tbbxg_Do43jkWNZfJloATA"
+									/>
+								</div>
+								<div class="flex flex-col gap-1">
+									<div class="flex items-baseline gap-2">
+										<span class="font-medium text-[15px] text-text-main">bob_builder</span>
+										<span class="text-[13px] text-text-muted">5 hours ago</span>
+									</div>
+									<p class="text-[15px] text-text-main leading-[1.6]">
+										It's great, but it does mean your components folder gets massive quickly. Worth
+										the trade-off though.
+									</p>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+				<!-- Right Column: Sticky Sidebar (320px fixed) -->
+				<aside class="hidden lg:block w-[320px] flex-shrink-0">
+					<div class="sticky top-[120px] flex flex-col gap-6">
+						<!-- Primary CTA -->
+						<button
+							class="w-full h-[48px] bg-primary text-text-main font-medium text-[14px] rounded-md hover:bg-[#B8E600] transition-colors flex items-center justify-center gap-2 shadow-[0_4px_12px_rgba(204,255,0,0.15)]"
+						>
+							Visit Repository
+							<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+						</button>
+						<!-- GitHub Metrics Box -->
+						<div class="bg-surface border border-border-color rounded-md p-6">
+							<h3 class="text-[13px] uppercase tracking-[0.05em] text-text-muted mb-4 font-medium">
+								Repository Stats
+							</h3>
+							<div class="grid grid-cols-2 gap-y-6 gap-x-4">
+								<!-- Metric: Stars -->
+								<div class="flex flex-col gap-1">
+									<div class="flex items-center gap-1.5 text-text-muted">
+										<span class="material-symbols-outlined text-[16px]">star</span>
+										<span class="text-[13px]">Stars</span>
+									</div>
+									<span class="text-[18px] font-medium text-text-main">52.4k</span>
+								</div>
+								<!-- Metric: Forks -->
+								<div class="flex flex-col gap-1">
+									<div class="flex items-center gap-1.5 text-text-muted">
+										<span class="material-symbols-outlined text-[16px]">fork_right</span>
+										<span class="text-[13px]">Forks</span>
+									</div>
+									<span class="text-[18px] font-medium text-text-main">3.2k</span>
+								</div>
+								<!-- Metric: Issues -->
+								<div class="flex flex-col gap-1">
+									<div class="flex items-center gap-1.5 text-text-muted">
+										<span class="material-symbols-outlined text-[16px]">error_outline</span>
+										<span class="text-[13px]">Issues</span>
+									</div>
+									<span class="text-[18px] font-medium text-text-main">142</span>
+								</div>
+								<!-- Metric: License -->
+								<div class="flex flex-col gap-1">
+									<div class="flex items-center gap-1.5 text-text-muted">
+										<span class="material-symbols-outlined text-[16px]">gavel</span>
+										<span class="text-[13px]">License</span>
+									</div>
+									<span class="text-[18px] font-medium text-text-main">MIT</span>
+								</div>
+							</div>
+						</div>
+						<!-- Meta info -->
+						<div class="flex items-center justify-between text-[13px] text-text-muted px-2">
+							<span>Hunted by @design_enthusiast</span>
+							<span>Nov 12, 2023</span>
+						</div>
+					</div>
+				</aside>
+			</div>
+		</main>
+	</body>
+</html>

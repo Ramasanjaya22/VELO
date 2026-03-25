@@ -302,7 +302,9 @@ async function scrapeGitHubTrending(): Promise<void> {
 
 	console.log('\n[INFO] Top 5:');
 	data.products.slice(0, 5).forEach((p, i) => {
-		console.log(`  ${i + 1}. ${p.name} - Score: ${(p.score ?? 0).toFixed(1)} (${p.category ?? 'general'})`);
+		console.log(
+			`  ${i + 1}. ${p.name} - Score: ${(p.score ?? 0).toFixed(1)} (${p.category ?? 'general'})`
+		);
 	});
 }
 

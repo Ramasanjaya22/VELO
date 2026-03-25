@@ -1,276 +1,256 @@
 {
-  "lastUpdated": "2026-03-25T07:34:36.876Z",
-  "source": "github-trending-weekly",
-  "products": [
-    {
-      "rank": 1,
-      "name": "Crosstalk-Solutions/project-nomad",
-      "slug": "crosstalk-solutions-project-nomad",
-      "url": "https://github.com/Crosstalk-Solutions/project-nomad",
-      "description": "Project N.O.M.A.D, is a self-contained, offline survival computer packed with critical tools, knowledge, and AI to keep you informed and empowered—anytime, anywhere.",
-      "category": "TypeScript",
-      "useCases": [],
-      "bestFor": [],
-      "pricingModel": "unknown",
-      "affiliateAvailable": false,
-      "trustScore": 65,
-      "score": 55.6,
-      "logoUrl": "https://avatars.githubusercontent.com/u/52841588?s=40&v=4",
-      "updatedAt": "2026-03-25T07:34:36.873Z",
-      "sourceIds": [
-        "github:crosstalk-solutions-project-nomad"
-      ],
-      "legacy": {
-        "language": "TypeScript",
-        "stars": 15392,
-        "starsGrowth": 12165,
-        "forks": 1469,
-        "topics": [],
-        "contributors": 1
-      }
-    },
-    {
-      "rank": 2,
-      "name": "jarrodwatts/claude-hud",
-      "slug": "jarrodwatts-claude-hud",
-      "url": "https://github.com/jarrodwatts/claude-hud",
-      "description": "A Claude Code plugin that shows what's happening - context usage, active tools, running agents, and todo progress",
-      "category": "JavaScript",
-      "useCases": [],
-      "bestFor": [],
-      "pricingModel": "unknown",
-      "affiliateAvailable": false,
-      "trustScore": 65,
-      "score": 53.2,
-      "logoUrl": "https://avatars.githubusercontent.com/u/35651410?s=40&v=4",
-      "updatedAt": "2026-03-25T07:34:36.873Z",
-      "sourceIds": [
-        "github:jarrodwatts-claude-hud"
-      ],
-      "legacy": {
-        "language": "JavaScript",
-        "stars": 12698,
-        "starsGrowth": 7304,
-        "forks": 524,
-        "topics": [],
-        "contributors": 1
-      }
-    },
-    {
-      "rank": 3,
-      "name": "unslothai/unsloth",
-      "slug": "unslothai-unsloth",
-      "url": "https://github.com/unslothai/unsloth",
-      "description": "Unsloth Studio is a web UI for training and running open models like Qwen, DeepSeek, gpt-oss and Gemma locally.",
-      "category": "Python",
-      "useCases": [],
-      "bestFor": [],
-      "pricingModel": "unknown",
-      "affiliateAvailable": false,
-      "trustScore": 65,
-      "score": 53.2,
-      "logoUrl": "https://avatars.githubusercontent.com/u/23090290?s=40&v=4",
-      "updatedAt": "2026-03-25T07:34:36.873Z",
-      "sourceIds": [
-        "github:unslothai-unsloth"
-      ],
-      "legacy": {
-        "language": "Python",
-        "stars": 58045,
-        "starsGrowth": 3905,
-        "forks": 4892,
-        "topics": [],
-        "contributors": 1
-      }
-    },
-    {
-      "rank": 4,
-      "name": "bytedance/deer-flow",
-      "slug": "bytedance-deer-flow",
-      "url": "https://github.com/bytedance/deer-flow",
-      "description": "An open-source SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of tasks that could take minutes to hours.",
-      "category": "Python",
-      "useCases": [],
-      "bestFor": [],
-      "pricingModel": "unknown",
-      "affiliateAvailable": false,
-      "trustScore": 65,
-      "score": 53.2,
-      "logoUrl": "https://avatars.githubusercontent.com/u/1003147?s=40&v=4",
-      "updatedAt": "2026-03-25T07:34:36.873Z",
-      "sourceIds": [
-        "github:bytedance-deer-flow"
-      ],
-      "legacy": {
-        "language": "Python",
-        "stars": 43491,
-        "starsGrowth": 10273,
-        "forks": 5112,
-        "topics": [],
-        "contributors": 1
-      }
-    },
-    {
-      "rank": 5,
-      "name": "obra/superpowers",
-      "slug": "obra-superpowers",
-      "url": "https://github.com/obra/superpowers",
-      "description": "An agentic skills framework & software development methodology that works.",
-      "category": "Shell",
-      "useCases": [],
-      "bestFor": [],
-      "pricingModel": "unknown",
-      "affiliateAvailable": false,
-      "trustScore": 65,
-      "score": 52.7,
-      "logoUrl": "https://avatars.githubusercontent.com/u/45416?s=40&v=4",
-      "updatedAt": "2026-03-25T07:34:36.873Z",
-      "sourceIds": [
-        "github:obra-superpowers"
-      ],
-      "legacy": {
-        "language": "Shell",
-        "stars": 110577,
-        "starsGrowth": 19373,
-        "forks": 8869,
-        "topics": [],
-        "contributors": 1
-      }
-    },
-    {
-      "rank": 6,
-      "name": "harry0703/MoneyPrinterTurbo",
-      "slug": "harry0703-moneyprinterturbo",
-      "url": "https://github.com/harry0703/MoneyPrinterTurbo",
-      "description": "利用AI大模型，一键生成高清短视频 Generate short videos with one click using AI LLM.",
-      "category": "Python",
-      "useCases": [],
-      "bestFor": [],
-      "pricingModel": "unknown",
-      "affiliateAvailable": false,
-      "trustScore": 65,
-      "score": 52.7,
-      "logoUrl": "https://avatars.githubusercontent.com/u/4928832?s=40&v=4",
-      "updatedAt": "2026-03-25T07:34:36.873Z",
-      "sourceIds": [
-        "github:harry0703-moneyprinterturbo"
-      ],
-      "legacy": {
-        "language": "Python",
-        "stars": 52671,
-        "starsGrowth": 2147,
-        "forks": 7451,
-        "topics": [],
-        "contributors": 1
-      }
-    },
-    {
-      "rank": 7,
-      "name": "affaan-m/everything-claude-code",
-      "slug": "affaan-m-everything-claude-code",
-      "url": "https://github.com/affaan-m/everything-claude-code",
-      "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
-      "category": "JavaScript",
-      "useCases": [],
-      "bestFor": [],
-      "pricingModel": "unknown",
-      "affiliateAvailable": false,
-      "trustScore": 65,
-      "score": 50.8,
-      "logoUrl": "https://avatars.githubusercontent.com/u/124439313?s=40&v=4",
-      "updatedAt": "2026-03-25T07:34:36.873Z",
-      "sourceIds": [
-        "github:affaan-m-everything-claude-code"
-      ],
-      "legacy": {
-        "language": "JavaScript",
-        "stars": 105067,
-        "starsGrowth": 21932,
-        "forks": 13662,
-        "topics": [],
-        "contributors": 1
-      }
-    },
-    {
-      "rank": 8,
-      "name": "666ghj/MiroFish",
-      "slug": "666ghj-mirofish",
-      "url": "https://github.com/666ghj/MiroFish",
-      "description": "A Simple and Universal Swarm Intelligence Engine, Predicting Anything. 简洁通用的群体智能引擎，预测万物",
-      "category": "Python",
-      "useCases": [],
-      "bestFor": [],
-      "pricingModel": "unknown",
-      "affiliateAvailable": false,
-      "trustScore": 65,
-      "score": 50.8,
-      "logoUrl": "https://avatars.githubusercontent.com/u/110395318?s=40&v=4",
-      "updatedAt": "2026-03-25T07:34:36.873Z",
-      "sourceIds": [
-        "github:666ghj-mirofish"
-      ],
-      "legacy": {
-        "language": "Python",
-        "stars": 41882,
-        "starsGrowth": 9935,
-        "forks": 5735,
-        "topics": [],
-        "contributors": 1
-      }
-    },
-    {
-      "rank": 9,
-      "name": "TauricResearch/TradingAgents",
-      "slug": "tauricresearch-tradingagents",
-      "url": "https://github.com/TauricResearch/TradingAgents",
-      "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
-      "category": "Python",
-      "useCases": [],
-      "bestFor": [],
-      "pricingModel": "unknown",
-      "affiliateAvailable": false,
-      "trustScore": 65,
-      "score": 50.3,
-      "logoUrl": "https://avatars.githubusercontent.com/u/48253104?s=40&v=4",
-      "updatedAt": "2026-03-25T07:34:36.873Z",
-      "sourceIds": [
-        "github:tauricresearch-tradingagents"
-      ],
-      "legacy": {
-        "language": "Python",
-        "stars": 40920,
-        "starsGrowth": 7784,
-        "forks": 7531,
-        "topics": [],
-        "contributors": 1
-      }
-    },
-    {
-      "rank": 10,
-      "name": "FujiwaraChoki/MoneyPrinterV2",
-      "slug": "fujiwarachoki-moneyprinterv2",
-      "url": "https://github.com/FujiwaraChoki/MoneyPrinterV2",
-      "description": "Automate the process of making money online.",
-      "category": "Python",
-      "useCases": [],
-      "bestFor": [],
-      "pricingModel": "unknown",
-      "affiliateAvailable": false,
-      "trustScore": 65,
-      "score": 48.8,
-      "logoUrl": "https://avatars.githubusercontent.com/u/78088687?s=40&v=4",
-      "updatedAt": "2026-03-25T07:34:36.873Z",
-      "sourceIds": [
-        "github:fujiwarachoki-moneyprinterv2"
-      ],
-      "legacy": {
-        "language": "Python",
-        "stars": 24875,
-        "starsGrowth": 9287,
-        "forks": 2579,
-        "topics": [],
-        "contributors": 1
-      }
-    }
-  ]
+	"lastUpdated": "2026-03-25T07:34:36.876Z",
+	"source": "github-trending-weekly",
+	"products": [
+		{
+			"rank": 1,
+			"name": "Crosstalk-Solutions/project-nomad",
+			"slug": "crosstalk-solutions-project-nomad",
+			"url": "https://github.com/Crosstalk-Solutions/project-nomad",
+			"description": "Project N.O.M.A.D, is a self-contained, offline survival computer packed with critical tools, knowledge, and AI to keep you informed and empowered—anytime, anywhere.",
+			"category": "TypeScript",
+			"useCases": [],
+			"bestFor": [],
+			"pricingModel": "unknown",
+			"affiliateAvailable": false,
+			"trustScore": 65,
+			"score": 55.6,
+			"logoUrl": "https://avatars.githubusercontent.com/u/52841588?s=40&v=4",
+			"updatedAt": "2026-03-25T07:34:36.873Z",
+			"sourceIds": ["github:crosstalk-solutions-project-nomad"],
+			"legacy": {
+				"language": "TypeScript",
+				"stars": 15392,
+				"starsGrowth": 12165,
+				"forks": 1469,
+				"topics": [],
+				"contributors": 1
+			}
+		},
+		{
+			"rank": 2,
+			"name": "jarrodwatts/claude-hud",
+			"slug": "jarrodwatts-claude-hud",
+			"url": "https://github.com/jarrodwatts/claude-hud",
+			"description": "A Claude Code plugin that shows what's happening - context usage, active tools, running agents, and todo progress",
+			"category": "JavaScript",
+			"useCases": [],
+			"bestFor": [],
+			"pricingModel": "unknown",
+			"affiliateAvailable": false,
+			"trustScore": 65,
+			"score": 53.2,
+			"logoUrl": "https://avatars.githubusercontent.com/u/35651410?s=40&v=4",
+			"updatedAt": "2026-03-25T07:34:36.873Z",
+			"sourceIds": ["github:jarrodwatts-claude-hud"],
+			"legacy": {
+				"language": "JavaScript",
+				"stars": 12698,
+				"starsGrowth": 7304,
+				"forks": 524,
+				"topics": [],
+				"contributors": 1
+			}
+		},
+		{
+			"rank": 3,
+			"name": "unslothai/unsloth",
+			"slug": "unslothai-unsloth",
+			"url": "https://github.com/unslothai/unsloth",
+			"description": "Unsloth Studio is a web UI for training and running open models like Qwen, DeepSeek, gpt-oss and Gemma locally.",
+			"category": "Python",
+			"useCases": [],
+			"bestFor": [],
+			"pricingModel": "unknown",
+			"affiliateAvailable": false,
+			"trustScore": 65,
+			"score": 53.2,
+			"logoUrl": "https://avatars.githubusercontent.com/u/23090290?s=40&v=4",
+			"updatedAt": "2026-03-25T07:34:36.873Z",
+			"sourceIds": ["github:unslothai-unsloth"],
+			"legacy": {
+				"language": "Python",
+				"stars": 58045,
+				"starsGrowth": 3905,
+				"forks": 4892,
+				"topics": [],
+				"contributors": 1
+			}
+		},
+		{
+			"rank": 4,
+			"name": "bytedance/deer-flow",
+			"slug": "bytedance-deer-flow",
+			"url": "https://github.com/bytedance/deer-flow",
+			"description": "An open-source SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message gateway, it handles different levels of tasks that could take minutes to hours.",
+			"category": "Python",
+			"useCases": [],
+			"bestFor": [],
+			"pricingModel": "unknown",
+			"affiliateAvailable": false,
+			"trustScore": 65,
+			"score": 53.2,
+			"logoUrl": "https://avatars.githubusercontent.com/u/1003147?s=40&v=4",
+			"updatedAt": "2026-03-25T07:34:36.873Z",
+			"sourceIds": ["github:bytedance-deer-flow"],
+			"legacy": {
+				"language": "Python",
+				"stars": 43491,
+				"starsGrowth": 10273,
+				"forks": 5112,
+				"topics": [],
+				"contributors": 1
+			}
+		},
+		{
+			"rank": 5,
+			"name": "obra/superpowers",
+			"slug": "obra-superpowers",
+			"url": "https://github.com/obra/superpowers",
+			"description": "An agentic skills framework & software development methodology that works.",
+			"category": "Shell",
+			"useCases": [],
+			"bestFor": [],
+			"pricingModel": "unknown",
+			"affiliateAvailable": false,
+			"trustScore": 65,
+			"score": 52.7,
+			"logoUrl": "https://avatars.githubusercontent.com/u/45416?s=40&v=4",
+			"updatedAt": "2026-03-25T07:34:36.873Z",
+			"sourceIds": ["github:obra-superpowers"],
+			"legacy": {
+				"language": "Shell",
+				"stars": 110577,
+				"starsGrowth": 19373,
+				"forks": 8869,
+				"topics": [],
+				"contributors": 1
+			}
+		},
+		{
+			"rank": 6,
+			"name": "harry0703/MoneyPrinterTurbo",
+			"slug": "harry0703-moneyprinterturbo",
+			"url": "https://github.com/harry0703/MoneyPrinterTurbo",
+			"description": "利用AI大模型，一键生成高清短视频 Generate short videos with one click using AI LLM.",
+			"category": "Python",
+			"useCases": [],
+			"bestFor": [],
+			"pricingModel": "unknown",
+			"affiliateAvailable": false,
+			"trustScore": 65,
+			"score": 52.7,
+			"logoUrl": "https://avatars.githubusercontent.com/u/4928832?s=40&v=4",
+			"updatedAt": "2026-03-25T07:34:36.873Z",
+			"sourceIds": ["github:harry0703-moneyprinterturbo"],
+			"legacy": {
+				"language": "Python",
+				"stars": 52671,
+				"starsGrowth": 2147,
+				"forks": 7451,
+				"topics": [],
+				"contributors": 1
+			}
+		},
+		{
+			"rank": 7,
+			"name": "affaan-m/everything-claude-code",
+			"slug": "affaan-m-everything-claude-code",
+			"url": "https://github.com/affaan-m/everything-claude-code",
+			"description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+			"category": "JavaScript",
+			"useCases": [],
+			"bestFor": [],
+			"pricingModel": "unknown",
+			"affiliateAvailable": false,
+			"trustScore": 65,
+			"score": 50.8,
+			"logoUrl": "https://avatars.githubusercontent.com/u/124439313?s=40&v=4",
+			"updatedAt": "2026-03-25T07:34:36.873Z",
+			"sourceIds": ["github:affaan-m-everything-claude-code"],
+			"legacy": {
+				"language": "JavaScript",
+				"stars": 105067,
+				"starsGrowth": 21932,
+				"forks": 13662,
+				"topics": [],
+				"contributors": 1
+			}
+		},
+		{
+			"rank": 8,
+			"name": "666ghj/MiroFish",
+			"slug": "666ghj-mirofish",
+			"url": "https://github.com/666ghj/MiroFish",
+			"description": "A Simple and Universal Swarm Intelligence Engine, Predicting Anything. 简洁通用的群体智能引擎，预测万物",
+			"category": "Python",
+			"useCases": [],
+			"bestFor": [],
+			"pricingModel": "unknown",
+			"affiliateAvailable": false,
+			"trustScore": 65,
+			"score": 50.8,
+			"logoUrl": "https://avatars.githubusercontent.com/u/110395318?s=40&v=4",
+			"updatedAt": "2026-03-25T07:34:36.873Z",
+			"sourceIds": ["github:666ghj-mirofish"],
+			"legacy": {
+				"language": "Python",
+				"stars": 41882,
+				"starsGrowth": 9935,
+				"forks": 5735,
+				"topics": [],
+				"contributors": 1
+			}
+		},
+		{
+			"rank": 9,
+			"name": "TauricResearch/TradingAgents",
+			"slug": "tauricresearch-tradingagents",
+			"url": "https://github.com/TauricResearch/TradingAgents",
+			"description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
+			"category": "Python",
+			"useCases": [],
+			"bestFor": [],
+			"pricingModel": "unknown",
+			"affiliateAvailable": false,
+			"trustScore": 65,
+			"score": 50.3,
+			"logoUrl": "https://avatars.githubusercontent.com/u/48253104?s=40&v=4",
+			"updatedAt": "2026-03-25T07:34:36.873Z",
+			"sourceIds": ["github:tauricresearch-tradingagents"],
+			"legacy": {
+				"language": "Python",
+				"stars": 40920,
+				"starsGrowth": 7784,
+				"forks": 7531,
+				"topics": [],
+				"contributors": 1
+			}
+		},
+		{
+			"rank": 10,
+			"name": "FujiwaraChoki/MoneyPrinterV2",
+			"slug": "fujiwarachoki-moneyprinterv2",
+			"url": "https://github.com/FujiwaraChoki/MoneyPrinterV2",
+			"description": "Automate the process of making money online.",
+			"category": "Python",
+			"useCases": [],
+			"bestFor": [],
+			"pricingModel": "unknown",
+			"affiliateAvailable": false,
+			"trustScore": 65,
+			"score": 48.8,
+			"logoUrl": "https://avatars.githubusercontent.com/u/78088687?s=40&v=4",
+			"updatedAt": "2026-03-25T07:34:36.873Z",
+			"sourceIds": ["github:fujiwarachoki-moneyprinterv2"],
+			"legacy": {
+				"language": "Python",
+				"stars": 24875,
+				"starsGrowth": 9287,
+				"forks": 2579,
+				"topics": [],
+				"contributors": 1
+			}
+		}
+	]
 }

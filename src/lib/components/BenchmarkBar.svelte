@@ -36,7 +36,10 @@
 					<span class="benchmark-label">{item.label}</span>
 					<span class="benchmark-score">{item.score.toFixed(1)}</span>
 					{#if !item.isThisTool && getDelta(item, items)}
-						<span class="benchmark-delta" class:positive={item.score > (items.find((i) => i.isThisTool)?.score ?? 0)}>
+						<span
+							class="benchmark-delta"
+							class:positive={item.score > (items.find((i) => i.isThisTool)?.score ?? 0)}
+						>
 							({getDelta(item, items)})
 						</span>
 					{/if}
@@ -117,7 +120,11 @@
 	}
 
 	.benchmark-bar-fill.is-this-tool {
-		background: linear-gradient(90deg, var(--accent-dim), color-mix(in srgb, var(--accent-dim) 55%, var(--metal-900)));
+		background: linear-gradient(
+			90deg,
+			var(--accent-dim),
+			color-mix(in srgb, var(--accent-dim) 55%, var(--metal-900))
+		);
 	}
 
 	.benchmark-marker {

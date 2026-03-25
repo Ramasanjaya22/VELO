@@ -95,6 +95,14 @@
 <svelte:head>
 	<title>Archive — VELO</title>
 	<meta name="description" content="Saved AI tools archive with search and category filters." />
+	<meta property="og:title" content="Archive — VELO" />
+	<meta property="og:description" content="Saved AI tools archive with search and category filters." />
+	<meta property="og:type" content="website" />
+	<meta property="og:image" content="https://velo-428.pages.dev/og-image.svg" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Archive — VELO" />
+	<meta name="twitter:description" content="Saved AI tools archive with search and category filters." />
+	<meta name="twitter:image" content="https://velo-428.pages.dev/og-image.svg" />
 </svelte:head>
 
 <main class="w-full max-w-[1280px] mx-auto px-6 py-10 lg:py-12" in:fly={{ y: 16, duration: 320 }}>
@@ -102,7 +110,7 @@
 		<header class="space-y-3">
 			<div class="inline-flex items-center gap-3">
 				<div
-					class="size-9 border border-metal-900 bg-metal-900 text-surface rounded-sm flex items-center justify-center"
+				class="size-9 border border-metal-900 bg-metal-100 text-metal-900 rounded-sm flex items-center justify-center"
 				>
 					<Icon data={layersIcon} size="16px" color="currentColor" />
 				</div>
