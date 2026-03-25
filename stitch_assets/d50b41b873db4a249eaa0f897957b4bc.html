@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Profile - VELO</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#CCFF00",
+                        "background-light": "#FAFAFA",
+                        "background-dark": "#171717",
+                        "surface-light": "#FFFFFF",
+                        "text-main": "#171717",
+                        "text-muted": "#8B8D98",
+                        "border-light": "#E4E4E5",
+                        "accent-black": "#000000"
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "4px",
+                        "sm": "2px",
+                        "md": "4px",
+                        "lg": "4px",
+                        "xl": "4px",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'hover': '0 4px 12px rgba(0,0,0,0.05)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #FAFAFA;
+            color: #171717;
+        }
+        .repo-card {
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .repo-card:hover {
+            border-color: #000000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .upvote-btn {
+            transition: background-color 0.1s ease, color 0.1s ease;
+        }
+        .upvote-btn:active, .upvote-btn.active {
+            background-color: #CCFF00;
+            color: #171717;
+            border-color: #CCFF00;
+        }
+    </style>
+</head>
+<body class="bg-background-light min-h-screen flex flex-col font-display antialiased">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-border-light bg-surface-light px-8 py-4 h-[64px]">
+<div class="flex items-center gap-4 text-text-main">
+<h1 class="text-text-main text-[20px] font-bold leading-tight tracking-[-0.02em]">VELO</h1>
+</div>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center rounded bg-accent-black text-white h-10 px-6 text-sm font-medium transition-colors hover:bg-black/80">
+            Submit
+        </button>
+</header>
+<!-- Main Content Container -->
+<main class="flex-1 flex flex-col items-center w-full px-4 sm:px-8 pt-20 pb-24">
+<div class="w-full max-w-[800px] flex flex-col">
+<!-- Profile Header -->
+<section class="flex flex-col items-center text-center mb-[80px]">
+<img alt="User avatar placeholder" class="w-[120px] h-[120px] rounded object-cover mb-6 border border-border-light bg-surface-light" data-alt="Square portrait of a person" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoAV9VycR4sfcHL1-yy1rEv8dORsxVrnre5AMJiTaEOXW9lV1tSoAT2jkkO477bBqQHoZ5WIyMaUhKXfexubWaTkKdUsYdJFWeC9o1mJlbV37D9mMvsRKfRybF8ysLNImmqB1L5mVNuogFVItBpUaXl3ZI5_eHkpGDGkB7Gb9G4BBh016eQ62XA76wwt1xTkewSoApUsXvqA5joDzbXjcup20WSupxKdVhUM6T5M5_UlYFatO3YvN5EH7fYpYoahDC8nhfSy6MoYQ"/>
+<h2 class="text-[32px] font-bold text-text-main tracking-[-0.02em] leading-tight mb-2">Alex Developer</h2>
+<p class="text-[18px] text-text-muted font-medium">Frontend Engineer &amp; Open Source Enthusiast</p>
+</section>
+<!-- Tabs -->
+<nav aria-label="Profile Tabs" class="flex border-b border-border-light mb-8 h-[40px]">
+<button aria-current="page" class="flex items-center justify-center px-6 border-b-2 border-primary text-text-main font-semibold text-[15px] h-full">
+                    Hunted
+                </button>
+<button class="flex items-center justify-center px-6 border-b-2 border-transparent text-text-muted hover:text-text-main font-medium text-[15px] h-full transition-colors">
+                    Upvoted
+                </button>
+</nav>
+<!-- Activity Feed (Hunted Repos) -->
+<div class="flex flex-col gap-4">
+<!-- Repo Item 1 -->
+<article class="repo-card flex items-center bg-surface-light border border-border-light rounded h-[120px] pl-6 pr-4 py-4 w-full group">
+<!-- Rank -->
+<div class="w-[40px] flex-shrink-0 text-primary font-bold text-[18px]">
+                        1
+                    </div>
+<!-- Content -->
+<div class="flex-1 min-w-0 pr-6 flex flex-col justify-center">
+<div class="flex items-center gap-3 mb-1">
+<h3 class="text-[18px] font-bold text-text-main truncate tracking-[-0.02em] group-hover:underline cursor-pointer">
+                                facebook/react
+                            </h3>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center justify-center h-[24px] px-2 bg-background-light text-text-muted text-[12px] rounded-sm font-medium uppercase tracking-[0.05em] border border-border-light/50">
+                                    JavaScript
+                                </span>
+<span class="inline-flex items-center justify-center h-[24px] px-2 bg-background-light text-text-muted text-[12px] rounded-sm font-medium uppercase tracking-[0.05em] border border-border-light/50">
+                                    UI
+                                </span>
+</div>
+</div>
+<p class="text-[15px] text-text-muted truncate leading-[1.6]">
+                            A declarative, efficient, and flexible JavaScript library for building user interfaces.
+                        </p>
+</div>
+<!-- Upvote Action -->
+<button class="upvote-btn active flex-shrink-0 w-[64px] h-[64px] border border-primary bg-primary text-text-main rounded flex flex-col items-center justify-center cursor-pointer group/btn">
+<span class="material-symbols-outlined text-[24px] leading-none mb-1 font-bold">keyboard_arrow_up</span>
+<span class="text-[14px] font-bold leading-none">1.2k</span>
+</button>
+</article>
+<!-- Repo Item 2 -->
+<article class="repo-card flex items-center bg-surface-light border border-border-light rounded h-[120px] pl-6 pr-4 py-4 w-full group">
+<div class="w-[40px] flex-shrink-0 text-primary font-bold text-[18px]">
+                        2
+                    </div>
+<div class="flex-1 min-w-0 pr-6 flex flex-col justify-center">
+<div class="flex items-center gap-3 mb-1">
+<h3 class="text-[18px] font-bold text-text-main truncate tracking-[-0.02em] group-hover:underline cursor-pointer">
+                                tailwindlabs/tailwindcss
+                            </h3>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center justify-center h-[24px] px-2 bg-background-light text-text-muted text-[12px] rounded-sm font-medium uppercase tracking-[0.05em] border border-border-light/50">
+                                    CSS
+                                </span>
+</div>
+</div>
+<p class="text-[15px] text-text-muted truncate leading-[1.6]">
+                            A utility-first CSS framework for rapid UI development.
+                        </p>
+</div>
+<button class="upvote-btn flex-shrink-0 w-[64px] h-[64px] border border-border-light bg-surface-light text-text-main rounded flex flex-col items-center justify-center cursor-pointer hover:border-text-muted">
+<span class="material-symbols-outlined text-[24px] leading-none mb-1 font-medium text-text-muted group-hover:text-text-main transition-colors">keyboard_arrow_up</span>
+<span class="text-[14px] font-bold leading-none">856</span>
+</button>
+</article>
+<!-- Repo Item 3 -->
+<article class="repo-card flex items-center bg-surface-light border border-border-light rounded h-[120px] pl-6 pr-4 py-4 w-full group">
+<div class="w-[40px] flex-shrink-0 text-primary font-bold text-[18px]">
+                        3
+                    </div>
+<div class="flex-1 min-w-0 pr-6 flex flex-col justify-center">
+<div class="flex items-center gap-3 mb-1">
+<h3 class="text-[18px] font-bold text-text-main truncate tracking-[-0.02em] group-hover:underline cursor-pointer">
+                                tauri-apps/tauri
+                            </h3>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center justify-center h-[24px] px-2 bg-background-light text-text-muted text-[12px] rounded-sm font-medium uppercase tracking-[0.05em] border border-border-light/50">
+                                    Rust
+                                </span>
+<span class="inline-flex items-center justify-center h-[24px] px-2 bg-background-light text-text-muted text-[12px] rounded-sm font-medium uppercase tracking-[0.05em] border border-border-light/50">
+                                    Desktop
+                                </span>
+</div>
+</div>
+<p class="text-[15px] text-text-muted truncate leading-[1.6]">
+                            Build smaller, faster, and more secure desktop applications with a web frontend.
+                        </p>
+</div>
+<button class="upvote-btn flex-shrink-0 w-[64px] h-[64px] border border-border-light bg-surface-light text-text-main rounded flex flex-col items-center justify-center cursor-pointer hover:border-text-muted">
+<span class="material-symbols-outlined text-[24px] leading-none mb-1 font-medium text-text-muted group-hover:text-text-main transition-colors">keyboard_arrow_up</span>
+<span class="text-[14px] font-bold leading-none">412</span>
+</button>
+</article>
+<!-- Empty State Example (Hidden by default, useful for reference) -->
+<!--
+                <div class="flex flex-col items-center justify-center py-20 text-center border border-dashed border-border-light rounded bg-surface-light">
+                    <span class="material-symbols-outlined text-[32px] text-text-muted mb-4">search_off</span>
+                    <p class="text-[15px] text-text-muted font-medium">No repositories hunted yet.</p>
+                </div>
+                -->
+</div>
+<div class="mt-12 text-center">
+<button class="inline-flex items-center justify-center px-6 py-3 border border-border-light text-text-main text-[14px] font-medium rounded hover:border-text-main transition-colors bg-surface-light shadow-sm">
+                    Load More
+                </button>
+</div>
+</div>
+</main>
+</body></html>

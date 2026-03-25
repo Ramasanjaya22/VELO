@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VELO - Clean Editorial Home Feed</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#c4f20d",
+                        "background-light": "#FAFAFA",
+                        "background-dark": "#1e2210",
+                        "surface": "#FFFFFF",
+                        "text-main": "#171717",
+                        "text-muted": "#8B8D98",
+                        "border-color": "#E4E4E5",
+                        "accent": "#000000"
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "sm": "0.125rem",
+                        "md": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        "hover": "0 4px 12px rgba(0,0,0,0.05)"
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #FAFAFA;
+            color: #171717;
+        }
+        .repo-card {
+            transition: all 0.2s ease;
+        }
+        .repo-card:hover {
+            border-color: #000000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .upvote-btn {
+            transition: background-color 0.1s ease, color 0.1s ease;
+        }
+        .upvote-btn:active {
+            background-color: #c4f20d;
+            color: #171717;
+        }
+    </style>
+</head>
+<body class="bg-background-light min-h-screen antialiased">
+<!-- Sticky Top Navigation -->
+<header class="sticky top-0 z-50 bg-background-light border-b border-border-color h-16 w-full flex justify-center">
+<div class="w-full max-w-[1080px] px-6 flex items-center justify-between h-full">
+<div class="flex items-center gap-4 text-text-main">
+<div class="size-5">
+<svg aria-hidden="true" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path>
+</svg>
+</div>
+<h1 class="text-xl font-bold tracking-[-0.02em]">VELO</h1>
+</div>
+<button class="flex items-center justify-center rounded bg-accent text-white h-10 px-6 font-medium text-sm transition-colors hover:bg-gray-800">
+                Submit
+            </button>
+</div>
+</header>
+<!-- Main Layout -->
+<main class="w-full max-w-[1080px] mx-auto px-6 pt-12 pb-24 flex gap-12 items-start justify-center">
+<!-- Center Column (Feed) -->
+<div class="w-full max-w-[800px] flex flex-col gap-10">
+<!-- Group: Today -->
+<section class="flex flex-col gap-4">
+<div class="flex items-center gap-4 mb-2">
+<h2 class="text-2xl font-semibold tracking-[-0.02em] text-text-main">Today</h2>
+<div class="h-[1px] bg-border-color flex-grow"></div>
+</div>
+<!-- Repo List Item 1 -->
+<article class="repo-card flex h-[120px] bg-surface border border-border-color rounded-md overflow-hidden group cursor-pointer">
+<!-- Rank Indicator -->
+<div class="w-10 flex items-center justify-center border-r border-border-color bg-surface group-hover:border-black transition-colors shrink-0">
+<span class="text-primary font-bold text-lg">1</span>
+</div>
+<!-- Content -->
+<div class="flex-grow flex flex-col justify-center px-6 py-4 overflow-hidden">
+<div class="flex items-center gap-3 mb-1">
+<h3 class="text-lg font-semibold text-text-main truncate">shadcn/ui</h3>
+<div class="flex gap-2 shrink-0">
+<span class="bg-background-light text-text-muted text-xs uppercase tracking-[0.05em] px-2 py-1 rounded-sm border border-border-color">React</span>
+<span class="bg-background-light text-text-muted text-xs uppercase tracking-[0.05em] px-2 py-1 rounded-sm border border-border-color">Tailwind</span>
+</div>
+</div>
+<p class="text-text-muted text-[15px] leading-[1.6] truncate">Beautifully designed components that you can copy and paste into your apps.</p>
+</div>
+<!-- Upvote Action -->
+<button class="upvote-btn w-[120px] h-[120px] shrink-0 border-l border-border-color flex flex-col items-center justify-center gap-1 group-hover:border-black transition-colors bg-surface hover:bg-gray-50">
+<span class="material-symbols-outlined text-text-main" style="font-variation-settings: 'FILL' 1;">arrow_drop_up</span>
+<span class="text-text-main font-semibold text-lg">892</span>
+</button>
+</article>
+<!-- Repo List Item 2 -->
+<article class="repo-card flex h-[120px] bg-surface border border-border-color rounded-md overflow-hidden group cursor-pointer">
+<div class="w-10 flex items-center justify-center border-r border-border-color bg-surface group-hover:border-black transition-colors shrink-0">
+<span class="text-primary font-bold text-lg">2</span>
+</div>
+<div class="flex-grow flex flex-col justify-center px-6 py-4 overflow-hidden">
+<div class="flex items-center gap-3 mb-1">
+<h3 class="text-lg font-semibold text-text-main truncate">Tauri</h3>
+<div class="flex gap-2 shrink-0">
+<span class="bg-background-light text-text-muted text-xs uppercase tracking-[0.05em] px-2 py-1 rounded-sm border border-border-color">Rust</span>
+<span class="bg-background-light text-text-muted text-xs uppercase tracking-[0.05em] px-2 py-1 rounded-sm border border-border-color">Desktop</span>
+</div>
+</div>
+<p class="text-text-muted text-[15px] leading-[1.6] truncate">Build smaller, faster, and more secure desktop applications with a web frontend.</p>
+</div>
+<button class="upvote-btn w-[120px] h-[120px] shrink-0 border-l border-border-color flex flex-col items-center justify-center gap-1 group-hover:border-black transition-colors bg-surface hover:bg-gray-50">
+<span class="material-symbols-outlined text-text-main" style="font-variation-settings: 'FILL' 1;">arrow_drop_up</span>
+<span class="text-text-main font-semibold text-lg">645</span>
+</button>
+</article>
+<!-- Repo List Item 3 -->
+<article class="repo-card flex h-[120px] bg-surface border border-border-color rounded-md overflow-hidden group cursor-pointer">
+<div class="w-10 flex items-center justify-center border-r border-border-color bg-surface group-hover:border-black transition-colors shrink-0">
+<span class="text-primary font-bold text-lg">3</span>
+</div>
+<div class="flex-grow flex flex-col justify-center px-6 py-4 overflow-hidden">
+<div class="flex items-center gap-3 mb-1">
+<h3 class="text-lg font-semibold text-text-main truncate">Supabase</h3>
+<div class="flex gap-2 shrink-0">
+<span class="bg-background-light text-text-muted text-xs uppercase tracking-[0.05em] px-2 py-1 rounded-sm border border-border-color">Postgres</span>
+<span class="bg-background-light text-text-muted text-xs uppercase tracking-[0.05em] px-2 py-1 rounded-sm border border-border-color">BaaS</span>
+</div>
+</div>
+<p class="text-text-muted text-[15px] leading-[1.6] truncate">The open source Firebase alternative. Start your project with a Postgres database.</p>
+</div>
+<button class="upvote-btn w-[120px] h-[120px] shrink-0 border-l border-border-color flex flex-col items-center justify-center gap-1 group-hover:border-black transition-colors bg-surface hover:bg-gray-50">
+<span class="material-symbols-outlined text-text-main" style="font-variation-settings: 'FILL' 1;">arrow_drop_up</span>
+<span class="text-text-main font-semibold text-lg">512</span>
+</button>
+</article>
+<!-- Repo List Item 4 -->
+<article class="repo-card flex h-[120px] bg-surface border border-border-color rounded-md overflow-hidden group cursor-pointer">
+<div class="w-10 flex items-center justify-center border-r border-border-color bg-surface group-hover:border-black transition-colors shrink-0">
+<span class="text-text-muted font-bold text-lg">4</span>
+</div>
+<div class="flex-grow flex flex-col justify-center px-6 py-4 overflow-hidden">
+<div class="flex items-center gap-3 mb-1">
+<h3 class="text-lg font-semibold text-text-main truncate">tldraw</h3>
+<div class="flex gap-2 shrink-0">
+<span class="bg-background-light text-text-muted text-xs uppercase tracking-[0.05em] px-2 py-1 rounded-sm border border-border-color">TypeScript</span>
+<span class="bg-background-light text-text-muted text-xs uppercase tracking-[0.05em] px-2 py-1 rounded-sm border border-border-color">Canvas</span>
+</div>
+</div>
+<p class="text-text-muted text-[15px] leading-[1.6] truncate">A tiny little drawing app. Open source, collaborative, and wildly extensible.</p>
+</div>
+<button class="upvote-btn w-[120px] h-[120px] shrink-0 border-l border-border-color flex flex-col items-center justify-center gap-1 group-hover:border-black transition-colors bg-surface hover:bg-gray-50">
+<span class="material-symbols-outlined text-text-main" style="font-variation-settings: 'FILL' 1;">arrow_drop_up</span>
+<span class="text-text-main font-semibold text-lg">420</span>
+</button>
+</article>
+</section>
+<!-- Group: Yesterday -->
+<section class="flex flex-col gap-4 mt-8">
+<div class="flex items-center gap-4 mb-2">
+<h2 class="text-2xl font-semibold tracking-[-0.02em] text-text-main">Yesterday</h2>
+<div class="h-[1px] bg-border-color flex-grow"></div>
+</div>
+<!-- Repo List Item 1 (Yesterday) -->
+<article class="repo-card flex h-[120px] bg-surface border border-border-color rounded-md overflow-hidden group cursor-pointer">
+<div class="w-10 flex items-center justify-center border-r border-border-color bg-surface group-hover:border-black transition-colors shrink-0">
+<span class="text-primary font-bold text-lg">1</span>
+</div>
+<div class="flex-grow flex flex-col justify-center px-6 py-4 overflow-hidden">
+<div class="flex items-center gap-3 mb-1">
+<h3 class="text-lg font-semibold text-text-main truncate">Bun</h3>
+<div class="flex gap-2 shrink-0">
+<span class="bg-background-light text-text-muted text-xs uppercase tracking-[0.05em] px-2 py-1 rounded-sm border border-border-color">Zig</span>
+<span class="bg-background-light text-text-muted text-xs uppercase tracking-[0.05em] px-2 py-1 rounded-sm border border-border-color">Runtime</span>
+</div>
+</div>
+<p class="text-text-muted text-[15px] leading-[1.6] truncate">Incredibly fast JavaScript runtime, bundler, test runner, and package manager.</p>
+</div>
+<button class="upvote-btn w-[120px] h-[120px] shrink-0 border-l border-border-color flex flex-col items-center justify-center gap-1 group-hover:border-black transition-colors bg-surface hover:bg-gray-50">
+<span class="material-symbols-outlined text-text-main" style="font-variation-settings: 'FILL' 1;">arrow_drop_up</span>
+<span class="text-text-main font-semibold text-lg">1204</span>
+</button>
+</article>
+<!-- Repo List Item 2 (Yesterday) -->
+<article class="repo-card flex h-[120px] bg-surface border border-border-color rounded-md overflow-hidden group cursor-pointer">
+<div class="w-10 flex items-center justify-center border-r border-border-color bg-surface group-hover:border-black transition-colors shrink-0">
+<span class="text-primary font-bold text-lg">2</span>
+</div>
+<div class="flex-grow flex flex-col justify-center px-6 py-4 overflow-hidden">
+<div class="flex items-center gap-3 mb-1">
+<h3 class="text-lg font-semibold text-text-main truncate">HTMX</h3>
+<div class="flex gap-2 shrink-0">
+<span class="bg-background-light text-text-muted text-xs uppercase tracking-[0.05em] px-2 py-1 rounded-sm border border-border-color">JavaScript</span>
+<span class="bg-background-light text-text-muted text-xs uppercase tracking-[0.05em] px-2 py-1 rounded-sm border border-border-color">HTML</span>
+</div>
+</div>
+<p class="text-text-muted text-[15px] leading-[1.6] truncate">high power tools for HTML. AJAX, CSS Transitions, WebSockets and Server Sent Events.</p>
+</div>
+<button class="upvote-btn w-[120px] h-[120px] shrink-0 border-l border-border-color flex flex-col items-center justify-center gap-1 group-hover:border-black transition-colors bg-surface hover:bg-gray-50">
+<span class="material-symbols-outlined text-text-main" style="font-variation-settings: 'FILL' 1;">arrow_drop_up</span>
+<span class="text-text-main font-semibold text-lg">980</span>
+</button>
+</article>
+</section>
+</div>
+<!-- Right Sidebar (Filters/Meta) -->
+<aside class="w-[240px] shrink-0 hidden lg:flex flex-col gap-8 sticky top-28">
+<div class="bg-surface border border-border-color rounded-md p-6">
+<h4 class="text-xs uppercase tracking-[0.05em] text-text-muted mb-4 font-semibold">Filter by Language</h4>
+<ul class="flex flex-col gap-2">
+<li><a class="text-[15px] text-text-main hover:text-primary transition-colors flex justify-between" href="#"><span>TypeScript</span> <span class="text-text-muted">142</span></a></li>
+<li><a class="text-[15px] text-text-main hover:text-primary transition-colors flex justify-between" href="#"><span>Rust</span> <span class="text-text-muted">89</span></a></li>
+<li><a class="text-[15px] text-text-main hover:text-primary transition-colors flex justify-between" href="#"><span>Go</span> <span class="text-text-muted">64</span></a></li>
+<li><a class="text-[15px] text-text-main hover:text-primary transition-colors flex justify-between" href="#"><span>Python</span> <span class="text-text-muted">51</span></a></li>
+</ul>
+</div>
+<div class="text-xs text-text-muted leading-[1.6]">
+<p>VELO is a curated daily leaderboard for discovering high-signal open source projects.</p>
+<div class="mt-4 flex gap-3">
+<a class="hover:text-text-main transition-colors" href="#">About</a>
+<a class="hover:text-text-main transition-colors" href="#">Twitter</a>
+<a class="hover:text-text-main transition-colors" href="#">GitHub</a>
+</div>
+</div>
+</aside>
+</main>
+</body></html>

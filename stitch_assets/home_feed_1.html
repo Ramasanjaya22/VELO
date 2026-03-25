@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VELO - Annual Leaderboard &amp; Archive</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#CCFF00",
+                        "background-light": "#FAFAFA",
+                        "surface": "#FFFFFF",
+                        "text-main": "#171717",
+                        "text-muted": "#8B8D98",
+                        "border-color": "#E4E4E5",
+                        "accent": "#000000"
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "sm": "2px",
+                        "md": "4px",
+                    },
+                    boxShadow: {
+                        "hover": "0 4px 12px rgba(0,0,0,0.05)"
+                    }
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #FAFAFA;
+            color: #171717;
+        }
+        .repo-card {
+            transition: all 0.2s ease;
+        }
+        .repo-card:hover {
+            border-color: #000000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .upvote-btn {
+            transition: background-color 0.1s ease, color 0.1s ease;
+        }
+        .upvote-btn:active {
+            background-color: #CCFF00;
+            color: #171717;
+        }
+        .year-link.active {
+            @apply border-primary text-text-main font-semibold;
+        }
+    </style>
+</head>
+<body class="bg-background-light min-h-screen antialiased">
+<header class="sticky top-0 z-50 bg-background-light border-b border-border-color h-16 w-full flex justify-center">
+<div class="w-full max-w-[1140px] px-6 flex items-center justify-between h-full">
+<div class="flex items-center gap-4 text-text-main">
+<div class="size-5">
+<svg aria-hidden="true" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path>
+</svg>
+</div>
+<h1 class="text-xl font-bold tracking-[-0.02em]">VELO</h1>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex gap-6 text-sm font-medium">
+<a class="text-text-main border-b-2 border-primary pb-1" href="#">Leaderboard</a>
+<a class="text-text-muted hover:text-text-main transition-colors pb-1" href="#">Archive</a>
+<a class="text-text-muted hover:text-text-main transition-colors pb-1" href="#">Stats</a>
+</nav>
+<button class="flex items-center justify-center rounded bg-accent text-white h-10 px-6 font-medium text-sm transition-colors hover:bg-gray-800">
+                    Submit Repo
+                </button>
+</div>
+</div>
+</header>
+<main class="w-full max-w-[1140px] mx-auto px-6 pt-12 pb-24 flex gap-12 items-start justify-center">
+<div class="w-full max-w-[800px] flex flex-col gap-12">
+<section class="flex flex-col gap-4">
+<div class="flex items-baseline justify-between gap-4 mb-2">
+<div class="flex items-center gap-4 flex-grow">
+<h2 class="text-2xl font-bold tracking-[-0.02em] text-text-main">Top Repos of 2024</h2>
+<div class="h-[1px] bg-border-color flex-grow"></div>
+</div>
+<span class="text-xs font-medium text-text-muted uppercase tracking-widest">Global Ranking</span>
+</div>
+<article class="repo-card flex h-[120px] bg-surface border border-border-color rounded-md overflow-hidden group cursor-pointer">
+<div class="w-12 flex items-center justify-center border-r border-border-color bg-surface group-hover:border-black transition-colors shrink-0">
+<span class="text-primary font-bold text-xl">1</span>
+</div>
+<div class="flex-grow flex flex-col justify-center px-6 py-4 overflow-hidden">
+<div class="flex items-center gap-3 mb-1">
+<h3 class="text-lg font-semibold text-text-main truncate">shadcn/ui</h3>
+<div class="flex gap-2 shrink-0">
+<span class="bg-background-light text-text-muted text-[10px] uppercase tracking-[0.05em] px-2 py-0.5 rounded-sm border border-border-color">React</span>
+<span class="bg-background-light text-text-muted text-[10px] uppercase tracking-[0.05em] px-2 py-0.5 rounded-sm border border-border-color">UI</span>
+</div>
+</div>
+<p class="text-text-muted text-[14px] leading-[1.6] line-clamp-2">Beautifully designed components that you can copy and paste into your apps.</p>
+</div>
+<button class="upvote-btn w-[100px] h-full shrink-0 border-l border-border-color flex flex-col items-center justify-center gap-1 group-hover:border-black transition-colors bg-surface hover:bg-gray-50">
+<span class="material-symbols-outlined text-text-main" style="font-variation-settings: 'FILL' 1;">arrow_drop_up</span>
+<span class="text-text-main font-semibold text-lg">24.1k</span>
+</button>
+</article>
+<article class="repo-card flex h-[120px] bg-surface border border-border-color rounded-md overflow-hidden group cursor-pointer">
+<div class="w-12 flex items-center justify-center border-r border-border-color bg-surface group-hover:border-black transition-colors shrink-0">
+<span class="text-primary font-bold text-xl">2</span>
+</div>
+<div class="flex-grow flex flex-col justify-center px-6 py-4 overflow-hidden">
+<div class="flex items-center gap-3 mb-1">
+<h3 class="text-lg font-semibold text-text-main truncate">vllm-project/vllm</h3>
+<div class="flex gap-2 shrink-0">
+<span class="bg-background-light text-text-muted text-[10px] uppercase tracking-[0.05em] px-2 py-0.5 rounded-sm border border-border-color">Python</span>
+<span class="bg-background-light text-text-muted text-[10px] uppercase tracking-[0.05em] px-2 py-0.5 rounded-sm border border-border-color">AI</span>
+</div>
+</div>
+<p class="text-text-muted text-[14px] leading-[1.6] line-clamp-2">A high-throughput and memory-efficient inference and serving engine for LLMs.</p>
+</div>
+<button class="upvote-btn w-[100px] h-full shrink-0 border-l border-border-color flex flex-col items-center justify-center gap-1 group-hover:border-black transition-colors bg-surface hover:bg-gray-50">
+<span class="material-symbols-outlined text-text-main" style="font-variation-settings: 'FILL' 1;">arrow_drop_up</span>
+<span class="text-text-main font-semibold text-lg">18.5k</span>
+</button>
+</article>
+<article class="repo-card flex h-[120px] bg-surface border border-border-color rounded-md overflow-hidden group cursor-pointer">
+<div class="w-12 flex items-center justify-center border-r border-border-color bg-surface group-hover:border-black transition-colors shrink-0">
+<span class="text-primary font-bold text-xl">3</span>
+</div>
+<div class="flex-grow flex flex-col justify-center px-6 py-4 overflow-hidden">
+<div class="flex items-center gap-3 mb-1">
+<h3 class="text-lg font-semibold text-text-main truncate">PocketBase</h3>
+<div class="flex gap-2 shrink-0">
+<span class="bg-background-light text-text-muted text-[10px] uppercase tracking-[0.05em] px-2 py-0.5 rounded-sm border border-border-color">Go</span>
+<span class="bg-background-light text-text-muted text-[10px] uppercase tracking-[0.05em] px-2 py-0.5 rounded-sm border border-border-color">Backend</span>
+</div>
+</div>
+<p class="text-text-muted text-[14px] leading-[1.6] line-clamp-2">Open source backend in 1 file with realtime database, auth, and file storage.</p>
+</div>
+<button class="upvote-btn w-[100px] h-full shrink-0 border-l border-border-color flex flex-col items-center justify-center gap-1 group-hover:border-black transition-colors bg-surface hover:bg-gray-50">
+<span class="material-symbols-outlined text-text-main" style="font-variation-settings: 'FILL' 1;">arrow_drop_up</span>
+<span class="text-text-main font-semibold text-lg">12.2k</span>
+</button>
+</article>
+<div class="grid grid-cols-1 gap-4">
+<script>
+                        const extraRepos = [
+                            { name: "Biome", lang: "Rust", desc: "A toolchain for the web. One tool for everything.", votes: "9.8k" },
+                            { name: "Astro", lang: "TypeScript", desc: "The web framework for content-driven websites.", votes: "8.4k" },
+                            { name: "Rye", lang: "Rust", desc: "An experimental package management solution for Python.", votes: "7.9k" },
+                            { name: "Ollama", lang: "Go", desc: "Get up and running with large language models locally.", votes: "22.1k" },
+                            { name: "Zed", lang: "Rust", desc: "A high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.", votes: "15.3k" },
+                            { name: "Drizzle ORM", lang: "TypeScript", desc: "TypeScript ORM that feels like writing SQL.", votes: "6.7k" },
+                            { name: "Hoppscotch", lang: "Vue", desc: "Open source API development ecosystem.", votes: "5.9k" },
+                            { name: "Refine", lang: "React", desc: "A React-based framework for building internal tools and dashboards.", votes: "5.2k" },
+                            { name: "Bun", lang: "Zig", desc: "Fast all-in-one JavaScript runtime.", votes: "42.1k" },
+                            { name: "Directus", lang: "TypeScript", desc: "The Modern Data Stack for any SQL database.", votes: "4.8k" },
+                            { name: "Appwrite", lang: "PHP", desc: "Unified API for your end-to-end development needs.", votes: "4.1k" },
+                            { name: "Payload", lang: "TypeScript", desc: "The headless CMS for developers.", votes: "3.9k" }
+                        ];
+                        extraRepos.forEach((repo, i) => {
+                            document.write(`
+                                <article class="repo-card flex h-[100px] bg-surface border border-border-color rounded-md overflow-hidden group cursor-pointer">
+                                    <div class="w-12 flex items-center justify-center border-r border-border-color bg-surface group-hover:border-black transition-colors shrink-0">
+                                        <span class="text-text-muted font-bold text-lg">${i + 4}</span>
+                                    </div>
+                                    <div class="flex-grow flex flex-col justify-center px-6 py-2 overflow-hidden">
+                                        <div class="flex items-center gap-3 mb-0.5">
+                                            <h3 class="text-[16px] font-semibold text-text-main truncate">${repo.name}</h3>
+                                            <span class="bg-background-light text-text-muted text-[9px] uppercase tracking-[0.05em] px-1.5 py-0.5 rounded-sm border border-border-color">${repo.lang}</span>
+                                        </div>
+                                        <p class="text-text-muted text-[13px] leading-[1.4] line-clamp-1">${repo.desc}</p>
+                                    </div>
+                                    <button class="upvote-btn w-[80px] h-full shrink-0 border-l border-border-color flex flex-col items-center justify-center gap-0 group-hover:border-black transition-colors bg-surface hover:bg-gray-50">
+                                        <span class="material-symbols-outlined text-text-muted text-sm" style="font-variation-settings: 'FILL' 1;">arrow_drop_up</span>
+                                        <span class="text-text-main font-semibold text-[14px]">${repo.votes}</span>
+                                    </button>
+                                </article>
+                            `);
+                        });
+                    </script>
+</div>
+<button class="mt-4 w-full py-4 border-2 border-dashed border-border-color text-text-muted font-medium text-sm rounded-md hover:border-black hover:text-text-main transition-all">
+                    Load More from 2024
+                </button>
+</section>
+<section class="mt-8 flex flex-col gap-6">
+<div class="flex items-center gap-4">
+<h2 class="text-2xl font-bold tracking-[-0.02em] text-text-main">Yearly Archive</h2>
+<div class="h-[1px] bg-border-color flex-grow"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-surface border border-border-color p-6 rounded-md hover:shadow-hover transition-shadow group cursor-pointer">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="text-lg font-bold">2023</h4>
+<p class="text-xs text-text-muted uppercase tracking-wider">The Year of LLMs</p>
+</div>
+<span class="material-symbols-outlined text-text-muted group-hover:text-black transition-colors">arrow_forward_ios</span>
+</div>
+<div class="flex gap-2">
+<div class="w-12 h-12 bg-background-light rounded-sm flex items-center justify-center border border-border-color">
+<span class="text-[10px] font-bold">LLAMA</span>
+</div>
+<div class="w-12 h-12 bg-background-light rounded-sm flex items-center justify-center border border-border-color">
+<span class="text-[10px] font-bold">NEXT.JS</span>
+</div>
+<div class="w-12 h-12 bg-background-light rounded-sm flex items-center justify-center border border-border-color">
+<span class="text-[10px] font-bold">DOCKER</span>
+</div>
+<div class="w-12 h-12 bg-background-light rounded-sm flex items-center justify-center border border-border-color text-text-muted text-[10px]">
+                                +240
+                            </div>
+</div>
+</div>
+<div class="bg-surface border border-border-color p-6 rounded-md hover:shadow-hover transition-shadow group cursor-pointer">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="text-lg font-bold">2022</h4>
+<p class="text-xs text-text-muted uppercase tracking-wider">Web3 &amp; Performance</p>
+</div>
+<span class="material-symbols-outlined text-text-muted group-hover:text-black transition-colors">arrow_forward_ios</span>
+</div>
+<div class="flex gap-2">
+<div class="w-12 h-12 bg-background-light rounded-sm flex items-center justify-center border border-border-color">
+<span class="text-[10px] font-bold">TRPC</span>
+</div>
+<div class="w-12 h-12 bg-background-light rounded-sm flex items-center justify-center border border-border-color">
+<span class="text-[10px] font-bold">TAURI</span>
+</div>
+<div class="w-12 h-12 bg-background-light rounded-sm flex items-center justify-center border border-border-color">
+<span class="text-[10px] font-bold">SOLID</span>
+</div>
+<div class="w-12 h-12 bg-background-light rounded-sm flex items-center justify-center border border-border-color text-text-muted text-[10px]">
+                                +180
+                            </div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<aside class="w-[240px] shrink-0 hidden lg:flex flex-col gap-8 sticky top-28">
+<div class="bg-surface border border-border-color rounded-md p-6">
+<h4 class="text-xs uppercase tracking-[0.05em] text-text-muted mb-4 font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+                    Filter by Year
+                </h4>
+<ul class="flex flex-col gap-1">
+<li><a class="year-link active px-3 py-2 rounded-sm text-[15px] text-text-main flex justify-between items-center transition-all bg-background-light border-l-2 border-primary" href="#"><span>2024</span> <span class="text-[10px] bg-primary px-1.5 py-0.5 rounded-sm font-bold">LATEST</span></a></li>
+<li><a class="year-link px-3 py-2 rounded-sm text-[15px] text-text-muted hover:text-text-main hover:bg-gray-50 flex justify-between items-center transition-all border-l-2 border-transparent" href="#"><span>2023</span> <span class="text-[11px]">842 repos</span></a></li>
+<li><a class="year-link px-3 py-2 rounded-sm text-[15px] text-text-muted hover:text-text-main hover:bg-gray-50 flex justify-between items-center transition-all border-l-2 border-transparent" href="#"><span>2022</span> <span class="text-[11px]">615 repos</span></a></li>
+<li><a class="year-link px-3 py-2 rounded-sm text-[15px] text-text-muted hover:text-text-main hover:bg-gray-50 flex justify-between items-center transition-all border-l-2 border-transparent" href="#"><span>2021</span> <span class="text-[11px]">420 repos</span></a></li>
+<li><a class="year-link px-3 py-2 rounded-sm text-[15px] text-text-muted hover:text-text-main hover:bg-gray-50 flex justify-between items-center transition-all border-l-2 border-transparent" href="#"><span>2020</span> <span class="text-[11px]">290 repos</span></a></li>
+</ul>
+<button class="w-full mt-4 text-[12px] text-text-muted hover:text-black font-medium border-t border-border-color pt-3 text-center">
+                    View Complete History
+                </button>
+</div>
+<div class="bg-surface border border-border-color rounded-md p-6">
+<h4 class="text-xs uppercase tracking-[0.05em] text-text-muted mb-4 font-bold">Top Languages (2024)</h4>
+<ul class="flex flex-col gap-2">
+<li><a class="text-[13px] text-text-main hover:text-black transition-colors flex justify-between" href="#"><span>TypeScript</span> <span class="text-text-muted">32%</span></a></li>
+<li><a class="text-[13px] text-text-main hover:text-black transition-colors flex justify-between" href="#"><span>Python</span> <span class="text-text-muted">28%</span></a></li>
+<li><a class="text-[13px] text-text-main hover:text-black transition-colors flex justify-between" href="#"><span>Rust</span> <span class="text-text-muted">18%</span></a></li>
+<li><a class="text-[13px] text-text-main hover:text-black transition-colors flex justify-between" href="#"><span>Go</span> <span class="text-text-muted">12%</span></a></li>
+</ul>
+</div>
+<div class="text-[11px] text-text-muted leading-[1.6] px-2">
+<p>VELO Annual Leaderboard. Curating the highest signal open source projects since 2020.</p>
+<div class="mt-4 flex gap-4">
+<a class="hover:text-text-main transition-colors border-b border-transparent hover:border-text-main" href="#">Guidelines</a>
+<a class="hover:text-text-main transition-colors border-b border-transparent hover:border-text-main" href="#">API</a>
+<a class="hover:text-text-main transition-colors border-b border-transparent hover:border-text-main" href="#">Newsletter</a>
+</div>
+<p class="mt-4 opacity-50">© 2024 VELO Editorial.</p>
+</div>
+</aside>
+</main>
+
+</body></html>

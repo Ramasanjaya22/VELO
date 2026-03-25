@@ -1,0 +1,59 @@
+{
+	"week": "2026-W12",
+	"startDate": "2026-03-21",
+	"endDate": "2026-03-21",
+	"averageScore": 46.1,
+	"topProducts": [
+		{
+			"name": "msitarzewski/agency-agents",
+			"score": 76.1,
+			"language": "Shell"
+		},
+		{
+			"name": "obra/superpowers",
+			"score": 75.1,
+			"language": "Shell"
+		},
+		{
+			"name": "affaan-m/everything-claude-code",
+			"score": 73.3,
+			"language": "JavaScript"
+		},
+		{
+			"name": "666ghj/MiroFish",
+			"score": 59.1,
+			"language": "Python"
+		},
+		{
+			"name": "shareAI-lab/learn-claude-code",
+			"score": 55.6,
+			"language": "TypeScript"
+		},
+		{
+			"name": "lightpanda-io/browser",
+			"score": 48.1,
+			"language": "Zig"
+		},
+		{
+			"name": "volcengine/OpenViking",
+			"score": 42.6,
+			"language": "Python"
+		},
+		{
+			"name": "alibaba/page-agent",
+			"score": 42.5,
+			"language": "TypeScript"
+		},
+		{
+			"name": "langchain-ai/deepagents",
+			"score": 36.5,
+			"language": "Python"
+		},
+		{
+			"name": "jarrodwatts/claude-hud",
+			"score": 35.8,
+			"language": "JavaScript"
+		}
+	],
+	"productCount": 15
+}

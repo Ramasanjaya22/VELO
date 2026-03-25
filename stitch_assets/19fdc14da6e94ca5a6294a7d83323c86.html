@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VELO - Repo Detail</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#c4f20d",
+                        "primary-hover": "#b3db0c",
+                        "background-light": "#FAFAFA",
+                        "background-dark": "#171717",
+                        "surface-light": "#FFFFFF",
+                        "surface-dark": "#262626",
+                        "text-main": "#171717",
+                        "text-muted": "#8B8D98",
+                        "border-color": "#E4E4E5",
+                        "accent": "#000000"
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "4px",
+                        "sm": "2px",
+                        "md": "4px",
+                        "lg": "8px",
+                        "xl": "12px",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'hover': '0 4px 12px rgba(0,0,0,0.05)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-gray-100 min-h-screen flex flex-col selection:bg-primary selection:text-text-main">
+<!-- TopNavBar (Destination Screen) -->
+<div class="relative flex w-full flex-col bg-surface-light dark:bg-surface-dark border-b border-border-color dark:border-gray-800 z-50 sticky top-0">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 md:px-8 lg:px-40 flex flex-1 justify-center">
+<div class="layout-content-container flex flex-col max-w-[1040px] flex-1">
+<header class="flex h-[64px] items-center justify-between whitespace-nowrap px-0">
+<div class="flex items-center gap-4 text-text-main dark:text-white">
+<div class="size-5">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 4H30.6666V17.3334H17.3334V30.6666H4V44H44V4Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-text-main dark:text-white text-xl font-bold leading-tight tracking-[-0.02em]">VELO</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8 items-center">
+<div class="flex items-center gap-6 hidden sm:flex">
+<a class="text-text-muted hover:text-text-main dark:hover:text-white text-[15px] font-medium transition-colors" href="#">Home</a>
+</div>
+<a class="bg-accent dark:bg-white text-white dark:text-accent px-4 py-2 rounded font-medium text-[14px] hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors" href="#">Submit</a>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-md size-8 border border-border-color dark:border-gray-700" data-alt="User profile avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD0Jm4rNlYc6Pim87qoNusnrAJP3rM60NeSBLLQc-OcmbLvu5IJy9GkFuF-axbYPFaVGibjp_GSMWWxiDTgS60mnmGQ1iV-4ma94Dh8U_dAmj2WVurbPx4mJAMbrT8BDjR7dQELykoJHf8mjK2yYhD97_lqXtmVfoNyKAfr9I-VtPehe0Pfe2SZP39Pi86P-vPn6hkE-WLbPE_WOIVTzhz7_Tpg9thq55mA8H3gkqTiLKmFfMBFIsoVaeg0pV6XXV6DWI62gkkic_g");'></div>
+</div>
+</header>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Content Layout -->
+<main class="flex-1 w-full flex justify-center px-4 md:px-8 lg:px-40 py-10 md:py-16">
+<div class="max-w-[1040px] w-full flex flex-col lg:flex-row gap-10 lg:gap-[80px]">
+<!-- Left Column: Main Content (640px) -->
+<div class="flex-1 max-w-full lg:max-w-[640px] flex flex-col gap-10">
+<!-- Hero Section -->
+<div class="flex flex-col gap-3">
+<div class="flex items-center gap-3 mb-2">
+<span class="bg-surface-light dark:bg-surface-dark border border-border-color dark:border-gray-700 text-text-muted text-[12px] px-2 py-1 rounded-sm uppercase tracking-[0.05em] font-medium">Framework</span>
+<span class="bg-surface-light dark:bg-surface-dark border border-border-color dark:border-gray-700 text-text-muted text-[12px] px-2 py-1 rounded-sm uppercase tracking-[0.05em] font-medium">CSS</span>
+</div>
+<h1 class="text-text-main dark:text-white text-[32px] font-bold leading-tight tracking-[-0.02em]">Tailwind CSS</h1>
+<p class="text-text-muted text-[18px] font-medium leading-relaxed max-w-[600px]">A utility-first CSS framework for rapid UI development.</p>
+</div>
+<hr class="border-border-color dark:border-gray-800"/>
+<!-- Readme Section (Simulated Markdown) -->
+<article class="prose prose-slate dark:prose-invert max-w-none prose-headings:font-display prose-headings:tracking-[-0.02em] prose-headings:font-semibold prose-p:text-[15px] prose-p:leading-[1.6] prose-p:text-text-main dark:prose-p:text-gray-300 prose-a:text-accent dark:prose-a:text-white prose-a:decoration-primary prose-a:underline-offset-2 hover:prose-a:bg-primary/20 prose-code:font-mono prose-code:text-[13px] prose-code:bg-gray-100 dark:prose-code:bg-gray-800 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-sm prose-code:before:content-none prose-code:after:content-none prose-pre:bg-gray-50 dark:prose-pre:bg-surface-dark prose-pre:border prose-pre:border-border-color dark:prose-pre:border-gray-700 prose-pre:rounded-md">
+<h2>Rapidly build modern websites without ever leaving your HTML.</h2>
+<p>Tailwind CSS works by scanning all of your HTML files, JavaScript components, and any other templates for class names, generating the corresponding styles and then writing them to a static CSS file.</p>
+<p>It's fast, flexible, and reliable — with zero-runtime.</p>
+<h3>Installation</h3>
+<p>Install <code>tailwindcss</code> via npm, and create your <code>tailwind.config.js</code> file.</p>
+<pre><code>npm install -D tailwindcss
+npx tailwindcss init</code></pre>
+<h3>Configure your template paths</h3>
+<p>Add the paths to all of your template files in your <code>tailwind.config.js</code> file.</p>
+<pre><code>/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./src/**/*.{html,js}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}</code></pre>
+</article>
+<hr class="border-border-color dark:border-gray-800 mt-4"/>
+<!-- Discussion / Comments Section -->
+<section class="flex flex-col gap-8 mt-2">
+<div class="flex items-center justify-between">
+<h3 class="text-[20px] font-semibold tracking-[-0.02em] text-text-main dark:text-white">Discussion</h3>
+<span class="text-text-muted text-[13px] font-medium">3 comments</span>
+</div>
+<!-- Comment Input -->
+<div class="flex gap-4 items-start">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-md size-[32px] shrink-0 border border-border-color dark:border-gray-700 mt-1" data-alt="Current user avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAXCXvXJoWQgeGUm0U0mc2Kjs-f9tIJK0UJsCIyJMc7YbKl-cawFVOD2z8pbvMasxOpJuMtXxUJk94L_ZnjberVRENye9K4EuISOWR5PWkvc7YBfuYPh_IItlzOHp3y14A4lxWCdt9gidf7GmggObp3ReWt6icZzq-j2viWMDT1dE8yBiAmTsGNJSJUw9JOlTyBXIVzdLcgN-QFkB0OVJKsGk33wsRUeYQzdaml-rH2QM1MQzlzYlu1As5SqLApSLJF67sHIIclCxk");'></div>
+<div class="flex-1 flex flex-col gap-2">
+<textarea class="w-full bg-surface-light dark:bg-surface-dark border border-border-color dark:border-gray-700 rounded-md p-3 text-[15px] text-text-main dark:text-white placeholder:text-text-muted focus:outline-none focus:border-accent dark:focus:border-white focus:ring-0 min-h-[100px] resize-y transition-colors" placeholder="Add to the discussion..."></textarea>
+<div class="flex justify-end">
+<button class="bg-accent dark:bg-white text-white dark:text-accent px-4 py-2 rounded font-medium text-[14px] hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors">Post Comment</button>
+</div>
+</div>
+</div>
+<!-- Comment List -->
+<div class="flex flex-col gap-6 mt-4">
+<!-- Comment 1 -->
+<div class="flex gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-md size-[32px] shrink-0 border border-border-color dark:border-gray-700" data-alt="User avatar Michael" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAOJxFC7SFB9w-hEFvXoVEkFxPf0vL9hLEpHOngD7ZVOac4wsnoXQVpHhnnip3_h6qMAA5-2HguLkopra-MovdZHRZmhkJl6CctLKjmHN3RyT9Xw_zmKEh9iqgtahvfk1Wh5rYn3LFE_jqV487R3ncT2wg1ZMR4IsVvLYttsJI0sZG7Fz5UM1E-aqZK1xBtntznatmIEG8EWQNIoFEX65t_dqS8LlkHhtrEeGAVGEyNELDbEwZ5FVWdSX9suW6aTtl_BeRIX41N7mQ");'></div>
+<div class="flex flex-col gap-1.5 flex-1">
+<div class="flex items-center gap-2">
+<span class="font-medium text-[14px] text-text-main dark:text-white">michael_dev</span>
+<span class="text-text-muted text-[13px]">2 hours ago</span>
+</div>
+<p class="text-[15px] leading-[1.6] text-text-main dark:text-gray-300">The new arbitrary variants in v3.1 are incredible. Completely changes how I handle complex state styling.</p>
+</div>
+</div>
+<!-- Comment 2 -->
+<div class="flex gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-md size-[32px] shrink-0 border border-border-color dark:border-gray-700" data-alt="User avatar Sarah" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCVYCnxfbTz7Ey--n2ART0DrYNSPijND9qwdSy1_U3hSKzDaeciDUAx6Uc8PQ-MbHhIRni9bll6xfLRQWrCBB_7H-UkRbQwdoJKE1flpTPsvel4MFazOgeCr6kGbD0VJAwhjl5needp-m6CA0yMmLGh2vYD2t9uNEicYPpsnlK2rbSsXP_5IIzBSE6h3Ne99VXUH0G5uGkXLDRRhHFSdSiljvadIyFdxDa1xJVUX7P5BJ7BCcpk36IcX2NuT2x5vGH9Amh_qlfXxTw");'></div>
+<div class="flex flex-col gap-1.5 flex-1">
+<div class="flex items-center gap-2">
+<span class="font-medium text-[14px] text-text-main dark:text-white">sarah_codes</span>
+<span class="text-text-muted text-[13px]">5 hours ago</span>
+</div>
+<p class="text-[15px] leading-[1.6] text-text-main dark:text-gray-300">Is anyone else using this with Next.js 13 app directory? Found some quirks with server components but overall the integration is solid.</p>
+</div>
+</div>
+<!-- Comment 3 -->
+<div class="flex gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-md size-[32px] shrink-0 border border-border-color dark:border-gray-700" data-alt="User avatar David" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDPzTyq2cQiGQyU_wlEZ8-WtT882Ol6x_lZTExUzTPkmj1oJWeawQ7ptYKYQ8C4PUn42vzb5IZ5lSRilgvPFbwgLROitFckXCWn7l2kPohrqlvUV4D7A54rkEORcbL65FksLJ75dWmx6Pvc4zhtierQm3n98YMfakEcZo2JrZPUI8v6QYGDTNARpFSSx-MkDH-tfwmwVP8Eig5caS-WpGLJrVFzNZTUduhKaft7QDspJlwP5mbm0MtdytgJORa99OBKSfJW70HzOpM");'></div>
+<div class="flex flex-col gap-1.5 flex-1">
+<div class="flex items-center gap-2">
+<span class="font-medium text-[14px] text-text-main dark:text-white">david_design</span>
+<span class="text-text-muted text-[13px]">Yesterday</span>
+</div>
+<p class="text-[15px] leading-[1.6] text-text-main dark:text-gray-300">Paired with Headless UI, this is unmatched for building accessible design systems quickly.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Sticky Sidebar (320px) -->
+<aside class="w-full lg:w-[320px] shrink-0">
+<div class="sticky top-[104px] flex flex-col gap-6">
+<!-- Primary CTA -->
+<a class="w-full bg-primary hover:bg-primary-hover text-text-main h-[48px] flex items-center justify-center rounded-md font-medium text-[15px] transition-colors shadow-sm gap-2" href="#">
+<span>Visit Repository</span>
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</a>
+<!-- GitHub Metrics Box from Shared Components -->
+<div class="bg-surface-light dark:bg-surface-dark border border-border-color dark:border-gray-700 rounded-md p-1 overflow-hidden">
+<div class="grid grid-cols-2 gap-1 bg-border-color dark:bg-gray-700">
+<div class="flex flex-col gap-1 bg-surface-light dark:bg-surface-dark p-4">
+<p class="text-text-muted text-[13px] uppercase tracking-[0.05em] font-medium leading-normal">Stars</p>
+<p class="text-text-main dark:text-white tracking-[-0.02em] text-[24px] font-bold leading-tight">65k</p>
+</div>
+<div class="flex flex-col gap-1 bg-surface-light dark:bg-surface-dark p-4">
+<p class="text-text-muted text-[13px] uppercase tracking-[0.05em] font-medium leading-normal">Forks</p>
+<p class="text-text-main dark:text-white tracking-[-0.02em] text-[24px] font-bold leading-tight">3k</p>
+</div>
+<div class="flex flex-col gap-1 bg-surface-light dark:bg-surface-dark p-4">
+<p class="text-text-muted text-[13px] uppercase tracking-[0.05em] font-medium leading-normal">Issues</p>
+<p class="text-text-main dark:text-white tracking-[-0.02em] text-[24px] font-bold leading-tight">142</p>
+</div>
+<div class="flex flex-col gap-1 bg-surface-light dark:bg-surface-dark p-4">
+<p class="text-text-muted text-[13px] uppercase tracking-[0.05em] font-medium leading-normal">License</p>
+<p class="text-text-main dark:text-white tracking-[-0.02em] text-[24px] font-bold leading-tight">MIT</p>
+</div>
+</div>
+</div>
+<!-- Meta Info -->
+<div class="flex flex-col gap-4 bg-surface-light dark:bg-surface-dark border border-border-color dark:border-gray-700 rounded-md p-5">
+<div class="flex items-center justify-between">
+<span class="text-text-muted text-[13px] font-medium">Hunted by</span>
+<div class="flex items-center gap-2">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-sm size-[20px] border border-border-color dark:border-gray-600" data-alt="Hunter avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDtz-RE8Xt-qXPB3VKRt_2S3kOB_hDLq4VPD6789RyhqjZp2FPEJXBCxRNUp5wmMPnv_s9QWm4b7BrkHU-rvI_jq2jCg5-VPn8hgcGjNwsgzSzH1Mn-tN9zz7Uiv1TGRIHe8iv_Yf-m4OXVgPsJDzx6rVnr2e4GZg6pNWQTJYDe87xrKkzJJtAjP7iH_EnoiXrHyexXyftHqri2AYvKUTTdzaGSAtBmc_-f0z61B-8y4WGmErrqy5Uj2GNKRNiSmm_GSjuWgn3g8is");'></div>
+<span class="text-[14px] font-medium text-text-main dark:text-white">alex_hunt</span>
+</div>
+</div>
+<hr class="border-border-color dark:border-gray-700"/>
+<div class="flex items-center justify-between">
+<span class="text-text-muted text-[13px] font-medium">Added</span>
+<span class="text-[14px] font-medium text-text-main dark:text-white">Oct 24, 2023</span>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+</body></html>
