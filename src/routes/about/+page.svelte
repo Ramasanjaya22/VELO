@@ -61,7 +61,7 @@
 					<div
 						class="border border-metal-100 p-6 flex items-center justify-center h-24 transition-all duration-200 grayscale group-hover:grayscale-0 group-hover:scale-105 hover:shadow-[0_0_20px_rgba(0,230,118,0.3)]"
 					>
-						<span class="font-mono text-sm text-metal-500">aira.interactive</span>
+						<span class="font-mono text-sm text-metal-500">aira.interactive.com</span>
 					</div>
 				</a>
 				<a href="https://algonabata.com" target="_blank" rel="noopener noreferrer" class="group">
