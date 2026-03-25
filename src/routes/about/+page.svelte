@@ -52,23 +52,31 @@
 			<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
 				<a href="https://anywork.dev" target="_blank" rel="noopener noreferrer" class="group">
 					<div
-						class="border border-metal-100 p-6 flex items-center justify-center h-24 transition-all duration-200 grayscale group-hover:grayscale-0 group-hover:scale-105 hover:shadow-[0_0_20px_rgba(0,230,118,0.3)]"
+						class="border border-metal-100 p-6 flex flex-col items-center justify-center h-24 transition-all duration-200 grayscale group-hover:grayscale-0 group-hover:scale-105 hover:shadow-[0_0_20px_rgba(0,230,118,0.3)]"
 					>
 						<span class="font-mono text-sm text-metal-500">anywork.dev</span>
+						<span class="text-xs text-metal-500">AI Integration</span>
 					</div>
 				</a>
-				<a href="https://aira.interactive" target="_blank" rel="noopener noreferrer" class="group">
+				<a
+					href="https://www.airainteractive.com"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="group"
+				>
 					<div
-						class="border border-metal-100 p-6 flex items-center justify-center h-24 transition-all duration-200 grayscale group-hover:grayscale-0 group-hover:scale-105 hover:shadow-[0_0_20px_rgba(0,230,118,0.3)]"
+						class="border border-metal-100 p-6 flex flex-col items-center justify-center h-24 transition-all duration-200 grayscale group-hover:grayscale-0 group-hover:scale-105 hover:shadow-[0_0_20px_rgba(0,230,118,0.3)]"
 					>
 						<span class="font-mono text-sm text-metal-500">aira.interactive.com</span>
+						<span class="text-xs text-metal-500">3D Web Interactive</span>
 					</div>
 				</a>
-				<a href="https://algonabata.com" target="_blank" rel="noopener noreferrer" class="group">
+				<a href="https://allgonabata.com" target="_blank" rel="noopener noreferrer" class="group">
 					<div
-						class="border border-metal-100 p-6 flex items-center justify-center h-24 transition-all duration-200 grayscale group-hover:grayscale-0 group-hover:scale-105 hover:shadow-[0_0_20px_rgba(0,230,118,0.3)]"
+						class="border border-metal-100 p-6 flex flex-col items-center justify-center h-24 transition-all duration-200 grayscale group-hover:grayscale-0 group-hover:scale-105 hover:shadow-[0_0_20px_rgba(0,230,118,0.3)]"
 					>
 						<span class="font-mono text-sm text-metal-500">algonabata.com</span>
+						<span class="text-xs text-metal-500">Custom B2B Digital Creative Agency</span>
 					</div>
 				</a>
 			</div>
