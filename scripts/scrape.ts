@@ -7,7 +7,7 @@ import type { Tool, TrendingData } from '../src/lib/types';
 import { RETENTION_CONFIG, SCRAPE_CONFIG } from './lib/config';
 import { ensureDir, writeJSON, getDatePrefix } from './lib/fs-utils';
 
-const FIRECRAWL_API_KEY = process.env.FIRECRAWL_API_KEY || 'fc-44d275e00cc04c50b53b82e1f426efc5';
+const FIRECRAWL_API_KEY = process.env.FIRECRAWL_API_KEY;
 const GITHUB_TRENDING_URL = 'https://github.com/trending?since=weekly';
 
 interface RawRepo {
@@ -30,6 +30,11 @@ function toSlug(value: string): string {
 		.replace(/^-+|-+$/g, '');
 }
 
+function upscaleGitHubAvatar(url?: string): string | undefined {
+	if (!url) return undefined;
+	return url.replace(/([?&]s=)\d+/i, '$196');
+}
+
 function normalizeTool(repo: RawRepo): Tool {
 	const slug = toSlug(repo.name);
 	return {
@@ -45,7 +50,7 @@ function normalizeTool(repo: RawRepo): Tool {
 		affiliateAvailable: false,
 		trustScore: Math.min(40 + (repo.description ? 15 : 0) + (repo.avatarUrl ? 10 : 0), 100),
 		score: 0,
-		logoUrl: repo.avatarUrl,
+		logoUrl: upscaleGitHubAvatar(repo.avatarUrl),
 		updatedAt: new Date().toISOString(),
 		sourceIds: [`github:${slug}`],
 		legacy: {
@@ -72,7 +77,7 @@ function parseGitHubTrending(html: string): RawRepo[] {
 	const $ = cheerio.load(html);
 	const repos: RawRepo[] = [];
 
-	$('article.Box-row').each((_, element) => {
+	$('article.Box-row').each((_: number, element: any) => {
 		try {
 			const $article = $(element);
 			const $link = $article.find('h2 a');
@@ -102,7 +107,7 @@ function parseGitHubTrending(html: string): RawRepo[] {
 			}
 
 			const topics: string[] = [];
-			$article.find('[data-topic-tag]').each((__, topicEl) => {
+			$article.find('[data-topic-tag]').each((__: number, topicEl: any) => {
 				const topic = $(topicEl).attr('data-topic-tag');
 				if (topic) topics.push(topic);
 			});
@@ -131,6 +136,9 @@ function parseGitHubTrending(html: string): RawRepo[] {
 }
 
 async function fetchWithFirecrawl(): Promise<string> {
+	if (!FIRECRAWL_API_KEY) {
+		throw new Error('FIRECRAWL_API_KEY is required');
+	}
 	const firecrawl = new Firecrawl({ apiKey: FIRECRAWL_API_KEY });
 
 	console.log('[INFO] Fetching GitHub Trending via Firecrawl...');

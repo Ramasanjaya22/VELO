@@ -25,6 +25,22 @@
 		return `${data.tool.name} vs ${target.name}`;
 	});
 
+	const signalBars = $derived.by(() => {
+		const stars = Math.min(100, ((data.tool.stars ?? 0) / 50000) * 100);
+		const growth = Math.min(100, ((data.tool.starsGrowth ?? 0) / 5000) * 100);
+		const forks = Math.min(100, ((data.tool.forks ?? 0) / 20000) * 100);
+		const contributors = Math.min(100, ((data.tool.contributors ?? 0) / 100) * 100);
+		const trust = Math.min(100, ((data.tool.trustScore ?? 0) / 100) * 100);
+
+		return [
+			{ label: 'Stars', value: data.tool.stars?.toLocaleString() ?? '—', width: stars },
+			{ label: 'Weekly growth', value: data.tool.starsGrowth ? `+${data.tool.starsGrowth.toLocaleString()}` : '—', width: growth },
+			{ label: 'Forks', value: data.tool.forks?.toLocaleString() ?? '—', width: forks },
+			{ label: 'Contributors', value: data.tool.contributors?.toString() ?? '—', width: contributors },
+			{ label: 'Trust', value: data.tool.trustScore?.toFixed(1) ?? '—', width: trust }
+		];
+	});
+
 	const categoryIconUrl = $derived.by(() => {
 		const category = (data.tool.category ?? '').toLowerCase();
 		if (category.includes('javascript') || category.includes('js')) {
@@ -122,7 +138,27 @@
 
 	<section class="mt-8 grid gap-8 xl:grid-cols-[1fr_320px]">
 		<div class="space-y-6">
-				<div class="grid gap-4 lg:grid-cols-3">
+			<div class="border border-metal-100 bg-surface rounded-sm p-5">
+				<div class="flex items-center justify-between gap-3">
+					<h2 class="text-xs uppercase tracking-[0.25em] text-metal-500 font-mono">Signal charts</h2>
+					<span class="text-xs uppercase tracking-[0.2em] text-metal-500 font-mono">Repo specific</span>
+				</div>
+				<div class="mt-5 grid gap-4">
+					{#each signalBars as item}
+						<div class="signal-row">
+							<div class="flex items-center justify-between gap-4 text-[10px] uppercase tracking-[0.18em] font-mono text-metal-500">
+								<span>{item.label}</span>
+								<span>{item.value}</span>
+							</div>
+							<div class="signal-track">
+								<div class="signal-fill" style={`width: ${item.width}%`}></div>
+							</div>
+						</div>
+					{/each}
+				</div>
+			</div>
+
+			<div class="grid gap-4 lg:grid-cols-3">
 				<div class="border border-metal-100 bg-surface rounded-sm p-5">
 					<p class="text-[10px] uppercase tracking-[0.25em] text-metal-500 font-mono mb-2">Benefit</p>
 					<ul class="space-y-3 text-sm text-metal-500">
@@ -275,5 +311,23 @@
 		border-color: var(--accent);
 		background: color-mix(in srgb, var(--accent) 18%, var(--surface));
 		color: var(--metal-900);
+	}
+
+	.signal-row {
+		display: grid;
+		gap: 0.45rem;
+	}
+
+	.signal-track {
+		height: 0.6rem;
+		border: 1px solid var(--metal-100);
+		background: var(--bg);
+		border-radius: 0.125rem;
+		overflow: hidden;
+	}
+
+	.signal-fill {
+		height: 100%;
+		background: linear-gradient(90deg, var(--accent), color-mix(in srgb, var(--accent) 55%, var(--metal-900)));
 	}
 </style>

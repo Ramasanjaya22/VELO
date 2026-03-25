@@ -46,8 +46,8 @@
 						<span>{data.segment.replace(/-/g, ' ')}</span>
 					</span>
 					<span class="badge-chip badge-chip-accent">selected</span>
-					<span class="badge-chip badge-chip-accent">conversion-first</span>
 					<span class="badge-chip">ranked tools</span>
+					<span class="badge-chip">client work</span>
 				</div>
 
 				<h1 class="max-w-4xl text-[clamp(2.3rem,4.8vw,4.8rem)] leading-[0.94] tracking-[-0.05em] text-metal-900 font-heading">
@@ -55,6 +55,7 @@
 				</h1>
 				<p class="max-w-2xl text-base lg:text-lg text-metal-500 leading-relaxed">
 					{data.description}
+					For freelancers, the list favors tools that help you pitch better, write faster, and ship with less friction.
 				</p>
 			</header>
 		</div>
@@ -66,29 +67,22 @@
 					<Icon data={boltIcon} size="14px" color="var(--metal-500)" />
 				</div>
 				<div class="mt-4 grid grid-cols-2 gap-3">
-					<div class="rounded-sm border border-metal-100 bg-bg p-3">
+					<div class="rounded-sm border border-metal-100 bg-[color-mix(in_srgb,var(--surface)_94%,var(--metal-100)_6%)] p-3">
 						<p class="text-[10px] uppercase tracking-[0.2em] text-metal-500 font-mono">Tools</p>
 						<p class="mt-2 text-lg font-heading text-metal-900">{data.highlights.total}</p>
 					</div>
-					<div class="rounded-sm border border-metal-100 bg-bg p-3">
+					<div class="rounded-sm border border-metal-100 bg-[color-mix(in_srgb,var(--surface)_94%,var(--metal-100)_6%)] p-3">
 						<p class="text-[10px] uppercase tracking-[0.2em] text-metal-500 font-mono">Affiliate ready</p>
 						<p class="mt-2 text-lg font-heading text-metal-900">{data.highlights.affiliateReady}</p>
 					</div>
-					<div class="rounded-sm border border-metal-100 bg-bg p-3">
+					<div class="rounded-sm border border-metal-100 bg-[color-mix(in_srgb,var(--surface)_94%,var(--metal-100)_6%)] p-3">
 						<p class="text-[10px] uppercase tracking-[0.2em] text-metal-500 font-mono">Free / trial</p>
 						<p class="mt-2 text-lg font-heading text-metal-900">{data.highlights.freeTrial}</p>
 					</div>
-					<div class="rounded-sm border border-metal-100 bg-bg p-3">
+					<div class="rounded-sm border border-metal-100 bg-[color-mix(in_srgb,var(--surface)_94%,var(--metal-100)_6%)] p-3">
 						<p class="text-[10px] uppercase tracking-[0.2em] text-metal-500 font-mono">Top category</p>
 						<p class="mt-2 text-lg font-heading text-metal-900 capitalize">{data.highlights.topCategory}</p>
 					</div>
-				</div>
-			</div>
-
-			<div class="border border-metal-100 bg-surface rounded-sm p-5">
-				<div class="flex items-center justify-between">
-					<p class="text-[10px] uppercase tracking-[0.25em] text-metal-500 font-mono">Filter</p>
-					<Icon data={searchIcon} size="14px" color="var(--metal-500)" />
 				</div>
 				<div class="mt-4 flex flex-wrap gap-2">
 					{#each data.filters.primary as filter}
@@ -102,7 +96,7 @@
 		</div>
 	</section>
 
-	<section class="mt-8 grid gap-4 xl:grid-cols-3">
+	<section class="mt-8 grid gap-4 xl:grid-cols-[1.2fr_0.9fr_0.9fr]">
 		<div class="border border-metal-100 bg-surface rounded-sm p-5">
 			<p class="text-[10px] uppercase tracking-[0.25em] text-metal-500 font-mono">Category fit</p>
 			<div class="mt-4 flex flex-wrap gap-2">
@@ -175,18 +169,18 @@
 		</div>
 
 		<aside class="space-y-4">
-			<div class="border border-metal-100 bg-surface rounded-sm p-5">
+			<div class="border border-metal-100 bg-[color-mix(in_srgb,var(--surface)_94%,var(--metal-100)_6%)] rounded-sm p-4">
 				<p class="text-[10px] uppercase tracking-[0.25em] text-metal-500 font-mono">Monetization</p>
 				<p class="mt-2 text-sm text-metal-500">
 					Affiliate and promotion surfaces live here, clearly separated from ranking.
 				</p>
-				<div class="mt-4 flex items-center justify-between rounded-sm border border-metal-100 bg-bg px-3 py-2">
+				<div class="mt-4 flex items-center justify-between rounded-sm border border-metal-100 bg-[color-mix(in_srgb,var(--surface)_94%,var(--metal-100)_6%)] px-3 py-2">
 					<span class="text-[10px] uppercase tracking-[0.2em] text-metal-500 font-mono">Promo block</span>
 					<span class="text-sm font-mono font-bold text-metal-900">Active</span>
 				</div>
 			</div>
 
-			<div class="border border-metal-100 bg-surface rounded-sm p-5">
+			<div class="border border-metal-100 bg-[color-mix(in_srgb,var(--surface)_94%,var(--metal-100)_6%)] rounded-sm p-4">
 				<p class="text-[10px] uppercase tracking-[0.25em] text-metal-500 font-mono">Disclosure</p>
 				<p class="mt-2 text-sm text-metal-500">
 					Some cards may contain affiliate links. Ranking priority remains independent.
@@ -199,7 +193,7 @@
 		{#each data.recommendations as tool, index}
 			<a
 				href={toolHref(tool)}
-				class="group border border-metal-100 bg-surface rounded-sm p-5 transition-all hover:-translate-y-[2px] hover:border-metal-900 hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] active:scale-[0.995]"
+				class={`group border border-metal-100 bg-surface rounded-sm p-5 transition-all hover:-translate-y-[2px] hover:border-metal-900 hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] active:scale-[0.995] ${index === 0 ? 'xl:col-span-2' : ''}`}
 			>
 				<div class="flex items-start justify-between gap-4">
 					<div class="min-w-0">

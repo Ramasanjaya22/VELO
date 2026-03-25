@@ -31,7 +31,7 @@ const SEGMENT_RULES: Record<
 > = {
 	freelancers: {
 		title: 'Best AI tools for freelancers',
-		description: 'Fast tools for shipping work, communicating value, and keeping overhead low.',
+		description: 'Tools for freelancers to win clients, write faster, deliver clean work, and keep overhead low.',
 		boost: (tool) => scoreByKeywords(tool, ['freelance', 'client', 'proposal', 'writing', 'design', 'productivity'])
 	},
 	'researchers': {
@@ -101,7 +101,7 @@ function fallbackSegment(slug: string): { title: string; description: string } {
 	const humanized = slug.replace(/-/g, ' ').trim();
 	return {
 		title: `Best AI tools for ${humanized}`,
-		description: 'Flexible recommendation hub for fast evaluation and conversion.'
+		description: 'Flexible recommendation hub for fast evaluation and better decisions.'
 	};
 }
 

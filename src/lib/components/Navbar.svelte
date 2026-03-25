@@ -1,68 +1,92 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import { fly } from 'svelte/transition';
 	import { Icon } from 'svelte-icon';
 	import layersIcon from '$lib/icons/layers.svg?raw';
-	import crownIcon from '$lib/icons/crown.svg?raw';
-	import boltIcon from '$lib/icons/bolt.svg?raw';
-
-	let mounted = $state(false);
-
-	onMount(() => {
-		mounted = true;
-	});
-
-	const asciiWordmark = ['╦ ╦╔═╗╔╗    ╔═╗', '║ ║╠═╝╠╩╗   ╠╦╝', '╚═╝╩  ╚═╝───╩╚═'];
 </script>
 
-<header class="sticky top-0 z-50 bg-bg/90 backdrop-blur-sm border-b border-metal-100 h-16 w-full flex justify-center">
-	<div class="w-full max-w-[1240px] px-6 flex items-center justify-between h-full">
+<header class="site-header sticky top-0 z-50 flex h-16 w-full justify-center border-b border-metal-100 bg-bg/88">
+	<div class="flex h-full w-full max-w-[1240px] items-center justify-between px-6">
 		<a href="/" class="flex items-center gap-4 text-metal-900 group">
-			<div class="size-10 border border-metal-100 bg-surface rounded-sm flex items-center justify-center shrink-0 group-hover:border-metal-900 transition-colors">
+			<div class="logo-mark size-10 shrink-0 border border-metal-900 bg-metal-900 flex items-center justify-center transition-all duration-300 group-hover:-translate-y-[1px]">
 				<Icon data={layersIcon} size="18px" color="currentColor" />
 			</div>
-			{#if mounted}
-				<div class="flex flex-col gap-0 scale-75 origin-left group-hover:text-accent transition-colors" in:fly={{ x: -10, duration: 400 }}>
-					{#each asciiWordmark as line}
-						<pre class="font-mono leading-none m-0 text-[10px]">{line}</pre>
-					{/each}
-				</div>
-			{/if}
-			<h1 class="text-xl font-bold tracking-[-0.02em] font-display">VELO</h1>
+			<h1 class="logo-title text-xl font-bold tracking-[-0.08em] font-display">VELO</h1>
 		</a>
 
 		<div class="flex items-center gap-6">
-			<nav class="hidden md:flex items-center gap-4 text-sm font-medium text-metal-500">
-				<a href="/" class="inline-flex items-center gap-2 hover:text-metal-900 transition-colors">
-					<Icon data={layersIcon} size="14px" color="currentColor" />
-					Today
-				</a>
-				<a href="/best-for/freelancers" class="inline-flex items-center gap-2 hover:text-metal-900 transition-colors">
-					<span class="size-5 inline-flex items-center justify-center"><Icon data={crownIcon} size="12px" color="currentColor" /></span>
-					Best For
-				</a>
-				<a href="/archive" class="inline-flex items-center gap-2 hover:text-metal-900 transition-colors">
-					<span class="size-5 inline-flex items-center justify-center">
-						<Icon data={boltIcon} size="12px" color="currentColor" />
-					</span>
-					Bookmarks
-				</a>
-				<a href="/about" class="hover:text-metal-900 transition-colors">About</a>
+			<nav class="hidden items-center gap-5 text-sm font-medium text-metal-500 md:flex">
+				<a href="/" class="nav-link nav-link-active">Today</a>
+				<a href="/best-for/freelancers" class="nav-link">Best For</a>
+				<a href="/archive" class="nav-link">Archive</a>
+				<a href="/about" class="nav-link">About</a>
 			</nav>
 
 			<a
 				href="/submit"
-				class="flex items-center justify-center rounded-sm bg-metal-900 text-white h-10 px-6 font-medium text-sm transition-colors hover:bg-metal-700 active:bg-accent active:text-metal-900"
+				class="submit-cta flex h-10 items-center justify-center rounded-sm border border-metal-900 bg-accent px-5 text-sm font-medium text-metal-900 transition-all hover:-translate-y-[1px] hover:bg-accent-dim active:translate-y-0"
 			>
-				Submit
+				Submit tool
 			</a>
 		</div>
 	</div>
 </header>
 
 <style>
-	.sticky {
+	.site-header {
 		backdrop-filter: blur(8px);
-		background-color: rgba(250, 250, 250, 0.8);
+		background-color: color-mix(in srgb, var(--bg) 88%, transparent);
+	}
+
+	.logo-mark {
+		color: var(--accent);
+	}
+
+	.logo-title {
+		color: var(--metal-900);
+	}
+
+	.group:hover .logo-title {
+		color: var(--accent-dim);
+	}
+
+	.nav-link {
+		position: relative;
+		transition: color 180ms ease;
+	}
+
+	.nav-link:hover {
+		color: var(--metal-900);
+	}
+
+	.nav-link::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: -0.2rem;
+		width: 100%;
+		height: 1px;
+		background: linear-gradient(90deg, var(--accent), transparent);
+		transform: scaleX(0);
+		transform-origin: left;
+		transition: transform 180ms ease;
+	}
+
+	.nav-link:hover::after {
+		transform: scaleX(1);
+	}
+
+	.nav-link-active {
+		color: var(--metal-900);
+	}
+
+	.nav-link-active::after {
+		transform: scaleX(1);
+	}
+
+	.submit-cta {
+		box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02);
+	}
+
+	.submit-cta:hover {
+		box-shadow: 3px 3px 0px var(--accent);
 	}
 </style>
