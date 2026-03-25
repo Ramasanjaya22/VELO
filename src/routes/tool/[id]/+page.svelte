@@ -39,14 +39,19 @@
 		{ label: 'Top in Category', score: data.categoryStats.topScore, isThisTool: false }
 	]);
 
-	const benefits = $derived.by(() => {
-		const list = [
-			`Best for ${data.tool.bestFor?.[0] ?? 'general use'}`,
-			data.tool.affiliateAvailable ? 'Affiliate-ready CTA' : 'No affiliate friction',
-			`Category: ${data.tool.category ?? 'general'}`,
-			`Pricing: ${data.tool.pricingModel ?? 'unknown'}`
+	const displayPricing = $derived.by(() => {
+		if (data.tool.pricingModel && data.tool.pricingModel !== 'unknown') {
+			return data.tool.pricingModel;
+		}
+		return 'open-source';
+	});
+
+	const useCasesList = $derived.by(() => {
+		const cases = [
+			...(data.tool.useCases ?? []).map((u) => ({ text: u, type: 'useCase' })),
+			...(data.tool.bestFor ?? []).map((b) => ({ text: b, type: 'bestFor' }))
 		];
-		return list;
+		return cases.slice(0, 6);
 	});
 
 	const comparisonLine = $derived.by(() => {
@@ -451,41 +456,53 @@
 				</div>
 			</div>
 
-			<div class="grid gap-4 lg:grid-cols-3">
-				<div class="border border-metal-100 bg-surface rounded-sm p-5">
-					<p class="text-[10px] uppercase tracking-[0.25em] text-metal-500 font-mono mb-2">
-						Benefit
-					</p>
-					<ul class="space-y-3 text-sm text-metal-500">
-						{#each benefits as item}
-							<li class="flex items-start gap-2">
-								<Icon data={boltIcon} size="12px" color="var(--accent-dim)" />
-								<span>{item}</span>
-							</li>
-						{/each}
-					</ul>
+			<div class="grid gap-4 lg:grid-cols-2">
+				<div
+					class="border border-metal-900 bg-surface rounded-sm p-5 shadow-[4px_4px_0px_var(--accent-dim)]"
+				>
+					<div class="flex items-center gap-2 mb-4">
+						<div
+							class="size-8 border border-metal-900 bg-metal-900 rounded-sm flex items-center justify-center"
+						>
+							<Icon data={boltIcon} size="14px" color="var(--accent-dim)" />
+						</div>
+						<p class="text-[10px] uppercase tracking-[0.25em] text-metal-500 font-mono">
+							Use cases
+						</p>
+					</div>
+					{#if useCasesList.length > 0}
+						<div class="flex flex-wrap gap-2">
+							{#each useCasesList as item}
+								<span class="use-case-tag">{item.text}</span>
+							{/each}
+						</div>
+					{:else}
+						<p class="text-sm text-metal-500">No use cases listed.</p>
+					{/if}
 				</div>
 
-				<div class="border border-metal-100 bg-surface rounded-sm p-5">
-					<p class="text-[10px] uppercase tracking-[0.25em] text-metal-500 font-mono mb-2">
-						Use case
-					</p>
-					<p class="text-base text-metal-900 font-medium">
-						{data.tool.bestFor?.[0] ?? 'General users'}
-					</p>
+				<div
+					class="border border-metal-900 bg-surface rounded-sm p-5 shadow-[4px_4px_0px_var(--accent-dim)]"
+				>
+					<div class="flex items-center gap-2 mb-4">
+						<div
+							class="size-8 border border-metal-900 bg-metal-900 rounded-sm flex items-center justify-center"
+						>
+							<Icon data={crownIcon} size="14px" color="var(--accent-dim)" />
+						</div>
+						<p class="text-[10px] uppercase tracking-[0.25em] text-metal-500 font-mono">
+							Pricing model
+						</p>
+					</div>
+					<p class="text-xl font-heading font-bold text-metal-900 capitalize">{displayPricing}</p>
 					<p class="mt-2 text-sm text-metal-500">
-						Ideal for developers and teams focused on this use case.
+						{data.tool.url.includes('github') ? 'Repository hosted on GitHub' : 'Web-based service'}
 					</p>
-				</div>
-
-				<div class="border border-metal-100 bg-surface rounded-sm p-5">
-					<p class="text-[10px] uppercase tracking-[0.25em] text-metal-500 font-mono mb-2">
-						Pricing
-					</p>
-					<p class="text-base text-metal-900 font-medium">{data.tool.pricingModel ?? 'unknown'}</p>
-					<p class="mt-2 text-sm text-metal-500">
-						Transparent pricing to help evaluate ROI before visiting.
-					</p>
+					{#if data.tool.affiliateAvailable}
+						<div class="mt-3 pt-3 border-t border-metal-100">
+							<span class="use-case-tag use-case-tag-accent">affiliate-ready</span>
+						</div>
+					{/if}
 				</div>
 			</div>
 
@@ -703,5 +720,32 @@
 
 	.score-row:last-child {
 		margin-bottom: 0;
+	}
+
+	.use-case-tag {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35rem;
+		border: 1px solid var(--metal-200);
+		background: var(--bg);
+		color: var(--metal-700);
+		padding: 0.4rem 0.75rem;
+		border-radius: 0.125rem;
+		font-size: 0.7rem;
+		font-family: var(--font-mono);
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		transition: all 160ms ease;
+	}
+
+	.use-case-tag:hover {
+		border-color: var(--metal-900);
+		color: var(--metal-900);
+	}
+
+	.use-case-tag-accent {
+		border-color: var(--accent-dim);
+		background: color-mix(in srgb, var(--accent-dim) 15%, var(--surface));
+		color: var(--metal-900);
 	}
 </style>
