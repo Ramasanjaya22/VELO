@@ -18,5 +18,7 @@ bun run build
 ## Scrape Data
 
 ```bash
-FIRECRAWL_API_KEY=your_key bun run scrape
+bun run scrape
 ```
+
+Set `FIRECRAWL_API_KEY` in your local `.env` file before scraping.
