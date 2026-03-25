@@ -1,0 +1,232 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - link "VELO" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img [ref=e8]
+        - heading "VELO" [level=1] [ref=e12]
+      - generic [ref=e13]:
+        - navigation [ref=e14]:
+          - link "Today" [ref=e15] [cursor=pointer]:
+            - /url: /
+          - link "Best For" [ref=e16] [cursor=pointer]:
+            - /url: /best-for/freelancers
+          - link "Archive" [ref=e17] [cursor=pointer]:
+            - /url: /archive
+          - link "About" [ref=e18] [cursor=pointer]:
+            - /url: /about
+        - button "Toggle theme" [ref=e19]:
+          - generic [ref=e20]: dark_mode
+        - link "Submit tool" [ref=e21] [cursor=pointer]:
+          - /url: /submit
+  - main [ref=e22]:
+    - generic [ref=e24]:
+      - generic [ref=e25]:
+        - generic [ref=e26]:
+          - img [ref=e27]
+          - generic [ref=e31]: Tool detail
+        - generic [ref=e32]:
+          - generic [ref=e33]:
+            - generic [ref=e35]: TypeScript
+            - generic [ref=e36]: unknown
+          - generic [ref=e37]:
+            - img "Crosstalk-Solutions/project-nomad logo" [ref=e38]
+            - generic [ref=e39]:
+              - heading "Crosstalk-Solutions/project-nomad" [level=1] [ref=e40]
+              - paragraph [ref=e41]: Project N.O.M.A.D, is a self-contained, offline survival computer packed with critical tools, knowledge, and AI to keep you informed and empowered—anytime, anywhere.
+      - generic [ref=e42]:
+        - generic [ref=e43]:
+          - generic [ref=e44]:
+            - paragraph [ref=e45]: Score
+            - img [ref=e46]
+          - generic [ref=e48]:
+            - paragraph [ref=e49]: "55.6"
+            - generic [ref=e50]: +0.0 vs avg
+          - paragraph [ref=e51]: Calculated from GitHub stars, weekly growth, forks, and contributors.
+        - link "Visit tool" [ref=e52] [cursor=pointer]:
+          - /url: https://github.com/Crosstalk-Solutions/project-nomad
+          - text: Visit tool
+          - img [ref=e53]
+    - generic [ref=e56]:
+      - generic [ref=e57]:
+        - heading "Score Breakdown" [level=2] [ref=e59]
+        - img [ref=e61]:
+          - generic [ref=e81]: Demand
+          - generic [ref=e82]: Affiliate
+          - generic [ref=e83]: Conversion
+          - generic [ref=e84]: Trust
+          - generic [ref=e85]: Use Case
+          - generic [ref=e86]: Content
+          - generic [ref=e87]: Diff
+        - paragraph [ref=e88]: "Category avg: 55.6"
+      - generic [ref=e89]:
+        - heading "Score Composition" [level=2] [ref=e91]
+        - generic [ref=e92]:
+          - generic [ref=e94]:
+            - generic [ref=e95]: Demand
+            - generic [ref=e96]: "100"
+          - generic [ref=e100]:
+            - generic [ref=e101]: Affiliate
+            - generic [ref=e102]: "10"
+          - generic [ref=e106]:
+            - generic [ref=e107]: Conversion
+            - generic [ref=e108]: "59"
+          - generic [ref=e112]:
+            - generic [ref=e113]: Trust
+            - generic [ref=e114]: "75"
+          - generic [ref=e118]:
+            - generic [ref=e119]: Use Case
+            - generic [ref=e120]: "25"
+          - generic [ref=e124]:
+            - generic [ref=e125]: Content
+            - generic [ref=e126]: "25"
+          - generic [ref=e130]:
+            - generic [ref=e131]: Differentiation
+            - generic [ref=e132]: "36"
+    - generic [ref=e135]:
+      - generic [ref=e136]:
+        - heading "Benchmark" [level=2] [ref=e137]
+        - generic [ref=e138]: vs category
+      - generic [ref=e140]:
+        - generic [ref=e142]:
+          - generic [ref=e143]: This Tool
+          - generic [ref=e144]: "55.6"
+        - generic [ref=e149]:
+          - generic [ref=e150]: Category Avg (1 tools)
+          - generic [ref=e151]: "55.6"
+          - generic [ref=e152]: (+0.0)
+        - generic [ref=e156]:
+          - generic [ref=e157]: Top in Category
+          - generic [ref=e158]: "55.6"
+          - generic [ref=e159]: (+0.0)
+    - generic [ref=e162]:
+      - generic [ref=e163]:
+        - generic [ref=e164]:
+          - generic [ref=e165]:
+            - heading "Signal Metrics" [level=2] [ref=e166]
+            - generic [ref=e167]: GitHub data
+          - generic [ref=e168]:
+            - generic [ref=e170]:
+              - generic [ref=e171]: Stars
+              - generic [ref=e172]: —
+            - generic [ref=e175]:
+              - generic [ref=e176]: Weekly growth
+              - generic [ref=e177]: —
+            - generic [ref=e180]:
+              - generic [ref=e181]: Forks
+              - generic [ref=e182]: —
+            - generic [ref=e185]:
+              - generic [ref=e186]: Contributors
+              - generic [ref=e187]: —
+            - generic [ref=e190]:
+              - generic [ref=e191]: Trust
+              - generic [ref=e192]: "65.0"
+        - generic [ref=e195]:
+          - generic [ref=e196]:
+            - generic [ref=e197]:
+              - img [ref=e199]
+              - paragraph [ref=e201]: Use cases
+            - paragraph [ref=e202]: No use cases listed.
+          - generic [ref=e203]:
+            - generic [ref=e204]:
+              - img [ref=e206]
+              - paragraph [ref=e208]: Pricing model
+            - paragraph [ref=e209]: open-source
+            - paragraph [ref=e210]: Repository hosted on GitHub
+        - generic [ref=e211]:
+          - generic [ref=e212]:
+            - heading "Compare" [level=2] [ref=e213]
+            - generic [ref=e214]: 0 candidates
+          - generic [ref=e215]:
+            - generic [ref=e216]:
+              - generic [ref=e217]:
+                - paragraph [ref=e218]: Selected
+                - paragraph [ref=e219]: Crosstalk-Solutions/project-nomad
+              - img [ref=e220]
+            - paragraph [ref=e222]: No comparison candidate yet.
+      - complementary [ref=e223]:
+        - generic [ref=e224]:
+          - img "Crosstalk-Solutions/project-nomad logo" [ref=e225]
+          - heading "Crosstalk-Solutions/project-nomad" [level=3] [ref=e226]
+          - generic [ref=e227]:
+            - generic [ref=e228]:
+              - generic [ref=e229]: Stars
+              - generic [ref=e230]: —
+            - generic [ref=e231]:
+              - generic [ref=e232]: Forks
+              - generic [ref=e233]: —
+            - generic [ref=e234]:
+              - generic [ref=e235]: Contributors
+              - generic [ref=e236]: —
+          - generic [ref=e238]:
+            - generic [ref=e239]: Trust
+            - generic [ref=e240]: "65"
+        - generic [ref=e243]:
+          - generic [ref=e244]:
+            - paragraph [ref=e245]: Related tools
+            - img [ref=e246]
+          - generic [ref=e250]:
+            - link "jarrodwatts/claude-hud JavaScript unknown 53.2" [ref=e251] [cursor=pointer]:
+              - /url: /tool/jarrodwatts-claude-hud
+              - generic [ref=e252]:
+                - generic [ref=e253]:
+                  - paragraph [ref=e254]: jarrodwatts/claude-hud
+                  - generic [ref=e255]:
+                    - generic [ref=e256]: JavaScript
+                    - generic [ref=e257]: unknown
+                - generic [ref=e258]: "53.2"
+            - link "unslothai/unsloth Python unknown 53.2" [ref=e259] [cursor=pointer]:
+              - /url: /tool/unslothai-unsloth
+              - generic [ref=e260]:
+                - generic [ref=e261]:
+                  - paragraph [ref=e262]: unslothai/unsloth
+                  - generic [ref=e263]:
+                    - generic [ref=e264]: Python
+                    - generic [ref=e265]: unknown
+                - generic [ref=e266]: "53.2"
+            - link "bytedance/deer-flow Python unknown 53.2" [ref=e267] [cursor=pointer]:
+              - /url: /tool/bytedance-deer-flow
+              - generic [ref=e268]:
+                - generic [ref=e269]:
+                  - paragraph [ref=e270]: bytedance/deer-flow
+                  - generic [ref=e271]:
+                    - generic [ref=e272]: Python
+                    - generic [ref=e273]: unknown
+                - generic [ref=e274]: "53.2"
+            - link "obra/superpowers Shell unknown 52.7" [ref=e275] [cursor=pointer]:
+              - /url: /tool/obra-superpowers
+              - generic [ref=e276]:
+                - generic [ref=e277]:
+                  - paragraph [ref=e278]: obra/superpowers
+                  - generic [ref=e279]:
+                    - generic [ref=e280]: Shell
+                    - generic [ref=e281]: unknown
+                - generic [ref=e282]: "52.7"
+        - generic [ref=e283]:
+          - generic [ref=e284]:
+            - paragraph [ref=e285]: Disclosure
+            - img [ref=e286]
+          - paragraph [ref=e288]: Some outbound links may be affiliate links. Sponsored promotion, if present, is shown on this page.
+  - contentinfo [ref=e289]:
+    - generic [ref=e291]:
+      - generic [ref=e292]:
+        - generic [ref=e293]:
+          - paragraph [ref=e294]: Curated AI tools directory
+          - paragraph [ref=e295]: VELO
+          - paragraph [ref=e296]: Fast discovery. Clean ranking. Minimal noise.
+        - generic [ref=e297]:
+          - paragraph [ref=e298]: Sitemap
+          - generic [ref=e299]:
+            - link "Home / Trending" [ref=e300] [cursor=pointer]:
+              - /url: /
+            - link "Archive" [ref=e301] [cursor=pointer]:
+              - /url: /archive
+            - link "Best For Freelancers" [ref=e302] [cursor=pointer]:
+              - /url: /best-for/freelancers
+            - link "About" [ref=e303] [cursor=pointer]:
+              - /url: /about
+            - link "Submit Tool" [ref=e304] [cursor=pointer]:
+              - /url: /submit
+      - generic [ref=e305]:
+        - img "VELO curated AI tools directory hero visual" [ref=e308]
+        - generic [ref=e311]: Editorial visual

@@ -1,0 +1,3 @@
+[    2221ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:4173/api/readme?url=https%3A%2F%2Fgithub.com%2FCrosstalk-Solutions%2Fproject-nomad:0
+[   13426ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:4173/api/readme?url=https%3A%2F%2Fgithub.com%2FCrosstalk-Solutions%2Fproject-nomad:0
+[   62343ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://127.0.0.1:4173/api/readme?url=https%3A%2F%2Fgithub.com%2FCrosstalk-Solutions%2Fproject-nomad:0
