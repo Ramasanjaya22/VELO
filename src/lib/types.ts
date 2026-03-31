@@ -1,6 +1,7 @@
 export type PricingModel = 'free' | 'freemium' | 'trial' | 'paid' | 'unknown';
 
 export interface Tool {
+	id?: string;
 	rank: number;
 	name: string;
 	slug?: string;
@@ -25,6 +26,8 @@ export interface Tool {
 	forks?: number;
 	topics?: string[];
 	contributors?: number;
+	upvotes?: number;
+	views?: number;
 	legacy?: {
 		language?: string;
 		stars?: number;
